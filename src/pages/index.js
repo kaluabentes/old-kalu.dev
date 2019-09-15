@@ -1,11 +1,11 @@
 import React from 'react'
 
-import Base from '_templates/base'
+import Page from '_templates/page'
 
 const Home = () => (
-  <Base>
+  <Page>
     <h1>Hello</h1>
-  </Base>
+  </Page>
 )
 
 export default Home
