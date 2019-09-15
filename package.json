@@ -1,0 +1,25 @@
+{
+  "name": "kaluabentes.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next src",
+    "build": "next build src",
+    "start": "next start src",
+    "export": "next export src && node ./move-dist.js",
+    "build-static": "yarn build && yarn export"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^9.0.5",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "fs-extra": "^8.1.0"
+  }
+}
