@@ -8,8 +8,8 @@
     "dev": "next src",
     "build": "next build src",
     "start": "next start src",
-    "export": "next export src && node ./move-dist.js",
-    "build-static": "yarn build && yarn export"
+    "export": "next export src",
+    "build-static": "yarn build && yarn export && ./move-dist.sh"
   },
   "keywords": [],
   "author": "",
