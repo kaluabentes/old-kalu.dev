@@ -1,3 +1,4 @@
 #!/bin/bash
-rsync ./src/out/* .
+rm -rf ./_next
+mv ./src/out/* .
 rm -rf ./src/out
