@@ -1,4 +1,12 @@
 const withPlugins = require('next-compose-plugins')
 const css = require('@zeit/next-css')
+const webpackExtra = require('./webpack.extra')
 
-module.exports = withPlugins([css], { cssModules: true })
+const config = {
+  cssModules: true,
+  webpack(config, options) {
+    return { ...config, ...webpackExtra }
+  },
+}
+
+module.exports = withPlugins([css], config)

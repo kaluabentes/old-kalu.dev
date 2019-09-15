@@ -1,7 +1,11 @@
 import React from 'react'
 
-import styles from './styles.css'
+import Base from '_templates/base'
 
-const Home = () => <h1 className={styles.title}>Hello</h1>
+const Home = () => (
+  <Base>
+    <h1>Hello</h1>
+  </Base>
+)
 
 export default Home
