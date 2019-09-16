@@ -1,0 +1,22 @@
+.brand {
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+}
+
+.sizeSmall {
+  font-size: 1rem;
+}
+
+.sizeMedium {
+  font-size: 1.1rem;
+}
+
+.themeLight {
+  color: var(--color-black);
+}
+
+.themeDark {
+  color: var(--color-white);
+}

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { withRouter } from 'next/router'
 
 import Container from '_atoms/container'
+import Brand from '_atoms/brand'
 
 import styles from './styles.css'
 
@@ -49,7 +50,7 @@ class Header extends Component {
       <header className={styles.header}>
         <Container>
           <div className={styles.headerInner}>
-            <h1 className={styles.brand}>KALUX</h1>
+            <Brand />
             <button onClick={this.handleNavToggle} className={styles.navToggler}>
               <span />
               <span />
