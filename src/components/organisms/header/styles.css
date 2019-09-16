@@ -9,8 +9,6 @@
 .headerInner {
   display: flex;
   align-items: center;
-  padding-left: 1.2em;
-  padding-right: 1.2em;
   justify-content: space-between;
   height: 4em;
 }
