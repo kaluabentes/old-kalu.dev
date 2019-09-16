@@ -50,7 +50,7 @@ class Header extends Component {
       <header className={styles.header}>
         <Container>
           <div className={styles.headerInner}>
-            <Brand />
+            <Brand theme={Brand.themes.dark} />
             <button onClick={this.handleNavToggle} className={styles.navToggler}>
               <span />
               <span />

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+import Link from 'next/link'
 
 import styles from './styles.css'
 
@@ -19,7 +20,15 @@ const getClassName = props => ({
 })
 
 const Brand = ({ isTitle, ...props }) =>
-  isTitle ? <h1 {...getClassName(props)}>KALUX</h1> : <h4 {...getClassName(props)}>KALUX</h4>
+  isTitle ? (
+    <Link href="/">
+      <h1 {...getClassName(props)}>KALUX</h1>
+    </Link>
+  ) : (
+    <Link href="/">
+      <h4 {...getClassName(props)}>KALUX</h4>
+    </Link>
+  )
 
 Brand.propTypes = {
   isTitle: PropTypes.bool,
