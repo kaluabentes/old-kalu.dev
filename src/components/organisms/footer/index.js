@@ -17,7 +17,10 @@ const Footer = () => (
         </div>
         <div className={styles.rightColumn}>
           <p className={styles.greetings}>
-            Say hi, <span className={styles.email}>kaluanbentes@gmail.com</span>
+            Say hi,{' '}
+            <a href="mailto:kaluanbentes@gmail.com" className={styles.email}>
+              kaluanbentes@gmail.com
+            </a>
           </p>
           <div>
             <a href="https://github.com/kaluabentes" target="_blank" rel="nooponer noreferrer">

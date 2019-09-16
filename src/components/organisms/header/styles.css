@@ -19,7 +19,7 @@
   left: 0;
   display: flex;
   flex-direction: column;
-  background: var(--color-gray);
+  background: var(--color-grey);
   width: 100%;
   height: 0;
   overflow: hidden;
@@ -42,7 +42,7 @@
 .navItem {
   padding: 1.2em;
   text-decoration: none;
-  color: #757575;
+  color: var(--color-black-2);
 }
 
 .navToggler {

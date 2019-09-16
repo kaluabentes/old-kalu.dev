@@ -6,7 +6,7 @@
 
 .copyright {
   font-size: 0.75rem;
-  color: #8c8c8c;
+  color: var(--color-grey-2);
   margin-bottom: 0;
 }
 
@@ -53,9 +53,11 @@
 
 .greetings {
   color: var(--color-white);
-  color: #8c8c8c;
+  color: var(--color-grey-2);
+  margin-top: 0;
 }
 
 .email {
   text-decoration: underline;
+  color: var(--color-grey-2);
 }
