@@ -1,9 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Container from '_atoms/container'
-
-const Body = ({ children }) => <Container>{children}</Container>
+const Body = ({ children }) => <div>{children}</div>
 
 Body.propTypes = {
   children: PropTypes.node,

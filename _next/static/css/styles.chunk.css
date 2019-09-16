@@ -380,6 +380,7 @@ body {
   font-weight: 400;
   letter-spacing: 0.2em;
   font-weight: 500;
+  cursor: pointer;
 }
 
 ._37YKmWNIg3YtAmEG-eXep2 {
@@ -399,9 +400,8 @@ body {
 }
 
 ._1Hd8kyYlQU9tcciwZfA9bZ {
-  background: var(--color-white);
+  background: var(--color-black);
   width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 0.3em 1.2em;
   position: relative;
   font-size: 1rem;
 }
@@ -419,7 +419,7 @@ body {
   left: 0;
   display: flex;
   flex-direction: column;
-  background: var(--color-grey);
+  background: var(--color-black);
   width: 100%;
   height: 0;
   overflow: hidden;
@@ -445,7 +445,7 @@ body {
 ._1A53cM7WvkELCnFcsDO-2L {
   padding: 1.2em;
   text-decoration: none;
-  color: var(--color-black-2);
+  color: var(--color-white);
 }
 
 ._103sWyxxOl1K_2XbVVhZpV {
@@ -455,11 +455,16 @@ body {
   padding: 0;
   width: 20px;
   background: transparent;
-  align-items: flex-end
+  align-items: flex-end;
+  cursor: pointer
 }
 
+._103sWyxxOl1K_2XbVVhZpV:focus {
+    outline: none;
+  }
+
 ._103sWyxxOl1K_2XbVVhZpV span {
-    background: var(--color-black);
+    background: var(--color-white);
     height: 2px;
     margin: 2px 0;
     width: 20px;
@@ -478,9 +483,7 @@ body {
 
 ._2-QwGa5Nn3SARy4mZgyzmd {
   font-weight: 500;
-  color: var(--color-black);
 }
-
 
 ._3s-XvoxgSOckumTKpt0sw9 {
   background: var(--color-black);
@@ -552,6 +555,55 @@ body {
 ._3ziZZJHaC_MbyA3fSX2I49 {
   text-decoration: underline;
   color: var(--color-grey-2);
+}
+
+._20ZKkYDX7pqrpM9BqI0Vpv {
+  background: transparent;
+  border: none;
+  padding: 0 3.5em;
+  background: var(--color-blue);
+  color: var(--color-white);
+  height: 2.81em;
+  border-radius: 7px;
+  font-weight: 300;
+  cursor: pointer;
+  box-shadow: 0 4px 14px 0 rgba(0,118,255,0.39);
+}
+
+._3A_lbbwI5BomnorP0KQzeO {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+._3fm40iwZ2JHamhZsVu4pRz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3.75rem 1.5rem
+}
+
+@media (min-width: 768px) {
+
+._3fm40iwZ2JHamhZsVu4pRz {
+    padding: 7.75rem 1.5rem
+}
+  }
+
+._1rXDrkbCzgJm6CdoSeIYhd, ._2fOAQL6nxxJq4ZF40VwBZh {
+  margin: 0;
+}
+
+._1rXDrkbCzgJm6CdoSeIYhd {
+  font-size: 4.8rem;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+._2fOAQL6nxxJq4ZF40VwBZh {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 4.1rem;
 }
 
 

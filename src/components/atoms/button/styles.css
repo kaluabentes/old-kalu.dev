@@ -1,0 +1,12 @@
+.button {
+  background: transparent;
+  border: none;
+  padding: 0 3.5em;
+  background: var(--color-blue);
+  color: var(--color-white);
+  height: 2.81em;
+  border-radius: 7px;
+  font-weight: 300;
+  cursor: pointer;
+  box-shadow: 0 4px 14px 0 rgba(0,118,255,0.39);
+}

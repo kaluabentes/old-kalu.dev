@@ -1,10 +1,11 @@
 import React from 'react'
 
 import Page from '_templates/page'
+import Cover from '_organisms/cover'
 
 const Home = () => (
   <Page>
-    <h1>Hello</h1>
+    <Cover />
   </Page>
 )
 

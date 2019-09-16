@@ -11378,8 +11378,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! classnames */ "../node_modules/classnames/index.js");
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./styles.css */ "./components/atoms/brand/styles.css");
-/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/link */ "../node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles.css */ "./components/atoms/brand/styles.css");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_6__);
 
 
 var _jsxFileName = "/Users/kalu/Projects/kaluabentes.github.io/src/components/atoms/brand/index.js";
@@ -11388,18 +11390,19 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
 
+
 var SIZES = {
-  small: _styles_css__WEBPACK_IMPORTED_MODULE_5___default.a.sizeSmall,
-  medium: _styles_css__WEBPACK_IMPORTED_MODULE_5___default.a.sizeMedium
+  small: _styles_css__WEBPACK_IMPORTED_MODULE_6___default.a.sizeSmall,
+  medium: _styles_css__WEBPACK_IMPORTED_MODULE_6___default.a.sizeMedium
 };
 var THEMES = {
-  light: _styles_css__WEBPACK_IMPORTED_MODULE_5___default.a.themeLight,
-  dark: _styles_css__WEBPACK_IMPORTED_MODULE_5___default.a.themeDark
+  light: _styles_css__WEBPACK_IMPORTED_MODULE_6___default.a.themeLight,
+  dark: _styles_css__WEBPACK_IMPORTED_MODULE_6___default.a.themeDark
 };
 
 var getClassName = function getClassName(props) {
   return {
-    className: classnames__WEBPACK_IMPORTED_MODULE_4___default()(_styles_css__WEBPACK_IMPORTED_MODULE_5___default.a.brand, props.size, props.theme)
+    className: classnames__WEBPACK_IMPORTED_MODULE_4___default()(_styles_css__WEBPACK_IMPORTED_MODULE_6___default.a.brand, props.size, props.theme)
   };
 };
 
@@ -11407,19 +11410,33 @@ var Brand = function Brand(_ref) {
   var isTitle = _ref.isTitle,
       props = Object(_babel_runtime_corejs2_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__["default"])(_ref, ["isTitle"]);
 
-  return isTitle ? __jsx("h1", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, getClassName(props), {
+  return isTitle ? __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 24
     },
     __self: this
-  }), "KALUX") : __jsx("h4", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, getClassName(props), {
+  }, __jsx("h1", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, getClassName(props), {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 25
     },
     __self: this
-  }), "KALUX");
+  }), "KALUX")) : __jsx(next_link__WEBPACK_IMPORTED_MODULE_5___default.a, {
+    href: "/",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: this
+  }, __jsx("h4", Object(_babel_runtime_corejs2_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, getClassName(props), {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: this
+  }), "KALUX"));
 };
 
 Brand.propTypes = {
@@ -11491,19 +11508,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _atoms_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! _atoms/container */ "./components/atoms/container/index.js");
 var _jsxFileName = "/Users/kalu/Projects/kaluabentes.github.io/src/components/organisms/body/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
 var Body = function Body(_ref) {
   var children = _ref.children;
-  return __jsx(_atoms_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 6
+      lineNumber: 4
     },
     __self: this
   }, children);
@@ -11795,6 +11810,7 @@ function (_Component) {
         },
         __self: this
       }, __jsx(_atoms_brand__WEBPACK_IMPORTED_MODULE_13__["default"], {
+        theme: _atoms_brand__WEBPACK_IMPORTED_MODULE_13__["default"].themes.dark,
         __source: {
           fileName: _jsxFileName,
           lineNumber: 53
@@ -12045,7 +12061,7 @@ var About = function About() {
 
 /***/ }),
 
-/***/ 0:
+/***/ 9:
 /*!*************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fabout&absolutePagePath=%2FUsers%2Fkalu%2FProjects%2Fkaluabentes.github.io%2Fsrc%2Fpages%2Fabout.js ***!
   \*************************************************************************************************************************************************/
@@ -12068,5 +12084,5 @@ module.exports = dll_2524db69d4eccd75a204;
 
 /***/ })
 
-},[[0,"static/runtime/webpack.js","styles"]]]);
+},[[9,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=about.js.map
