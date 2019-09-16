@@ -5,7 +5,11 @@ const webpackExtra = require('./webpack.extra')
 const config = {
   cssModules: true,
   webpack(config, options) {
-    return { ...config, ...webpackExtra }
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      ...webpackExtra.resolve.alias,
+    }
+    return config
   },
 }
 
