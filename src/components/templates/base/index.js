@@ -7,7 +7,10 @@ import '_styles/base.css'
 const Base = ({ children }) => (
   <>
     <Head>
-      <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet" />
+      <link
+        href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700&display=swap"
+        rel="stylesheet"
+      />
     </Head>
     {children}
   </>
