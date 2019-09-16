@@ -44,7 +44,7 @@
 .navItem {
   padding: 1.2em;
   text-decoration: none;
-  color: var(--color-black);
+  color: #757575;
 }
 
 .navToggler {
@@ -74,6 +74,7 @@
 
 .navItemCurrent {
   font-weight: 500;
+  color: var(--color-black);
 }
 
 .brand {
