@@ -23,7 +23,11 @@ const Footer = () => (
             </a>
           </p>
           <div>
-            <a href="https://github.com/kaluabentes" target="_blank" rel="nooponer noreferrer">
+            <a
+              href="https://github.com/kaluabentes/kaluabentes.github.io"
+              target="_blank"
+              rel="nooponer noreferrer"
+            >
               <svg
                 className={styles.icon}
                 xmlns="http://www.w3.org/2000/svg"
