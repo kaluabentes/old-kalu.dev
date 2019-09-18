@@ -11675,14 +11675,14 @@ var Cover = function Cover(_ref) {
       lineNumber: 13
     },
     __self: this
-  }, "Life surfer"), __jsx("p", {
+  }, "Hello, I'm Kalu\xE3"), __jsx("p", {
     className: _styles_css__WEBPACK_IMPORTED_MODULE_5___default.a.subtitle,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14
     },
     __self: this
-  }, "and frontend developer"), __jsx(_atoms_button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, "and I'm a frontend developer"), __jsx(_atoms_button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     href: "/about",
     __source: {
       fileName: _jsxFileName,
@@ -12049,6 +12049,109 @@ Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODUL
 
 /***/ }),
 
+/***/ "./components/organisms/latest-articles/index.js":
+/*!*******************************************************!*\
+  !*** ./components/organisms/latest-articles/index.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "../node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _atoms_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! _atoms/container */ "./components/atoms/container/index.js");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles.css */ "./components/organisms/latest-articles/styles.css");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "/Users/kalu/Projects/kaluabentes.github.io/src/components/organisms/latest-articles/index.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+var LatestArticles = function LatestArticles() {
+  return __jsx(_atoms_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, __jsx("h2", {
+    className: _styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.title,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }, "Latest Articles"), __jsx("div", {
+    className: _styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.grid,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11
+    },
+    __self: this
+  }, [1, 2, 3].map(function (val, key) {
+    return __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+      href: "/",
+      key: key,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      },
+      __self: this
+    }, __jsx("a", {
+      className: _styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.article,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14
+      },
+      __self: this
+    }, __jsx("article", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      },
+      __self: this
+    }, __jsx("img", {
+      className: _styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.articleImage,
+      src: "http://lorempixel.com/400/300/sports/",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: this
+    }), __jsx("div", {
+      className: _styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.articleContent,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      },
+      __self: this
+    }, __jsx("h3", {
+      className: _styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.articleTitle,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    }, "Lorem ipsun"), __jsx("p", {
+      className: _styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.articleExcerpt,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: this
+    }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia magna magna, semper malesuada sapien lacinia sit amet. Nulla in consequat nibh.")))));
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (LatestArticles);
+
+/***/ }),
+
 /***/ "./components/templates/base/index.js":
 /*!********************************************!*\
   !*** ./components/templates/base/index.js ***!
@@ -12082,7 +12185,7 @@ var Base = function Base(_ref) {
     },
     __self: this
   }, __jsx("link", {
-    href: "https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700&display=swap",
+    href: "https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap",
     rel: "stylesheet",
     __source: {
       fileName: _jsxFileName,
@@ -12202,8 +12305,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _templates_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! _templates/page */ "./components/templates/page/index.js");
 /* harmony import */ var _organisms_cover__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! _organisms/cover */ "./components/organisms/cover/index.js");
+/* harmony import */ var _organisms_latest_articles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! _organisms/latest-articles */ "./components/organisms/latest-articles/index.js");
 var _jsxFileName = "/Users/kalu/Projects/kaluabentes.github.io/src/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -12212,13 +12317,19 @@ var Home = function Home() {
   return __jsx(_templates_page__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7
+      lineNumber: 8
     },
     __self: this
   }, __jsx(_organisms_cover__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 9
+    },
+    __self: this
+  }), __jsx(_organisms_latest_articles__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
     },
     __self: this
   }));

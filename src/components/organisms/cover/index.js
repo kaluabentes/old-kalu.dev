@@ -10,8 +10,8 @@ const Cover = ({}) => (
   <div className={styles.cover}>
     <Container>
       <div className={styles.inner}>
-        <h2 className={styles.title}>Life surfer</h2>
-        <p className={styles.subtitle}>and frontend developer</p>
+        <h2 className={styles.title}>Hello, I'm Kaluã</h2>
+        <p className={styles.subtitle}>and I'm a frontend developer</p>
         <Button href="/about">Read about me</Button>
       </div>
     </Container>
