@@ -9,4 +9,14 @@
   font-weight: 300;
   cursor: pointer;
   box-shadow: 0 4px 14px 0 rgba(0,118,255,0.39);
+  transition: 0.3s;
+  outline: none;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    background: var(--color-blue-2);
+  }
 }
