@@ -11689,7 +11689,7 @@ var Cover = function Cover(_ref) {
       lineNumber: 15
     },
     __self: this
-  }, "Read more about"))));
+  }, "Read about me"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Cover);
