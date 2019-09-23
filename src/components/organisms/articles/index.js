@@ -5,9 +5,9 @@ import Container from '_atoms/container'
 
 import styles from './styles.css'
 
-const LatestArticles = () => (
+const Articles = () => (
   <Container>
-    <h2 className={styles.title}>Latest Articles</h2>
+    <h2 className={styles.title}>Articles</h2>
     <div className={styles.grid}>
       {[1, 2, 3].map((val, key) => (
         <Link href="/" key={key}>
