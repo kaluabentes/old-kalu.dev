@@ -42,7 +42,7 @@
 .grid {
   display: grid;
   grid-template-rows: 250px 250px 250px;
-  grid-gap: 50px;
+  grid-gap: 38px;
   margin-bottom: 50px;
 
   @media (--break-desktop) {
