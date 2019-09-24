@@ -372,7 +372,7 @@ body {
 h3 {
   font-size: 1.6rem;
   font-weight: 600;
-  margin: 0px 0px;
+  margin: 0 0;
 }
 
 p {
@@ -648,7 +648,7 @@ p {
 }
   }
 
-._3IkJz94q1kOevsKLu1qWty {
+._1qwMeFo8XZSWnwTrUYYxia {
   position: relative;
   border-radius: 6px;
   overflow: hidden;
@@ -657,7 +657,7 @@ p {
   display: block
 }
 
-._3IkJz94q1kOevsKLu1qWty::after {
+._1qwMeFo8XZSWnwTrUYYxia::after {
     content: "";
     position: absolute;
     height: 100%;
@@ -669,41 +669,51 @@ p {
   }
 
 @media (min-width: 768px) {
-    ._3IkJz94q1kOevsKLu1qWty:first-child {
+    ._1qwMeFo8XZSWnwTrUYYxia:first-child {
       grid-row: 1 / 3;
     }
 
-      ._3IkJz94q1kOevsKLu1qWty:first-child ._1nslWOg6XHUHbVH3tVAe3m {
-        height: 530px;
+      ._1qwMeFo8XZSWnwTrUYYxia:first-child ._2Ke22Ptln2rOgu9ri06gxi {
+        height: 550px;
         width: 100%;
       }
   }
 
-._1MeO1k39uy8KR11lKyzcb4 {
+._1qwMeFo8XZSWnwTrUYYxia:hover ._1YhTvFFsCP9FYgB1Qa2NEK {
+      padding-left: 10px;
+    }
+
+._1qwMeFo8XZSWnwTrUYYxia:hover ._2Ke22Ptln2rOgu9ri06gxi {
+      transform: scale(1);
+    }
+
+._1UBVyE9h4xPzdjDQWAClZX {
   display: grid;
   grid-template-rows: 250px 250px 250px;
-  grid-gap: 30px;
+  grid-gap: 50px;
   margin-bottom: 50px
 }
 
 @media (min-width: 768px) {
 
-._1MeO1k39uy8KR11lKyzcb4 {
+._1UBVyE9h4xPzdjDQWAClZX {
     grid-template-rows: 250px 250px;
     grid-template-columns: 1fr 1fr
 }
   }
 
-._1nslWOg6XHUHbVH3tVAe3m {
+._2Ke22Ptln2rOgu9ri06gxi {
   height: 250px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   position: relative;
   z-index: 1;
+  transform: scale(1.2);
+  transition: 2s;
 }
 
-.ve7NwUGtfJa3yJ_cRKMvz {
+._2oqAjPTX_7WM9JhVXKiPG3 {
   position: absolute;
   z-index: 3;
   width: 100%;
@@ -714,19 +724,28 @@ p {
 
 @media (min-width: 768px) {
 
-.ve7NwUGtfJa3yJ_cRKMvz {
+._2oqAjPTX_7WM9JhVXKiPG3 {
     padding: 30px
 }
   }
 
-._1aZuRPmFWzWm5LYeD8ctcs {
+._G7KuKByp4WiuUdND3sXX {
+  margin-bottom: 20px;
 }
 
-.wMmUQooWvM0cHXNsWYEZa {
+._1YhTvFFsCP9FYgB1Qa2NEK {
+  color: var(--color-white);
+  display: inline-block;
+  border-radius: 3px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+._1Cm1do5tarLXjW7Vk3J5fm {
   margin-bottom: 0;
 }
 
-.JEXoSEi6f32To-hvXbA6i {
+._1H8yszdkmoGq8Nf_PJ6MwN {
   margin: 50px 0 30px 0;
 }
 

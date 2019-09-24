@@ -15,11 +15,10 @@ const Articles = () => (
             <article>
               <img className={styles.articleImage} src="http://lorempixel.com/400/300/sports/" />
               <div className={styles.articleContent}>
-                <h3 className={styles.articleTitle}>Lorem ipsun</h3>
-                <p className={styles.articleExcerpt}>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam lacinia magna
-                  magna, semper malesuada sapien lacinia sit amet. Nulla in consequat nibh.
-                </p>
+                <h3 className={styles.articleTitle}>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                </h3>
+                <div className={styles.articleReadMore}>> Read more</div>
               </div>
             </article>
           </a>
@@ -29,4 +28,4 @@ const Articles = () => (
   </Container>
 )
 
-export default LatestArticles
+export default Articles
