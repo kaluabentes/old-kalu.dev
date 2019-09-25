@@ -58,7 +58,7 @@
   position: relative;
   z-index: 1;
   transform: scale(1.2);
-  transition: 2s;
+  transition: 2s ease-in;
 }
 
 .articleContent {
