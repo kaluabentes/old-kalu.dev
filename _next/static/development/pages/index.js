@@ -12005,7 +12005,7 @@ var Base = function Base(_ref) {
     },
     __self: this
   }, __jsx("link", {
-    href: "https://fonts.googleapis.com/css?family=Poppins:200,400,500,700&display=swap",
+    href: "https://fonts.googleapis.com/css?family=Poppins:400,500,700&display=swap",
     rel: "stylesheet",
     __source: {
       fileName: _jsxFileName,
