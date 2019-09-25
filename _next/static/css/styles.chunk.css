@@ -349,7 +349,7 @@ template {
 }
 
 :root {
-  --font-face: 'Rubik', sans-serif;
+  --font-face: 'Poppins', sans-serif;
   
   --color-white: #fff;
   --color-grey: #f6f6f6;
@@ -381,7 +381,7 @@ p {
 }
 
 ._1U60eJOD406F4wjsRyzMst {
-  max-width: 1024px;
+  max-width: 1177px;
   margin: 0 auto;
   width: 100%;
   padding-left: 20px;
@@ -690,7 +690,7 @@ p {
 ._1UBVyE9h4xPzdjDQWAClZX {
   display: grid;
   grid-template-rows: 250px 250px 250px;
-  grid-gap: 50px;
+  grid-gap: 38px;
   margin-bottom: 50px
 }
 

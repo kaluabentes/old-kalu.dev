@@ -10,7 +10,7 @@ const Footer = () => (
     <Container>
       <div className={styles.row}>
         <div className={styles.leftColumn}>
-          <Brand isTitle={false} size={Brand.sizes.medium} theme={Brand.themes.dark} />
+          <Brand />
           <p className={styles.copyright}>
             Copyright © {new Date().getFullYear()} Kaluã Bentes, Inc. All rights reserved.
           </p>

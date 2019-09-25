@@ -8,7 +8,7 @@ const Base = ({ children }) => (
   <>
     <Head>
       <link
-        href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap"
+        href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap"
         rel="stylesheet"
       />
     </Head>

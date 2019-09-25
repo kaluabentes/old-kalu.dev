@@ -11778,18 +11778,18 @@ var Cover = function Cover(_ref) {
       lineNumber: 13
     },
     __self: this
-  }, "Hello, I'm Kalu\xE3"), __jsx("p", {
+  }, "Frontender, Surfer & Rocker"), __jsx("p", {
     className: _styles_css__WEBPACK_IMPORTED_MODULE_5___default.a.subtitle,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14
     },
     __self: this
-  }, "and I'm a frontend developer"), __jsx(_atoms_button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, "Hello everybody, I'm Kalu and I code beautiful UI's, and I love what I do."), __jsx(_atoms_button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     href: "/about",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15
+      lineNumber: 17
     },
     __self: this
   }, "Read about me"))));
@@ -12185,7 +12185,7 @@ var Base = function Base(_ref) {
     },
     __self: this
   }, __jsx("link", {
-    href: "https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap",
+    href: "https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap",
     rel: "stylesheet",
     __source: {
       fileName: _jsxFileName,
