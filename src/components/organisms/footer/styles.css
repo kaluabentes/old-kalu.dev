@@ -55,6 +55,7 @@
   color: var(--color-white);
   color: var(--color-grey-2);
   margin-top: 0;
+  font-size: 1.125rem;
 }
 
 .email {
