@@ -13,6 +13,10 @@ const Articles = () => (
         <Link href="/" key={key}>
           <a className={styles.article}>
             <article>
+              <div className={styles.publicationDate}>
+                <div className={styles.publicationDateDay}>15</div>
+                <div className={styles.publicationDateMonth}>Mar</div>
+              </div>
               <img className={styles.articleImage} src="http://lorempixel.com/400/300/sports/" />
               <div className={styles.articleContent}>
                 <h3 className={styles.articleTitle}>
