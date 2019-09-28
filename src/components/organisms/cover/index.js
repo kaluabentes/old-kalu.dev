@@ -12,7 +12,7 @@ const Cover = ({}) => (
       <div className={styles.inner}>
         <h2 className={styles.title}>Frontender, Surfer & Rocker</h2>
         <p className={styles.subtitle}>
-          Hello everybody, I'm Kalu and I code beautiful UI's, and I love what I do.
+          Hello everybody, I'm Kalu. I code beautiful UI's and I love what I do.
         </p>
         <Button href="/about">Read about me</Button>
       </div>
