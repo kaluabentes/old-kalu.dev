@@ -1,0 +1,8 @@
+.actionable {
+  display: inline-block;
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  outline: none;
+}

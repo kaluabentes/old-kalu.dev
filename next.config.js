@@ -1,5 +1,6 @@
 const withPlugins = require('next-compose-plugins')
 const css = require('@zeit/next-css')
+const optimizedImages = require('next-optimized-images')
 const webpackExtra = require('./webpack.extra')
 
 const config = {
@@ -13,4 +14,4 @@ const config = {
   },
 }
 
-module.exports = withPlugins([css], config)
+module.exports = withPlugins([css, optimizedImages], config)
