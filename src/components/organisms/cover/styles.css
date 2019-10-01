@@ -8,7 +8,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3.75rem 1.5rem;
   min-height: 667px;
 
   @media (--break-desktop) {
@@ -26,7 +25,7 @@
   margin-bottom: 0.75rem;
 
   @media (--break-mobile) {
-    font-size: 3.1rem;
+    font-size: 2.375rem;
   }
 }
 
@@ -37,6 +36,6 @@
   font-weight: 400;
 
   @media (--break-mobile) {
-    font-size: 1.375rem;
+    font-size: 1.125rem;
   }
 }
