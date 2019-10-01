@@ -21,41 +21,17 @@
 
 .row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-
-  @media (--break-mobile) {
-    flex-direction: column;
-  }
-}
-
-.rightColumn {
-  display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
-.rightColumn {
-  @media (--break-mobile) {
-    align-items: center;
-    order: 1;
-    margin-bottom: 30px;
-  }
-}
-
-.leftColumn {
-  @media (--break-mobile) {
-    text-align: center;
-    order: 2;
-  }
 }
 
 .greetings {
   color: var(--color-white);
   color: var(--color-grey-2);
   margin-top: 0;
-  font-size: 1.125rem;
+  font-size: 1rem;
+  padding: 20px;
 }
 
 .email {
