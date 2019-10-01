@@ -21,4 +21,9 @@
   &:active {
     background: var(--color-blue-2);
   }
+
+  @media (max-width: 550px) {
+    display: block;
+    width: 100%;
+  }
 }
