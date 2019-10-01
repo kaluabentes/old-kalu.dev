@@ -30,7 +30,7 @@ module.exports = {"footer":"footer___3s-Xv","copyright":"copyright___1DdOG","ico
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1569889735329");
+            injectCss(link, link.href.split("?")[0] + "?unix=1569890640730");
           });
       }
     }
@@ -39,4 +39,4 @@ module.exports = {"footer":"footer___3s-Xv","copyright":"copyright___1DdOG","ico
 /***/ })
 
 })
-//# sourceMappingURL=styles.3fec51967709fb6ad020.hot-update.js.map
+//# sourceMappingURL=styles.309fcb97d52c18abd131.hot-update.js.map
