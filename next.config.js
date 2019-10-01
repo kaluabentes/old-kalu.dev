@@ -5,6 +5,10 @@ const webpackExtra = require('./webpack.extra')
 
 const config = {
   cssModules: true,
+  cssLoaderOptions: {
+    importLoaders: 1,
+    localIdentName: '[local]___[hash:base64:5]',
+  },
   webpack(config, options) {
     config.resolve.alias = {
       ...config.resolve.alias,
