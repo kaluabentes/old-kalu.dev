@@ -11252,6 +11252,53 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./components/atoms/actionable/index.js":
+/*!**********************************************!*\
+  !*** ./components/atoms/actionable/index.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.css */ "./components/atoms/actionable/styles.css");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/kalu/Projects/kaluabentes.github.io/src/components/atoms/actionable/index.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+var Actionable = function Actionable(_ref) {
+  var children = _ref.children,
+      onClick = _ref.onClick;
+  return __jsx("button", {
+    className: _styles_css__WEBPACK_IMPORTED_MODULE_2___default.a.actionable,
+    type: "button",
+    onClick: onClick,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }, children);
+};
+
+Actionable.propTypes = {
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node.isRequired,
+  onClick: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func
+};
+Actionable.defaultProps = {
+  onClick: function onClick() {}
+};
+/* harmony default export */ __webpack_exports__["default"] = (Actionable);
+
+/***/ }),
+
 /***/ "./components/atoms/brand/index.js":
 /*!*****************************************!*\
   !*** ./components/atoms/brand/index.js ***!
@@ -11406,6 +11453,130 @@ Container.propTypes = {
 
 /***/ }),
 
+/***/ "./components/atoms/paper/index.js":
+/*!*****************************************!*\
+  !*** ./components/atoms/paper/index.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! classnames */ "../node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles.css */ "./components/atoms/paper/styles.css");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_3__);
+var _jsxFileName = "/Users/kalu/Projects/kaluabentes.github.io/src/components/atoms/paper/index.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+var Paper = function Paper(_ref) {
+  var className = _ref.className,
+      children = _ref.children;
+  return __jsx("div", {
+    className: classnames__WEBPACK_IMPORTED_MODULE_2___default()(_styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.paper, className),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  }, children);
+};
+
+Paper.propTypes = {
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (Paper);
+
+/***/ }),
+
+/***/ "./components/atoms/section-title/index.js":
+/*!*************************************************!*\
+  !*** ./components/atoms/section-title/index.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.css */ "./components/atoms/section-title/styles.css");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/kalu/Projects/kaluabentes.github.io/src/components/atoms/section-title/index.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+var SectionTitle = function SectionTitle(_ref) {
+  var children = _ref.children;
+  return __jsx("h2", {
+    className: _styles_css__WEBPACK_IMPORTED_MODULE_2___default.a.title,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }, children);
+};
+
+SectionTitle.propTypes = {
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (SectionTitle);
+
+/***/ }),
+
+/***/ "./components/molecules/section/index.js":
+/*!***********************************************!*\
+  !*** ./components/molecules/section/index.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles.css */ "./components/molecules/section/styles.css");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/kalu/Projects/kaluabentes.github.io/src/components/molecules/section/index.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+var Section = function Section(_ref) {
+  var children = _ref.children;
+  return __jsx("section", {
+    className: _styles_css__WEBPACK_IMPORTED_MODULE_2___default.a.section,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
+    },
+    __self: this
+  }, children);
+};
+
+Section.propTypes = {
+  children: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.node.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (Section);
+
+/***/ }),
+
 /***/ "./components/organisms/articles/index.js":
 /*!************************************************!*\
   !*** ./components/organisms/articles/index.js ***!
@@ -11420,8 +11591,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "../node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _atoms_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! _atoms/container */ "./components/atoms/container/index.js");
-/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles.css */ "./components/organisms/articles/styles.css");
-/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _molecules_section__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! _molecules/section */ "./components/molecules/section/index.js");
+/* harmony import */ var _atoms_section_title__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! _atoms/section-title */ "./components/atoms/section-title/index.js");
+/* harmony import */ var _atoms_paper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! _atoms/paper */ "./components/atoms/paper/index.js");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./styles.css */ "./components/organisms/articles/styles.css");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_6__);
 var _jsxFileName = "/Users/kalu/Projects/kaluabentes.github.io/src/components/organisms/articles/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -11429,25 +11603,33 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
+
+
 var Articles = function Articles() {
-  return __jsx(_atoms_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return __jsx(_molecules_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 12
     },
     __self: this
-  }, __jsx("h2", {
-    className: _styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.title,
+  }, __jsx(_atoms_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 13
+    },
+    __self: this
+  }, __jsx(_atoms_section_title__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
     },
     __self: this
   }, "Articles"), __jsx("div", {
-    className: _styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.grid,
+    className: _styles_css__WEBPACK_IMPORTED_MODULE_6___default.a.grid,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 15
     },
     __self: this
   }, [1, 2, 3].map(function (val, key) {
@@ -11456,53 +11638,80 @@ var Articles = function Articles() {
       key: key,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 13
-      },
-      __self: this
-    }, __jsx("a", {
-      className: _styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.article,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 14
-      },
-      __self: this
-    }, __jsx("article", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 15
-      },
-      __self: this
-    }, __jsx("img", {
-      className: _styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.articleImage,
-      src: "http://lorempixel.com/400/300/sports/",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 16
-      },
-      __self: this
-    }), __jsx("div", {
-      className: _styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.articleContent,
-      __source: {
-        fileName: _jsxFileName,
         lineNumber: 17
       },
       __self: this
-    }, __jsx("h3", {
-      className: _styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.articleTitle,
+    }, __jsx(_atoms_paper__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      className: _styles_css__WEBPACK_IMPORTED_MODULE_6___default.a.article,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 18
       },
       __self: this
-    }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit"), __jsx("div", {
-      className: _styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.articleReadMore,
+    }, __jsx("a", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: this
+    }, __jsx("article", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      },
+      __self: this
+    }, __jsx("div", {
+      className: _styles_css__WEBPACK_IMPORTED_MODULE_6___default.a.publicationDate,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 21
       },
       __self: this
-    }, "> Read more")))));
-  })));
+    }, __jsx("div", {
+      className: _styles_css__WEBPACK_IMPORTED_MODULE_6___default.a.publicationDateDay,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: this
+    }, "15"), __jsx("div", {
+      className: _styles_css__WEBPACK_IMPORTED_MODULE_6___default.a.publicationDateMonth,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: this
+    }, "Mar")), __jsx("img", {
+      className: _styles_css__WEBPACK_IMPORTED_MODULE_6___default.a.articleImage,
+      src: "http://lorempixel.com/400/300/sports/",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 25
+      },
+      __self: this
+    }), __jsx("div", {
+      className: _styles_css__WEBPACK_IMPORTED_MODULE_6___default.a.articleContent,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 29
+      },
+      __self: this
+    }, __jsx("h3", {
+      className: _styles_css__WEBPACK_IMPORTED_MODULE_6___default.a.articleTitle,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 30
+      },
+      __self: this
+    }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit"), __jsx("div", {
+      className: _styles_css__WEBPACK_IMPORTED_MODULE_6___default.a.articleReadMore,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 33
+      },
+      __self: this
+    }, "> Read more"))))));
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Articles);
@@ -11609,7 +11818,7 @@ var Cover = function Cover(_ref) {
       lineNumber: 14
     },
     __self: this
-  }, "Hello everybody, I'm Kalu and I code beautiful UI's, and I love what I do."), __jsx(_atoms_button__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, "Hello everybody, I'm Kalu. I code beautiful UI's and I love what I do."), __jsx(_atoms_button__WEBPACK_IMPORTED_MODULE_4__["default"], {
     href: "/about",
     __source: {
       fileName: _jsxFileName,
@@ -11666,38 +11875,17 @@ var Footer = function Footer() {
       lineNumber: 11
     },
     __self: this
-  }, __jsx("div", {
-    className: _styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.leftColumn,
+  }, __jsx(_atoms_brand__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 12
     },
     __self: this
-  }, __jsx(_atoms_brand__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 13
-    },
-    __self: this
   }), __jsx("p", {
-    className: _styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.copyright,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 14
-    },
-    __self: this
-  }, "Copyright \xA9 ", new Date().getFullYear(), " Kalu\xE3 Bentes, Inc. All rights reserved.")), __jsx("div", {
-    className: _styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.rightColumn,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: this
-  }, __jsx("p", {
     className: _styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.greetings,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19
+      lineNumber: 13
     },
     __self: this
   }, "Say hi,", ' ', __jsx("a", {
@@ -11705,13 +11893,13 @@ var Footer = function Footer() {
     className: _styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.email,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 15
     },
     __self: this
   }, "kaluanbentes@gmail.com")), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 19
     },
     __self: this
   }, __jsx("a", {
@@ -11720,7 +11908,7 @@ var Footer = function Footer() {
     rel: "nooponer noreferrer",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 20
     },
     __self: this
   }, __jsx("svg", {
@@ -11731,14 +11919,14 @@ var Footer = function Footer() {
     viewBox: "0 0 24 24",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 25
     },
     __self: this
   }, __jsx("path", {
     d: "M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38
+      lineNumber: 32
     },
     __self: this
   }))), __jsx("a", {
@@ -11747,7 +11935,7 @@ var Footer = function Footer() {
     rel: "nooponer noreferrer",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41
+      lineNumber: 35
     },
     __self: this
   }, __jsx("svg", {
@@ -11758,17 +11946,24 @@ var Footer = function Footer() {
     viewBox: "0 0 24 24",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46
+      lineNumber: 40
     },
     __self: this
   }, __jsx("path", {
     d: "M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 47
     },
     __self: this
-  }))))))));
+  })))), __jsx("p", {
+    className: _styles_css__WEBPACK_IMPORTED_MODULE_3___default.a.copyright,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51
+    },
+    __self: this
+  }, "Copyright \xA9 ", new Date().getFullYear(), " Kalu\xE3 Bentes, Inc. All rights reserved."))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
@@ -11969,6 +12164,140 @@ Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODUL
 });
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_11__["withRouter"])(Header));
+
+/***/ }),
+
+/***/ "./components/organisms/projects/index.js":
+/*!************************************************!*\
+  !*** ./components/organisms/projects/index.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "../node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _atoms_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! _atoms/container */ "./components/atoms/container/index.js");
+/* harmony import */ var _molecules_section__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! _molecules/section */ "./components/molecules/section/index.js");
+/* harmony import */ var _atoms_section_title__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! _atoms/section-title */ "./components/atoms/section-title/index.js");
+/* harmony import */ var _atoms_paper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! _atoms/paper */ "./components/atoms/paper/index.js");
+/* harmony import */ var _atoms_actionable__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! _atoms/actionable */ "./components/atoms/actionable/index.js");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./styles.css */ "./components/organisms/projects/styles.css");
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_styles_css__WEBPACK_IMPORTED_MODULE_7__);
+var _jsxFileName = "/Users/kalu/Projects/kaluabentes.github.io/src/components/organisms/projects/index.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+
+
+
+
+var Projects = function Projects(_ref) {
+  var projects = _ref.projects;
+  return __jsx(_molecules_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12
+    },
+    __self: this
+  }, __jsx(_atoms_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13
+    },
+    __self: this
+  }, __jsx(_atoms_section_title__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, "Projects"), __jsx("div", {
+    className: _styles_css__WEBPACK_IMPORTED_MODULE_7___default.a.grid,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  }, projects.map(function (project) {
+    return __jsx(_atoms_actionable__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      },
+      __self: this
+    }, __jsx(_atoms_paper__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: this
+    }, __jsx("div", {
+      className: _styles_css__WEBPACK_IMPORTED_MODULE_7___default.a.project,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 19
+      },
+      __self: this
+    }, __jsx("img", {
+      className: _styles_css__WEBPACK_IMPORTED_MODULE_7___default.a.projectImage,
+      alt: project.title,
+      src: project.image,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 20
+      },
+      __self: this
+    }), __jsx("div", {
+      className: _styles_css__WEBPACK_IMPORTED_MODULE_7___default.a.projectLegend,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: this
+    }, __jsx("h3", {
+      className: _styles_css__WEBPACK_IMPORTED_MODULE_7___default.a.projectTitle,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: this
+    }, project.title), __jsx("p", {
+      className: _styles_css__WEBPACK_IMPORTED_MODULE_7___default.a.projectDescription,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 23
+      },
+      __self: this
+    }, project.description), __jsx("a", {
+      className: _styles_css__WEBPACK_IMPORTED_MODULE_7___default.a.projectLink,
+      href: project.url,
+      rel: "noopener noreferrer",
+      target: "_blank",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 24
+      },
+      __self: this
+    }, project.url)))));
+  }))));
+};
+
+Projects.propTypes = {
+  projects: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.arrayOf(prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.shape({
+    title: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+    url: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+    image: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string,
+    description: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.string
+  })).isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (Projects);
 
 /***/ }),
 
@@ -12265,6 +12594,133 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./data/projects.js":
+/*!**************************!*\
+  !*** ./data/projects.js ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _images_findheli_png__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! _images/findheli.png */ "./images/findheli.png");
+/* harmony import */ var _images_findheli_png__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_images_findheli_png__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _images_woovit_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! _images/woovit.png */ "./images/woovit.png");
+/* harmony import */ var _images_woovit_png__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_images_woovit_png__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _images_forfreedoms_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! _images/forfreedoms.png */ "./images/forfreedoms.png");
+/* harmony import */ var _images_forfreedoms_png__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_images_forfreedoms_png__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _images_skyroam_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! _images/skyroam.png */ "./images/skyroam.png");
+/* harmony import */ var _images_skyroam_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_images_skyroam_png__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _images_sbtur_png__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! _images/sbtur.png */ "./images/sbtur.png");
+/* harmony import */ var _images_sbtur_png__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_images_sbtur_png__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _images_braincare_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! _images/braincare.png */ "./images/braincare.png");
+/* harmony import */ var _images_braincare_png__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_images_braincare_png__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ([{
+  title: 'Findheli',
+  url: 'https://app.findheli.com',
+  image: _images_findheli_png__WEBPACK_IMPORTED_MODULE_0___default.a,
+  description: 'A platform to book helicopter flights'
+}, {
+  title: 'Woovit',
+  url: 'https://woovit.com',
+  image: _images_woovit_png__WEBPACK_IMPORTED_MODULE_1___default.a,
+  description: 'A platform that connects game streamers with game providers'
+}, {
+  title: 'For Freedoms',
+  url: 'https://forfreedoms.org',
+  image: _images_forfreedoms_png__WEBPACK_IMPORTED_MODULE_2___default.a,
+  description: 'A platform for creative civic engagement, discourse, and direct action.'
+}, {
+  title: 'Skyroam',
+  url: 'https://skyroam.com',
+  image: _images_skyroam_png__WEBPACK_IMPORTED_MODULE_3___default.a,
+  description: 'Its a virtual SIM technology thats enables mobile data on-demand worldwide through local connectiviy'
+}, {
+  title: 'Sbtur',
+  url: 'https://www.sbtur.com',
+  image: _images_sbtur_png__WEBPACK_IMPORTED_MODULE_4___default.a,
+  description: 'Platform to help people save money for travel'
+}, {
+  title: 'Brain4care',
+  url: 'https://brain4.care',
+  image: _images_braincare_png__WEBPACK_IMPORTED_MODULE_5___default.a,
+  description: 'Dashboard to manage the tooling to noninvasive measure of intracranial pressure'
+}]);
+
+/***/ }),
+
+/***/ "./images/braincare.png":
+/*!******************************!*\
+  !*** ./images/braincare.png ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/braincare-0ce36208a31955f0c1db2bd98a15ece5.png";
+
+/***/ }),
+
+/***/ "./images/findheli.png":
+/*!*****************************!*\
+  !*** ./images/findheli.png ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/findheli-68ee36143871e9373af6b19a97176a3b.png";
+
+/***/ }),
+
+/***/ "./images/forfreedoms.png":
+/*!********************************!*\
+  !*** ./images/forfreedoms.png ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/forfreedoms-cc3759a6b80d12830aa10017a2e2662d.png";
+
+/***/ }),
+
+/***/ "./images/sbtur.png":
+/*!**************************!*\
+  !*** ./images/sbtur.png ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/sbtur-4ef83ce9b52f7db6f47b8c140e37d9a1.png";
+
+/***/ }),
+
+/***/ "./images/skyroam.png":
+/*!****************************!*\
+  !*** ./images/skyroam.png ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/skyroam-b67bac60dcf2c62687e0d5a4202791d5.png";
+
+/***/ }),
+
+/***/ "./images/woovit.png":
+/*!***************************!*\
+  !*** ./images/woovit.png ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/_next/static/images/woovit-19de6f84d7e9e19b08824a02686726fc.png";
+
+/***/ }),
+
 /***/ "./pages/index.js":
 /*!************************!*\
   !*** ./pages/index.js ***!
@@ -12281,8 +12737,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _templates_page__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! _templates/page */ "./components/templates/page/index.js");
 /* harmony import */ var _organisms_cover__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! _organisms/cover */ "./components/organisms/cover/index.js");
 /* harmony import */ var _organisms_articles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! _organisms/articles */ "./components/organisms/articles/index.js");
+/* harmony import */ var _organisms_projects__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! _organisms/projects */ "./components/organisms/projects/index.js");
+/* harmony import */ var _data_projects__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! _data/projects */ "./data/projects.js");
 var _jsxFileName = "/Users/kalu/Projects/kaluabentes.github.io/src/pages/index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
 
 
 
@@ -12293,31 +12753,38 @@ var Home = function Home() {
   return __jsx(_templates_page__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 11
     },
     __self: this
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 12
     },
     __self: this
   }, __jsx("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 13
     },
     __self: this
   }, "Kalu\xE3 Bentes - Frontend Developer")), __jsx(_organisms_cover__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 15
     },
     __self: this
   }), __jsx(_organisms_articles__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 16
+    },
+    __self: this
+  }), __jsx(_organisms_projects__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    projects: _data_projects__WEBPACK_IMPORTED_MODULE_6__["default"],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17
     },
     __self: this
   }));
