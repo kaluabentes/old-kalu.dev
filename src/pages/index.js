@@ -14,7 +14,7 @@ const Home = () => (
     </Head>
     <Cover />
     <Articles />
-    <Projects projects={projects} />
+    {/* <Projects projects={projects} /> */}
   </Page>
 )
 
