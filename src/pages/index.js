@@ -9,10 +9,7 @@ import Button from '_atoms/button'
 import Articles from '_organisms/articles'
 
 const Home = () => (
-  <Page>
-    <Head>
-      <title>Kaluã Bentes - Frontend Developer</title>
-    </Head>
+  <Page title="Frontend Developer">
     <Cover>
       <CoverTitle>Frontender, Surfer & Rocker</CoverTitle>
       <CoverSubtitle>

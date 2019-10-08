@@ -16,10 +16,7 @@ import Input from '_atoms/input'
 
 
 const Home = () => (
-  <Page>
-    <Head>
-      <title>Kaluã Bentes - Styleguide</title>
-    </Head>
+  <Page title="Styleguide">
     <Cover>
       <CoverTitle>Styleguide</CoverTitle>
       <CoverSubtitle>
