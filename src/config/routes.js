@@ -16,6 +16,10 @@ export default [
     text: 'Archive',
   },
   {
+    path: '/styleguide',
+    text: 'Styleguide',
+  },
+  {
     path: '/contact',
     text: 'Contact',
   },
