@@ -12,7 +12,7 @@ const THEMES = {
 
 const Brand = ({ theme }) => (
   <Link href="/">
-    <div className={classNames(styles.brand, theme)}>Kalux</div>
+    <h1 className={classNames(styles.brand, theme)}>Kalux</h1>
   </Link>
 )
 
