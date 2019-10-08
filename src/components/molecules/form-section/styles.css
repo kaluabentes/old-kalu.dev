@@ -1,0 +1,10 @@
+.title {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.section {
+  margin-bottom: 40px;
+}
