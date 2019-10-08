@@ -22,6 +22,11 @@ class Header extends Component {
         text: PropTypes.string,
       })
     ),
+    isFixed: PropTypes.bool,
+  }
+
+  static defaultProps = {
+    isFixed: false,
   }
 
   componentDidMount() {
@@ -43,11 +48,11 @@ class Header extends Component {
   }
 
   render() {
-    const { routes } = this.props
+    const { routes, isFixed } = this.props
     const { isNavOpen } = this.state
 
     return (
-      <header className={styles.header}>
+      <header className={classNames(styles.header, { [styles.fixed]: isFixed })}>
         <Container>
           <div className={styles.headerInner}>
             <Brand />

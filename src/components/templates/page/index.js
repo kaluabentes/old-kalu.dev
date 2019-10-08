@@ -9,7 +9,7 @@ import routes from '_config/routes'
 
 const Page = ({ children }) => (
   <Base>
-    <Header routes={routes} />
+    <Header isFixed routes={routes} />
     <Body>{children}</Body>
     <Footer />
   </Base>
