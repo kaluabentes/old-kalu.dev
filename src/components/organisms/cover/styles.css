@@ -8,10 +8,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 667px;
+  padding: 8.75rem 0;
 
   @media (--break-desktop) {
-    padding: 7.75rem 1.5rem;
+    padding: 14.75rem 1.5rem;
   }
 }
 
