@@ -4,6 +4,7 @@
   text-align: center;
   margin-bottom: 4.1rem;
   font-weight: 400;
+  max-width: 600px;
 
   @media (--break-mobile) {
     font-size: 1.125rem;
