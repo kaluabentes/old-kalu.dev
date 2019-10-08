@@ -8,11 +8,15 @@
   z-index: 10;
 }
 
+body {
+  padding-top: 64px;
+}
+
 .headerInner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 4em;
+  height: 64px;
 }
 
 .nav {
