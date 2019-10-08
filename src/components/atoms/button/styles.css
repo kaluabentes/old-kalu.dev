@@ -9,13 +9,12 @@
   cursor: pointer;
   transition: 0.3s;
   outline: none;
-  background: transparent;
-  border: 3px solid var(--color-blue);
+  background: var(--color-blue);
+  border: 2px solid var(--color-blue);
   font-weight: 500;
 
   &:hover {
     opacity: 0.9;
-    background: var(--color-blue);
   }
 
   &:active {
