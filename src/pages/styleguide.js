@@ -12,6 +12,7 @@ import routes from '_config/routes'
 import Button from '_atoms/button'
 import Header from '_organisms/header'
 import Footer from '_organisms/footer'
+import Input from '_atoms/input'
 
 
 const Home = () => (
@@ -46,6 +47,11 @@ const Home = () => (
       <Section>
         <SectionTitle>Button</SectionTitle>
         <Button>Action</Button>
+      </Section>
+      <Section>
+        <SectionTitle>Input</SectionTitle>
+        <Input label="Field title" errorMessage="Error message" />
+        <Input hasError label="Field with error" errorMessage="Error message" />
       </Section>
     </Container>
   </Page>
