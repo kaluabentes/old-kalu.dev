@@ -12,6 +12,13 @@ import AddButton from '_atoms/add-button'
 
 class ResumeWizard extends Component {
   state = {
+    firstName: '',
+    lastName: '',
+    jobTitle: '',
+    email: '',
+    phone: '',
+    address: '',
+    professionalSummary: '',
     employments: [
       {
         jobTitle: 'Frontend Develoer',
@@ -29,6 +36,7 @@ class ResumeWizard extends Component {
     super(props)
 
     this.handleEmploymentAdd = this.handleEmploymentAdd.bind(this)
+    this.handleInputChange = this.handleInputChange.bind(this)
   }
 
   handleEmploymentToggle(index) {
@@ -57,26 +65,95 @@ class ResumeWizard extends Component {
     }))
   }
 
+  handleInputChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value,
+    })
+  }
+
   render() {
-    const { employments } = this.state
+    const { 
+      employments,
+      firstName,
+      lastName,
+      jobTitle,
+      email,
+      phone,
+      address,
+      professionalSummary,
+    } = this.state
 
     return (
       <Page title="Resume Wizard">
         <Container>
           <PageTitle>Resume Wizard</PageTitle>
           <FormSection title="Personal Details">
-            <Input id="firstName" name="firstName" label="First Name" />
-            <Input id="lastName" name="lastName" label="Last Name" />
-            <Input id="photo" name="photo" label="Photo" type="file" />
-            <Input id="jobTitle" name="jobTitle" label="Job Title" />
-            <Input id="email" name="email" label="Email" type="email" />
-            <Input id="phone" name="phone" label="Phone" type="tel" />
+            <Input 
+              id="firstName" 
+              name="firstName" 
+              label="First Name" 
+              value={firstName} 
+              onChange={this.handleInputChange}
+            />
+            <Input 
+              id="lastName" 
+              name="lastName" 
+              label="Last Name"
+              value={lastName}
+              onChange={this.handleInputChange}
+            />
+            <Input 
+              id="photo" 
+              name="photo" 
+              label="Photo" 
+              type="file"
+            />
+            <Input 
+              id="jobTitle" 
+              name="jobTitle" 
+              label="Job Title"
+              value={jobTitle}
+              onChange={this.handleInputChange}
+            />
+            <Input 
+              id="email" 
+              name="email" 
+              label="Email" 
+              type="email"
+              value={email}
+              onChange={this.handleInputChange} 
+            />
+            <Input 
+              id="phone" 
+              name="phone" 
+              label="Phone" 
+              type="tel"
+              value={phone}
+              onChange={this.handleInputChange}
+            />
+            <Input 
+              id="address" 
+              name="address" 
+              label="address" 
+              type="Address"
+              value={address}
+              onChange={this.handleInputChange}
+            />
           </FormSection>
           <FormSection title="Professional Summary">
-            <TextArea label="Include 2-3 clear sentences about your overall exerience"></TextArea>
+            <TextArea 
+              id="professionalSummary"
+              name="professionalSummary"
+              label="Include 2-3 clear sentences about your overall exerience"
+              onChange={this.handleInputChange}
+            >
+              {professionalSummary}
+            </TextArea>
           </FormSection>
           <FormSection title="Employment History">
-            <FormDescription>Include your last 10 years of relevant experience and dates in this section. List your most recent position first.</FormDescription>
+            <FormDescription>
+              Include your last 10 years of relevant experience and dates in this section. List your most recent position first.
+            </FormDescription>
             {employments.map(({ isOpen, ...employment }, index) => (
               <EmploymentWizard
                 key={index}
