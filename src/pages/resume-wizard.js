@@ -21,31 +21,23 @@ class ResumeWizard extends Component {
     phone: '',
     address: '',
     professionalSummary: '',
-    employments: [
-      {
-        jobTitle: 'Frontend Develoer',
-        employer: 'Cheesecake Labs',
-        city: 'Florianópolis',
-        startDate: 'Oct, 2018',
-        endDate: 'Oct, 2019',
-        description: '',
-        isOpen: false,
-      }
-    ],
+    employments: [],
   }
 
   constructor(props) {
     super(props)
 
     this.handleEmploymentAdd = this.handleEmploymentAdd.bind(this)
+    this.handleEmploymentRemove = this.handleEmploymentRemove.bind(this)
+    this.handleEmploymentChange = this.handleEmploymentChange.bind(this)
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handlePhotoLoad = this.handlePhotoLoad.bind(this)
   }
 
   handleEmploymentToggle(index) {
     this.setState(prevState => ({
-      employments: prevState.employments.map((employment, currIndex) => {
-        if (index === currIndex) {
+      employments: prevState.employments.map((employment, currentIndex) => {
+        if (index === currentIndex) {
           employment.isOpen = !employment.isOpen
         }
 
@@ -55,16 +47,42 @@ class ResumeWizard extends Component {
   }
 
   handleEmploymentAdd() {
+    this.setState(prevState => {
+      const employments = prevState.employments.map(
+        employment => ({...employment, isOpen: false})
+      )
+      
+      return {
+        employments: [...employments, {
+          jobTitle: '',
+          employer: '',
+          city: '',
+          startDate: '',
+          endDate: '',
+          description: '',
+          isOpen: true,
+        }]
+      }
+    })
+  }
+
+  handleEmploymentRemove(index) {
     this.setState(prevState => ({
-      employments: [...prevState.employments, {
-        jobTitle: '',
-        employer: '',
-        city: '',
-        startDate: '',
-        endDate: '',
-        description: '',
-        isOpen: true,
-      }]
+      employments: prevState.employments.filter(
+        (employment, currentIndex) => index !== currentIndex
+      )
+    }))
+  }
+
+  handleEmploymentChange(index, name, value) {
+    this.setState(prevState => ({
+      employments: prevState.employments.map((employment, currentIndex) => {
+        if (index === currentIndex) {
+          employment = { ...employment, [name]: value }
+        }
+
+        return employment
+      })
     }))
   }
 
@@ -164,6 +182,8 @@ class ResumeWizard extends Component {
                 isOpen={isOpen}
                 employment={employment}
                 onToggle={() => this.handleEmploymentToggle(index)}
+                onChange={(name, value) => this.handleEmploymentChange(index, name, value)}
+                onRemove={() => this.handleEmploymentRemove(index)}
               />
             ))}
             <AddButton onClick={this.handleEmploymentAdd}>Add employment</AddButton>

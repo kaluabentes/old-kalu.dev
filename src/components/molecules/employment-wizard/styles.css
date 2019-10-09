@@ -72,14 +72,39 @@
 .arrowIcon {
   height: 30px;
   width: 30px;
-  margin-left: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 5px;
 
   & svg {
     fill: rgba(0, 0, 0, 0.3);
     transform: rotate(90deg);
     transition: 0.3s;
+  }
+}
+
+
+.removeButton {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  margin-left: 5px;
+  outline: none;
+
+  &:hover {
+    & svg {
+      fill: var(--color-blue);
+    }
+  }
+
+  & svg {
+    fill: rgba(0, 0, 0, 0.3);
   }
 }
