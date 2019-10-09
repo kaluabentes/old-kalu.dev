@@ -1,0 +1,46 @@
+.wizard {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  height: 77px;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  margin-bottom: 15px;
+}
+
+.open {
+  .arrowIcon {
+    & svg {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+.body {
+  padding: 15px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: transparent;
+  flex-wrap: nowrap;
+  padding: 15px;
+  align-items: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  height: 77px;
+
+  &:hover {
+    .title {
+      color: var(--color-blue);
+    }
+
+    .arrowIcon {
+      & svg {
+        fill: var(--color-blue);
+      }
+    }
+  }
+}
