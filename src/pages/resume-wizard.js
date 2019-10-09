@@ -7,7 +7,7 @@ import FormSection from '_molecules/form-section'
 import Input from '_atoms/input'
 import TextArea from '_atoms/text-area'
 import FormDescription from '_atoms/form-description'
-import EmploymentWizard from '_molecules/employment-wizard'
+import EmploymentWizard from '_organisms/employment-wizard'
 import AddButton from '_atoms/add-button'
 import UploadPhotoField from '_atoms/upload-photo-field'
 
