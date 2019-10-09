@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 import styles from './styles.css'
 
-const Input = ({
+const Input = forwardRef(({
   id,
   name,
   type,
@@ -14,7 +14,8 @@ const Input = ({
   onChange,
   isDisabled,
   hasError,
-}) => (
+  hasAutoFocus,
+}, ref) => (
   <div className={styles.container}>
     {label && (
       <label
@@ -35,10 +36,12 @@ const Input = ({
       value={value}
       onChange={onChange}
       disabled={isDisabled}
+      autoFocus={hasAutoFocus}
+      ref={ref}
     />
     {hasError && <div className={styles.errorMessage}>{errorMessage}</div>}
   </div>
-)
+))
 
 Input.propTypes = {
   className: PropTypes.string,
@@ -51,6 +54,8 @@ Input.propTypes = {
   onChange: PropTypes.func,
   isDisabled: PropTypes.bool,
   hasError: PropTypes.bool,
+  hasAutoFocus: PropTypes.bool,
+  inputRef: PropTypes.object,
 }
 
 Input.defaultProps = {
@@ -64,6 +69,8 @@ Input.defaultProps = {
   onChange: () => {},
   isDisabled: false,
   hasError: false,
+  hasAutoFocus: false,
+  inputRef: {},
 }
 
 export default Input

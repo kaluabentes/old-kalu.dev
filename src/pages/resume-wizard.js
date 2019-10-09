@@ -61,6 +61,7 @@ class ResumeWizard extends Component {
           endDate: '',
           description: '',
           isOpen: true,
+          hasFocus: true,
         }]
       }
     })
@@ -83,6 +84,20 @@ class ResumeWizard extends Component {
 
         return employment
       })
+    }))
+  }
+
+  handleEmploymentFocus(index) {
+    this.setState(prevState => ({
+      employments: prevState.employments.map(
+        (employment, currentIndex) => {
+          if (index === currentIndex) {
+            employment.hasFocus = false
+          }
+
+          return employment
+        }
+      )
     }))
   }
 
@@ -176,14 +191,16 @@ class ResumeWizard extends Component {
             <FormDescription>
               Include your last 10 years of relevant experience and dates in this section. List your most recent position first.
             </FormDescription>
-            {employments.map(({ isOpen, ...employment }, index) => (
+            {employments.map(({ isOpen, hasFocus, ...employment }, index) => (
               <EmploymentWizard
                 key={index}
                 isOpen={isOpen}
+                hasFocus={hasFocus}
                 employment={employment}
                 onToggle={() => this.handleEmploymentToggle(index)}
                 onChange={(name, value) => this.handleEmploymentChange(index, name, value)}
                 onRemove={() => this.handleEmploymentRemove(index)}
+                onFocus={() => this.handleEmploymentFocus(index)}
               />
             ))}
             <AddButton onClick={this.handleEmploymentAdd}>Add employment</AddButton>

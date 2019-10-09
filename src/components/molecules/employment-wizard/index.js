@@ -7,9 +7,10 @@ import TextArea from '_atoms/text-area'
 
 import styles from './styles.css'
 
-const EmploymentWizard = ({ isOpen, employment, onChange, onToggle, onRemove }) => {
+const EmploymentWizard = ({ isOpen, hasFocus, employment, onChange, onToggle, onRemove, onFocus }) => {
   const [wizardHeight, setWizardHeight] = useState(0)
   const wizardRef = createRef()
+  const inputRef = createRef()
 
   const handleChange = event => {
     onChange(event.target.name, event.target.value)
@@ -19,8 +20,24 @@ const EmploymentWizard = ({ isOpen, employment, onChange, onToggle, onRemove }) 
     event.stopPropagation()
     onRemove()
   }
+  
+  let alreadyScrolled = false
 
   useEffect(() => {
+    if (!alreadyScrolled) {
+      setTimeout(() => {
+        if (wizardRef.current) {
+          window.scrollTo(0, wizardRef.current.offsetTop - 64)
+          alreadyScrolled = true
+        }
+      }, 300)
+    }
+
+    if (hasFocus) {
+      inputRef.current.focus()
+      onFocus()
+    }
+
     setWizardHeight(wizardRef.current.scrollHeight)
   })
 
@@ -48,7 +65,8 @@ const EmploymentWizard = ({ isOpen, employment, onChange, onToggle, onRemove }) 
           name="jobTitle" 
           label="Job Title" 
           value={employment.jobTitle} 
-          onChange={handleChange} 
+          onChange={handleChange}
+          ref={inputRef}
         />
         <Input 
           id="employer" 
