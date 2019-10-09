@@ -11,7 +11,7 @@ import EmploymentWizard from '_organisms/employment-wizard'
 import AddButton from '_atoms/add-button'
 import UploadPhotoField from '_atoms/upload-photo-field'
 
-class ResumeWizard extends Component {
+class ResumeCreator extends Component {
   state = {
     firstName: '',
     lastName: '',
@@ -127,9 +127,9 @@ class ResumeWizard extends Component {
     } = this.state
 
     return (
-      <Page title="Resume Wizard">
+      <Page title="Resume Creator">
         <Container>
-          <PageTitle>Resume Wizard</PageTitle>
+          <PageTitle>Resume Creator</PageTitle>
           <FormSection title="Personal Details">
             <Input 
               id="firstName" 
@@ -211,4 +211,4 @@ class ResumeWizard extends Component {
   }
 }
 
-export default ResumeWizard
+export default ResumeCreator

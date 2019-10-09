@@ -20,8 +20,8 @@ export default [
     text: 'Styleguide',
   },
   {
-    path: '/resume-wizard',
-    text: 'Resume Wizard',
+    path: '/resume-creator',
+    text: 'Resume Creator',
   },
   {
     path: '/contact',

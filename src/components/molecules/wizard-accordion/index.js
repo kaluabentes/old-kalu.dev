@@ -21,7 +21,7 @@ const WizardAccordion = ({
       {...accordionProps}
       header={
         <>
-          <div ref={ref} className={styles.titleGroup}>
+          <div className={styles.titleGroup}>
             <div className={styles.title}>{title}</div>
             <div className={styles.subtitle}>{subtitle}</div>
           </div>
