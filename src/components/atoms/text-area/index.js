@@ -14,9 +14,10 @@ const TextArea = ({
   isDisabled,
   hasError,
 }) => (
-  <div>
+  <div className={styles.container}>
     {label && <label className={styles.label} htmlFor={id}>{label}</label>}
     <textarea
+      rows={5}
       className={classNames(
         styles.input,
         { [styles.error]: hasError }
