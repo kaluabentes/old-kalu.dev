@@ -7,7 +7,7 @@ import FormSection from '_molecules/form-section'
 import Input from '_atoms/input'
 import TextArea from '_atoms/text-area'
 import FormDescription from '_atoms/form-description'
-import EmploymentAccordion from '_molecules/employment-accordion'
+import EmploymentWizard from '_molecules/employment-wizard'
 import AddButton from '_atoms/add-button'
 import UploadPhotoField from '_atoms/upload-photo-field'
 
@@ -192,7 +192,7 @@ class ResumeWizard extends Component {
               Include your last 10 years of relevant experience and dates in this section. List your most recent position first.
             </FormDescription>
             {employments.map(({ isOpen, hasFocus, ...employment }, index) => (
-              <EmploymentAccordion
+              <EmploymentWizard
                 key={index}
                 isOpen={isOpen}
                 hasFocus={hasFocus}
