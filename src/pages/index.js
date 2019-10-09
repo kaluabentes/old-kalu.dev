@@ -11,7 +11,7 @@ import Articles from '_organisms/articles'
 const Home = () => (
   <Page title="Frontend Developer">
     <Cover>
-      <CoverTitle>Frontender, Surfer & Rocker</CoverTitle>
+      <CoverTitle>Solving one problem at a time</CoverTitle>
       <CoverSubtitle>
         Hello everybody, I'm Kalu. I code beautiful UI's and I love what I do.
       </CoverSubtitle>

@@ -1,0 +1,84 @@
+.wizard {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  height: 77px;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+.open {
+  .arrowIcon {
+    & svg {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+.form {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: transparent;
+  flex-wrap: nowrap;
+  padding: 20px;
+  align-items: center;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  height: 77px;
+
+  &:hover {
+    .title {
+      color: var(--color-blue);
+    }
+
+    .arrowIcon {
+      & svg {
+        fill: var(--color-blue);
+      }
+    }
+  }
+}
+
+.titleGroup {
+  flex-grow: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.title {
+  transition: 0.3s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 5px;
+}
+
+.periodDate {
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.arrowIcon {
+  height: 30px;
+  width: 30px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & svg {
+    fill: rgba(0, 0, 0, 0.3);
+    transform: rotate(90deg);
+    transition: 0.3s;
+  }
+}
