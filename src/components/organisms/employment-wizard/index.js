@@ -79,7 +79,8 @@ const EmploymentWizard = ({
   )
 }
 
-EmploymentWizard.propTypes = {  
+EmploymentWizard.propTypes = {
+  hasFocus: PropTypes.bool,
   employment: PropTypes.shape({
     jobTitle: PropTypes.string,
     employer: PropTypes.string,
@@ -88,10 +89,12 @@ EmploymentWizard.propTypes = {
     endDate: PropTypes.string,
     description: PropTypes.description,
   }), 
-  onChange: PropTypes.func, 
+  onChange: PropTypes.func,
+  onFocus: PropTypes.func,
 }
 
-EmploymentWizard.defaultProps = { 
+EmploymentWizard.defaultProps = {
+  hasFocus: false,
   employment: {
     jobTitle: 'Frontend Develoer',
     employer: 'Cheesecake Labs',
@@ -101,6 +104,7 @@ EmploymentWizard.defaultProps = {
     description: '',
   }, 
   onChange: () => {},
+  onFocus: () => {},
 }
 
 export default EmploymentWizard
