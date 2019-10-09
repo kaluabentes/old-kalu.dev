@@ -8,6 +8,7 @@ import Input from '_atoms/input'
 import TextArea from '_atoms/text-area'
 import FormDescription from '_atoms/form-description'
 import EmploymentWizard from '_molecules/employment-wizard'
+import AddButton from '_atoms/add-button'
 
 class ResumeWizard extends Component {
   state = {
@@ -64,6 +65,7 @@ class ResumeWizard extends Component {
                 onToggle={() => this.handleEmploymentToggle(index)}
               />
             ))}
+            <AddButton>Add employment</AddButton>
           </FormSection>
         </Container>
       </Page>

@@ -1,0 +1,24 @@
+.button {
+  background: transparent;
+  border: none;
+  display: block;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-blue);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.3s;
+
+  & svg {
+    fill: var(--color-blue);
+  }
+
+  &:hover {
+    background: var(--color-grey);
+  }
+}

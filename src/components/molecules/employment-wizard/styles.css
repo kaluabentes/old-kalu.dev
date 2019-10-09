@@ -4,6 +4,7 @@
   height: 77px;
   overflow: hidden;
   transition: 0.3s ease-in-out;
+  margin-bottom: 15px;
 }
 
 .open {
