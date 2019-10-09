@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{"9goU":function(n,e,u){(window.__NEXT_P=window.__NEXT_P||[]).push(["/archive",function(){var n=u("PVZq");return{page:n.default||n}}])},PVZq:function(n,e,u){"use strict";u.r(e);var o=u("mXGw"),t=u.n(o),a=u("Q+If"),i=t.a.createElement;e.default=function(){return i(a.a,null,i("h1",null,"Archive"))}}},[["9goU",1,0]]]);
