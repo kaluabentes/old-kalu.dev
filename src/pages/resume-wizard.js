@@ -25,7 +25,13 @@ class ResumeWizard extends Component {
     ],
   }
 
-  handleEmploymentToggle = index => {
+  constructor(props) {
+    super(props)
+
+    this.handleEmploymentAdd = this.handleEmploymentAdd.bind(this)
+  }
+
+  handleEmploymentToggle(index) {
     this.setState(prevState => ({
       employments: prevState.employments.map((employment, currIndex) => {
         if (index === currIndex) {
@@ -34,6 +40,20 @@ class ResumeWizard extends Component {
 
         return employment
       })
+    }))
+  }
+
+  handleEmploymentAdd() {
+    this.setState(prevState => ({
+      employments: [...prevState.employments, {
+        jobTitle: '',
+        employer: '',
+        city: '',
+        startDate: '',
+        endDate: '',
+        description: '',
+        isOpen: true,
+      }]
     }))
   }
 
@@ -65,7 +85,7 @@ class ResumeWizard extends Component {
                 onToggle={() => this.handleEmploymentToggle(index)}
               />
             ))}
-            <AddButton>Add employment</AddButton>
+            <AddButton onClick={this.handleEmploymentAdd}>Add employment</AddButton>
           </FormSection>
         </Container>
       </Page>
