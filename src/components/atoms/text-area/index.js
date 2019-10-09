@@ -26,9 +26,8 @@ const TextArea = ({
       name={name}
       onChange={onChange}
       disabled={isDisabled}
-    >
-      {value}
-    </textarea>
+      value={value}
+    />
     {hasError && <div className={styles.errorMessage}>{errorMessage}</div>}
   </div>
 )

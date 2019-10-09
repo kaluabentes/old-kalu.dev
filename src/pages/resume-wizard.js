@@ -151,9 +151,8 @@ class ResumeWizard extends Component {
               name="professionalSummary"
               label="Include 2-3 clear sentences about your overall exerience"
               onChange={this.handleInputChange}
-            >
-              {professionalSummary}
-            </TextArea>
+              value={professionalSummary}
+            />
           </FormSection>
           <FormSection title="Employment History">
             <FormDescription>

@@ -73,9 +73,8 @@ const EmploymentWizard = ({ isOpen, employment, onChange, onToggle }) => {
           name="description" 
           label="Description"
           onChange={onChange}
-        >
-          {employment.description}
-        </TextArea>
+          value={employment.description}
+        />
       </div>
     </div>
   )
