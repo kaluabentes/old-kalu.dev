@@ -9,11 +9,13 @@ import TextArea from '_atoms/text-area'
 import FormDescription from '_atoms/form-description'
 import EmploymentWizard from '_molecules/employment-wizard'
 import AddButton from '_atoms/add-button'
+import UploadPhotoField from '_atoms/upload-photo-field'
 
 class ResumeWizard extends Component {
   state = {
     firstName: '',
     lastName: '',
+    photo: '',
     jobTitle: '',
     email: '',
     phone: '',
@@ -37,6 +39,7 @@ class ResumeWizard extends Component {
 
     this.handleEmploymentAdd = this.handleEmploymentAdd.bind(this)
     this.handleInputChange = this.handleInputChange.bind(this)
+    this.handlePhotoLoad = this.handlePhotoLoad.bind(this)
   }
 
   handleEmploymentToggle(index) {
@@ -71,11 +74,18 @@ class ResumeWizard extends Component {
     })
   }
 
+  handlePhotoLoad(base64) {
+    this.setState({
+      photo: base64
+    })
+  }
+
   render() {
     const { 
       employments,
       firstName,
       lastName,
+      photo,
       jobTitle,
       email,
       phone,
@@ -102,12 +112,7 @@ class ResumeWizard extends Component {
               value={lastName}
               onChange={this.handleInputChange}
             />
-            <Input 
-              id="photo" 
-              name="photo" 
-              label="Photo" 
-              type="file"
-            />
+            <UploadPhotoField photoSrc={photo} onPhotoLoad={this.handlePhotoLoad} />
             <Input 
               id="jobTitle" 
               name="jobTitle" 

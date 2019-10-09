@@ -1,0 +1,60 @@
+.field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+
+  &:hover {
+    .text {
+      color: var(--color-blue);
+    }
+
+    .photoBox {
+      & svg {
+        fill: var(--color-blue);
+      }
+    }
+  }
+}
+
+.fieldCenter {
+  justify-content: center;
+}
+
+.photoBox {
+  min-width: 60px;
+  height: 60px;
+  border-radius: 3px;
+  background: rgb(242, 245, 250);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+
+  & svg {
+    fill: rgb(207, 214, 230);
+    transition: 0.3s;
+  }
+}
+
+.text {
+  color: rgb(33, 150, 243);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.input {
+  width: 0;
+  height: 0;
+}
+
+.photo {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
