@@ -1,6 +1,5 @@
-import React, { useState, useEffect, createRef } from 'react'
+import React, { createRef } from 'react'
 import PropTypes from 'prop-types'
-import classNames from 'classnames'
 
 import WizardAccordion from '_molecules/wizard-accordion'
 import Input from '_atoms/input'
