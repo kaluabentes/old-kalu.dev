@@ -12,9 +12,12 @@ const Input = forwardRef(({
   errorMessage,
   label,
   onChange,
+  onFocus,
+  onClick,
   isDisabled,
   hasError,
   hasAutoFocus,
+  placeholder,
 }, ref) => (
   <div className={styles.container}>
     {label && (
@@ -37,7 +40,10 @@ const Input = forwardRef(({
       onChange={onChange}
       disabled={isDisabled}
       autoFocus={hasAutoFocus}
+      onFocus={onFocus}
+      onClick={onClick}
       ref={ref}
+      placeholder={placeholder}
     />
     {hasError && <div className={styles.errorMessage}>{errorMessage}</div>}
   </div>

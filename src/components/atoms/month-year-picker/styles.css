@@ -1,0 +1,61 @@
+.picker {
+  max-width: 256px;
+  background: rgb(242, 245, 250);
+  box-shadow: rgba(207, 214, 230, 0.7) 0px 14px 16px -10px, rgba(207, 214, 230, 0.12) 0px 20px 40px -8px;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 24px 5px 24px;
+}
+
+.leftButton,
+.rightButton,
+.month {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+.leftButton,
+.rightButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & svg {
+    fill: var(--color-blue);
+  }
+}
+
+.leftButton {
+  transform: rotate(180deg);
+}
+
+.year {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.body {
+  padding: 7px 12px 12px 12px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.month {
+  min-width: 25%;
+  height: 40px;
+  font-weight: 400;
+  color: var(--color-text);
+  border-radius: 20px;
+}
+
+.monthActive {
+  color: var(--color-white);
+  background: var(--color-blue);
+}

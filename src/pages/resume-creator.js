@@ -13,6 +13,8 @@ import SkillWizard from '_organisms/skill-wizard'
 import LinkWizard from '_organisms/link-wizard'
 import AddButton from '_atoms/add-button'
 import UploadPhotoField from '_atoms/upload-photo-field'
+import MonthYearField from '_molecules/month-year-field'
+
 
 class ResumeCreator extends Component {
   COMMON_FIELDS = {

@@ -1,0 +1,17 @@
+.container {
+  position: relative;
+}
+
+.picker {
+  position: absolute;
+  top: 50px;
+  display: none;
+}
+
+.pickerOpen {
+  display: block;
+}
+
+.withLabel {
+  top: 77px;
+}

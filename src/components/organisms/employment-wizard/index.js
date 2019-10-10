@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import WizardAccordion from '_molecules/wizard-accordion'
 import Input from '_atoms/input'
 import TextArea from '_atoms/text-area'
+import MonthYearField from '_molecules/month-year-field'
 import useInputFocus from '_hooks/use-input-focus'
 
 import styles from './styles.css'
@@ -16,11 +17,17 @@ const EmploymentWizard = ({
   ...wizardAccordionProps
 }) => {
   const firstInputRef = createRef()
+  const startDateList = employment.startDate.split(',').map(string => string.trim())
+  const endDateList = employment.endDate.split(',').map(string => string.trim())
 
   useInputFocus(firstInputRef, hasFocus, onFocus)
 
   const handleChange = event => {
     onChange(event.target.name, event.target.value)
+  }
+
+  const handleDateChange = (field, month, year) => {
+    onChange(field, `${month}, ${year}`)
   }
 
   return (
@@ -52,20 +59,19 @@ const EmploymentWizard = ({
         onChange={handleChange}
       />
       <div className={styles.periodDateGrid}>
-        <Input 
-          id="startDate" 
-          name="startDate" 
-          label="Start Date" 
-          value={employment.startDate}
-          onChange={handleChange}
+        <MonthYearField
+          id="employmentStartDate"
+          label="Start Date"
+          month={startDateList[0]}
+          year={startDateList[1]}
+          onChange={(month, year) => handleDateChange('startDate', month, year)}
         />
-        <Input 
-          id="endDate" 
-          name="endDate" 
-          label="End Date" 
-          value={employment.endDate}
-          onChange={handleChange}
-        />
+        {/* <MonthYearField
+          label="End Date"
+          month={endDateList[0]}
+          year={endDateList[1]}
+          onChange={(month, year) => handleDateChange('endDate', month, year)}
+        /> */}
       </div>
       <TextArea 
         id="description" 
