@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, createRef } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import Link from 'next/link'
@@ -13,7 +13,10 @@ class Header extends Component {
   state = {
     isNavOpen: false,
     currentPath: '',
+    navHeight: undefined,
   }
+
+  navRef = createRef()
 
   static propTypes = {
     routes: PropTypes.arrayOf(
@@ -31,8 +34,10 @@ class Header extends Component {
 
   componentDidMount() {
     const { router } = this.props
+    
     this.setState({
       currentPath: router.asPath,
+      navHeight: this.navRef.current.scrollHeight,
     })
   }
 
@@ -49,7 +54,7 @@ class Header extends Component {
 
   render() {
     const { routes, isFixed } = this.props
-    const { isNavOpen } = this.state
+    const { isNavOpen, navHeight } = this.state
 
     return (
       <header className={classNames(styles.header, { [styles.fixed]: isFixed })}>
@@ -61,7 +66,11 @@ class Header extends Component {
               <span />
               <span />
             </button>
-            <nav className={classNames(styles.nav, { [styles.navOpen]: isNavOpen })}>
+            <nav 
+              ref={this.navRef} 
+              style={{ height: isNavOpen ? `${navHeight}px` : '0' }} 
+              className={styles.nav}
+            >
               {routes.map(route => (
                 <Link href={route.path} key={route.path}>
                   <a

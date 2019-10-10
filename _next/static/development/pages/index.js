@@ -12349,7 +12349,7 @@ var Base = function Base(_ref) {
     __self: this
   }), __jsx("link", {
     rel: "manifest",
-    href: "/manifest.json",
+    href: "/static/manifest.json",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 24
@@ -12497,8 +12497,8 @@ __webpack_require__.r(__webpack_exports__);
   path: '/styleguide',
   text: 'Styleguide'
 }, {
-  path: '/resume-wizard',
-  text: 'Resume Wizard'
+  path: '/resume-creator',
+  text: 'Resume Creator'
 }, {
   path: '/contact',
   text: 'Contact'
@@ -12582,7 +12582,7 @@ var Home = function Home() {
 
 /***/ }),
 
-/***/ 14:
+/***/ 15:
 /*!*******************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2Fhome%2Fkalu%2FProjects%2Fkaluabentes.github.io%2Fsrc%2Fpages%2Findex.js ***!
   \*******************************************************************************************************************************************/
@@ -12605,5 +12605,5 @@ module.exports = dll_2524db69d4eccd75a204;
 
 /***/ })
 
-},[[14,"static/runtime/webpack.js","styles"]]]);
+},[[15,"static/runtime/webpack.js","styles"]]]);
 //# sourceMappingURL=index.js.map
