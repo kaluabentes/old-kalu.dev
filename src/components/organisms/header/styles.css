@@ -54,11 +54,15 @@ body {
   color: var(--color-grey-2);
   transition: 0.3s;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 1rem;
 
   &:hover {
     color: var(--color-white);
   }
+}
+
+.navItemCurrent {
+  color: var(--color-white);
 }
 
 .navToggler {
@@ -89,9 +93,4 @@ body {
   @media (--break-desktop) {
     display: none;
   }
-}
-
-.navItemCurrent {
-  font-weight: 500;
-  color: var(--color-white);
 }
