@@ -68,7 +68,7 @@ class Header extends Component {
             </button>
             <nav 
               ref={this.navRef} 
-              style={{ height: isNavOpen ? `${navHeight}px` : '0' }} 
+              style={{ height: isNavOpen ? `${navHeight}px` : 'auto' }} 
               className={styles.nav}
             >
               {routes.map(route => (
