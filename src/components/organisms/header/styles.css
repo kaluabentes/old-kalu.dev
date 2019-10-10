@@ -35,7 +35,7 @@ body {
   transition: 0.3s;
 
   @media (--break-desktop) {
-    height: 64px;
+    height: 64px !important;
     position: static;
     flex-direction: row;
     align-items: center;

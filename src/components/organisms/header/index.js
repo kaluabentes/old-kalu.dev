@@ -32,6 +32,13 @@ class Header extends Component {
     isFixed: false,
   }
 
+  constructor(props) {
+    super(props)
+
+    this.handleWindowResize = this.handleWindowResize.bind(this)
+    this.handleNavToggle = this.handleNavToggle.bind(this)
+  }
+
   componentDidMount() {
     const { router } = this.props
     
@@ -39,6 +46,12 @@ class Header extends Component {
       currentPath: router.asPath,
       navHeight: this.navRef.current.scrollHeight,
     })
+
+    window.addEventListener('resize', this.handleWindowResize)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowResize)
   }
 
   isCurrentNavItem(path) {
@@ -46,10 +59,16 @@ class Header extends Component {
     return currentPath == path
   }
 
-  handleNavToggle = () => {
+  handleNavToggle() {
     this.setState(prevState => ({
       isNavOpen: !prevState.isNavOpen,
     }))
+  }
+
+  handleWindowResize() {
+    this.setState({
+      navHeight: this.navRef.current.scrollHeight,
+    })
   }
 
   render() {
@@ -68,7 +87,7 @@ class Header extends Component {
             </button>
             <nav 
               ref={this.navRef} 
-              style={{ height: isNavOpen ? `${navHeight}px` : 'auto' }} 
+              style={{ height: isNavOpen ? `${navHeight}px` : '0' }} 
               className={styles.nav}
             >
               {routes.map(route => (
