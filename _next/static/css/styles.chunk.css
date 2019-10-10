@@ -436,7 +436,7 @@ body {
 
 .nav___O7EVv {
   position: absolute;
-  top: 4em;
+  top: 64px;
   left: 0;
   display: flex;
   flex-direction: column;
@@ -444,13 +444,13 @@ body {
   width: 100%;
   height: 0;
   overflow: hidden;
-  transition: 0.8s
+  transition: 0.3s
 }
 
 @media (min-width: 768px) {
 
 .nav___O7EVv {
-    height: 4em;
+    height: 64px;
     position: static;
     flex-direction: row;
     align-items: center;

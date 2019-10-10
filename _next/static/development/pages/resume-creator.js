@@ -13330,8 +13330,11 @@ function (_Component) {
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "state", {
       isNavOpen: false,
-      currentPath: ''
+      currentPath: '',
+      navHeight: undefined
     });
+
+    Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "navRef", Object(react__WEBPACK_IMPORTED_MODULE_7__["createRef"])());
 
     Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_corejs2_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_4__["default"])(_this), "handleNavToggle", function () {
       _this.setState(function (prevState) {
@@ -13349,7 +13352,8 @@ function (_Component) {
     value: function componentDidMount() {
       var router = this.props.router;
       this.setState({
-        currentPath: router.asPath
+        currentPath: router.asPath,
+        navHeight: this.navRef.current.scrollHeight
       });
     }
   }, {
@@ -13366,31 +13370,33 @@ function (_Component) {
       var _this$props = this.props,
           routes = _this$props.routes,
           isFixed = _this$props.isFixed;
-      var isNavOpen = this.state.isNavOpen;
+      var _this$state = this.state,
+          isNavOpen = _this$state.isNavOpen,
+          navHeight = _this$state.navHeight;
       return __jsx("header", {
         className: classnames__WEBPACK_IMPORTED_MODULE_9___default()(_styles_css__WEBPACK_IMPORTED_MODULE_14___default.a.header, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])({}, _styles_css__WEBPACK_IMPORTED_MODULE_14___default.a.fixed, isFixed)),
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 60
         },
         __self: this
       }, __jsx(_atoms_container__WEBPACK_IMPORTED_MODULE_12__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 61
         },
         __self: this
       }, __jsx("div", {
         className: _styles_css__WEBPACK_IMPORTED_MODULE_14___default.a.headerInner,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 62
         },
         __self: this
       }, __jsx(_atoms_brand__WEBPACK_IMPORTED_MODULE_13__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 63
         },
         __self: this
       }), __jsx("button", {
@@ -13398,32 +13404,36 @@ function (_Component) {
         className: _styles_css__WEBPACK_IMPORTED_MODULE_14___default.a.navToggler,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 64
         },
         __self: this
       }, __jsx("span", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 60
+          lineNumber: 65
         },
         __self: this
       }), __jsx("span", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 66
         },
         __self: this
       }), __jsx("span", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 67
         },
         __self: this
       })), __jsx("nav", {
-        className: classnames__WEBPACK_IMPORTED_MODULE_9___default()(_styles_css__WEBPACK_IMPORTED_MODULE_14___default.a.nav, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])({}, _styles_css__WEBPACK_IMPORTED_MODULE_14___default.a.navOpen, isNavOpen)),
+        ref: this.navRef,
+        style: {
+          height: isNavOpen ? "".concat(navHeight, "px") : '0'
+        },
+        className: _styles_css__WEBPACK_IMPORTED_MODULE_14___default.a.nav,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 69
         },
         __self: this
       }, routes.map(function (route) {
@@ -13432,14 +13442,14 @@ function (_Component) {
           key: route.path,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 66
+            lineNumber: 75
           },
           __self: this
         }, __jsx("a", {
           className: classnames__WEBPACK_IMPORTED_MODULE_9___default()(_styles_css__WEBPACK_IMPORTED_MODULE_14___default.a.navItem, Object(_babel_runtime_corejs2_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])({}, _styles_css__WEBPACK_IMPORTED_MODULE_14___default.a.navItemCurrent, _this2.isCurrentNavItem(route.path))),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 67
+            lineNumber: 76
           },
           __self: this
         }, route.text));

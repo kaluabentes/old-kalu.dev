@@ -865,7 +865,7 @@ module.exports = {"header":"header___1Hd8k","fixed":"fixed___3MMtl","headerInner
           .querySelectorAll("link[href][rel=stylesheet]")
           .forEach(function(link) {
             if (!link.href.match(prefix) || link.stale) return;
-            injectCss(link, link.href.split("?")[0] + "?unix=1570662276538");
+            injectCss(link, link.href.split("?")[0] + "?unix=1570678955384");
           });
       }
     }
