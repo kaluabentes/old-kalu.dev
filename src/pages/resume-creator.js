@@ -8,10 +8,22 @@ import Input from '_atoms/input'
 import TextArea from '_atoms/text-area'
 import FormDescription from '_atoms/form-description'
 import EmploymentWizard from '_organisms/employment-wizard'
+import EducationWizard from '_organisms/education-wizard'
 import AddButton from '_atoms/add-button'
 import UploadPhotoField from '_atoms/upload-photo-field'
 
 class ResumeCreator extends Component {
+  WIZARD_DEFAULT_VALUES = {
+    employments: {
+      jobTitle: '',
+      employer: '',
+    },
+    educations: {
+      school: '',
+      degree: '',
+    }
+  }
+
   state = {
     firstName: '',
     lastName: '',
@@ -22,41 +34,40 @@ class ResumeCreator extends Component {
     address: '',
     professionalSummary: '',
     employments: [],
+    educations: [],
   }
 
   constructor(props) {
     super(props)
 
-    this.handleEmploymentAdd = this.handleEmploymentAdd.bind(this)
-    this.handleEmploymentRemove = this.handleEmploymentRemove.bind(this)
-    this.handleEmploymentChange = this.handleEmploymentChange.bind(this)
+    this.handleWizardAdd = this.handleWizardAdd.bind(this)
+    this.handleWizardRemove = this.handleWizardRemove.bind(this)
+    this.handleWizardChange = this.handleWizardChange.bind(this)
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handlePhotoLoad = this.handlePhotoLoad.bind(this)
   }
 
-  handleEmploymentToggle(index) {
+  handleWizardToggle(collection, index) {
     this.setState(prevState => ({
-      employments: prevState.employments.map((employment, currentIndex) => {
+      [collection]: prevState[collection].map((item, currentIndex) => {
         if (index === currentIndex) {
-          employment.isOpen = !employment.isOpen
+          item.isOpen = !item.isOpen
         }
 
-        return employment
+        return item
       })
     }))
   }
 
-  handleEmploymentAdd() {
+  handleWizardAdd(collection) {
     this.setState(prevState => {
-      const employments = prevState.employments.map(
-        employment => ({...employment, isOpen: false})
+      const items = prevState[collection].map(
+        item => ({...item, isOpen: false})
       )
-      
+
       return {
-        employments: [...employments, {
-          jobTitle: '',
-          employer: '',
-          city: '',
+        [collection]: [...items, {
+          ...this.WIZARD_DEFAULT_VALUES[collection],
           startDate: '',
           endDate: '',
           description: '',
@@ -67,35 +78,35 @@ class ResumeCreator extends Component {
     })
   }
 
-  handleEmploymentRemove(index) {
+  handleWizardRemove(collection, index) {
     this.setState(prevState => ({
-      employments: prevState.employments.filter(
-        (employment, currentIndex) => index !== currentIndex
+      [collection]: prevState[collection].filter(
+        (item, currentIndex) => index !== currentIndex
       )
     }))
   }
 
-  handleEmploymentChange(index, name, value) {
+  handleWizardChange(collection, index, name, value) {
     this.setState(prevState => ({
-      employments: prevState.employments.map((employment, currentIndex) => {
+      [collection]: prevState[collection].map((item, currentIndex) => {
         if (index === currentIndex) {
-          employment = { ...employment, [name]: value }
+          item = { ...item, [name]: value }
         }
 
-        return employment
+        return item
       })
     }))
   }
 
-  handleEmploymentFocus(index) {
+  handleWizardFocus(collection, index) {
     this.setState(prevState => ({
-      employments: prevState.employments.map(
-        (employment, currentIndex) => {
+      [collection]: prevState[collection].map(
+        (item, currentIndex) => {
           if (index === currentIndex) {
-            employment.hasFocus = false
+            item.hasFocus = false
           }
 
-          return employment
+          return item
         }
       )
     }))
@@ -116,6 +127,7 @@ class ResumeCreator extends Component {
   render() {
     const { 
       employments,
+      educations,
       firstName,
       lastName,
       photo,
@@ -197,13 +209,31 @@ class ResumeCreator extends Component {
                 isOpen={isOpen}
                 hasFocus={hasFocus}
                 employment={employment}
-                onToggle={() => this.handleEmploymentToggle(index)}
-                onChange={(name, value) => this.handleEmploymentChange(index, name, value)}
-                onRemove={() => this.handleEmploymentRemove(index)}
-                onFocus={() => this.handleEmploymentFocus(index)}
+                onToggle={() => this.handleWizardToggle('employments', index)}
+                onChange={(name, value) => this.handleWizardChange('employments', index, name, value)}
+                onRemove={() => this.handleWizardRemove('employments', index)}
+                onFocus={() => this.handleWizardFocus('employments', index)}
               />
             ))}
-            <AddButton onClick={this.handleEmploymentAdd}>Add employment</AddButton>
+            <AddButton onClick={() => this.handleWizardAdd('employments')}>Add employment</AddButton>
+          </FormSection>
+          <FormSection title="Education">
+            <FormDescription>
+              If relevant, include your most recent educational achievements and the dates here
+            </FormDescription>
+            {educations.map(({ isOpen, hasFocus, ...education }, index) => (
+              <EducationWizard
+                key={index}
+                isOpen={isOpen}
+                hasFocus={hasFocus}
+                education={education}
+                onToggle={() => this.handleWizardToggle('educations', index)}
+                onChange={(name, value) => this.handleWizardChange('educations', index, name, value)}
+                onRemove={() => this.handleWizardRemove('educations', index)}
+                onFocus={() => this.handleWizardFocus('educations', index)}
+              />
+            ))}
+            <AddButton onClick={() => this.handleWizardAdd('educations')}>Add employment</AddButton>
           </FormSection>
         </Container>
       </Page>

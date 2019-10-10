@@ -46,7 +46,7 @@ WizardAccordion.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-WizardAccordion.propTypes = {
+WizardAccordion.defaultProps = {
   title: '',
   subtitle: '',
   onRemove: () => {},
