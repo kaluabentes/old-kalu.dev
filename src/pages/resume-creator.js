@@ -9,19 +9,32 @@ import TextArea from '_atoms/text-area'
 import FormDescription from '_atoms/form-description'
 import EmploymentWizard from '_organisms/employment-wizard'
 import EducationWizard from '_organisms/education-wizard'
+import SkillWizard from '_organisms/skill-wizard'
 import AddButton from '_atoms/add-button'
 import UploadPhotoField from '_atoms/upload-photo-field'
 
 class ResumeCreator extends Component {
+  COMMON_FIELDS = {
+    startDate: '',
+    endDate: '',
+    description: '',
+  }
+
   WIZARD_DEFAULT_VALUES = {
     employments: {
       jobTitle: '',
       employer: '',
+      ...this.COMMON_FIELDS,
     },
     educations: {
       school: '',
       degree: '',
-    }
+      ...this.COMMON_FIELDS,
+    },
+    skills: {
+      name: '',
+      level: 1,
+    },
   }
 
   state = {
@@ -35,6 +48,7 @@ class ResumeCreator extends Component {
     professionalSummary: '',
     employments: [],
     educations: [],
+    skills: [],
   }
 
   constructor(props) {
@@ -68,11 +82,7 @@ class ResumeCreator extends Component {
       return {
         [collection]: [...items, {
           ...this.WIZARD_DEFAULT_VALUES[collection],
-          startDate: '',
-          endDate: '',
-          description: '',
           isOpen: true,
-          hasFocus: true,
         }]
       }
     })
@@ -98,20 +108,6 @@ class ResumeCreator extends Component {
     }))
   }
 
-  handleWizardFocus(collection, index) {
-    this.setState(prevState => ({
-      [collection]: prevState[collection].map(
-        (item, currentIndex) => {
-          if (index === currentIndex) {
-            item.hasFocus = false
-          }
-
-          return item
-        }
-      )
-    }))
-  }
-
   handleInputChange(event) {
     this.setState({
       [event.target.name]: event.target.value,
@@ -128,6 +124,7 @@ class ResumeCreator extends Component {
     const { 
       employments,
       educations,
+      skills,
       firstName,
       lastName,
       photo,
@@ -207,12 +204,10 @@ class ResumeCreator extends Component {
               <EmploymentWizard
                 key={index}
                 isOpen={isOpen}
-                hasFocus={hasFocus}
                 employment={employment}
                 onToggle={() => this.handleWizardToggle('employments', index)}
                 onChange={(name, value) => this.handleWizardChange('employments', index, name, value)}
                 onRemove={() => this.handleWizardRemove('employments', index)}
-                onFocus={() => this.handleWizardFocus('employments', index)}
               />
             ))}
             <AddButton onClick={() => this.handleWizardAdd('employments')}>Add employment</AddButton>
@@ -225,15 +220,26 @@ class ResumeCreator extends Component {
               <EducationWizard
                 key={index}
                 isOpen={isOpen}
-                hasFocus={hasFocus}
                 education={education}
                 onToggle={() => this.handleWizardToggle('educations', index)}
                 onChange={(name, value) => this.handleWizardChange('educations', index, name, value)}
                 onRemove={() => this.handleWizardRemove('educations', index)}
-                onFocus={() => this.handleWizardFocus('educations', index)}
               />
             ))}
-            <AddButton onClick={() => this.handleWizardAdd('educations')}>Add employment</AddButton>
+            <AddButton onClick={() => this.handleWizardAdd('educations')}>Add education</AddButton>
+          </FormSection>
+          <FormSection title="Skills">
+            {skills.map(({ isOpen, hasFocus, ...skill }, index) => (
+              <SkillWizard
+                key={index}
+                isOpen={isOpen}
+                skill={skill}
+                onToggle={() => this.handleWizardToggle('skills', index)}
+                onChange={(name, value) => this.handleWizardChange('skills', index, name, value)}
+                onRemove={() => this.handleWizardRemove('skills', index)}
+              />
+            ))}
+            <AddButton onClick={() => this.handleWizardAdd('skills')}>Add skill</AddButton>
           </FormSection>
         </Container>
       </Page>

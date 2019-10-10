@@ -1,0 +1,133 @@
+.field {
+  padding: 0;
+  height: 45px;
+  background: var(--color-grey);
+  border: 0;
+  display: flex;
+  position: relative;
+}
+
+.fieldNovice {
+  .level {
+    &::after {
+      background: var(--color-novice);
+    }
+  }
+}
+
+.fieldBeginner {
+  .level {
+    &::after {
+      background: var(--color-beginner);
+    }
+  }
+}
+
+.fieldSkillful {
+  .level {
+    &::after {
+      background: var(--color-skillful);
+    }
+  }
+}
+
+.fieldExperienced {
+  .level {
+    &::after {
+      background: var(--color-experienced);
+    }
+  }
+}
+
+.fieldExpert {
+  .level {
+    &::after {
+      background: var(--color-expert);
+    }
+  }
+}
+
+.needle {
+  width: 20%;
+  height: 45px;
+  background: black;
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.needleNovice {
+  background: var(--color-novice);
+}
+
+.needleBeginner {
+  background: var(--color-beginner);
+}
+
+.needleSkillful {
+  background: var(--color-skillful);
+}
+
+.needleExperienced {
+  background: var(--color-experienced);
+}
+
+.needleExpert {
+  background: var(--color-expert);
+}
+
+.level {
+  position: relative;
+  z-index: 1;
+  height: 45px;
+  flex-grow: 1;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--color-grey-2);
+    opacity: 0.1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    width: 1px;
+    height: 14px;
+    margin-top: -7px;
+    opacity: 0.4;
+  }
+
+  &:first-of-type {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.labelNovice {
+  color: var(--color-novice);
+}
+
+.labelBeginner {
+  color: var(--color-beginner);
+}
+
+.labelSkillful {
+  color: var(--color-skillful);
+}
+
+.labelExperienced {
+  color: var(--color-experienced);
+}
+
+.labelExpert {
+  color: var(--color-expert);
+}
