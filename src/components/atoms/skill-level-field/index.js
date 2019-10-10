@@ -105,7 +105,7 @@ SkillLevelField.propTypes = {
   onChange: PropTypes.func,
 }
 
-SkillLevelField.propTypes = {
+SkillLevelField.defaultProps = {
   id: '',
   name: '',
   label: '',

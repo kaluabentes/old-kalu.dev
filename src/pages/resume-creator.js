@@ -10,6 +10,7 @@ import FormDescription from '_atoms/form-description'
 import EmploymentWizard from '_organisms/employment-wizard'
 import EducationWizard from '_organisms/education-wizard'
 import SkillWizard from '_organisms/skill-wizard'
+import LinkWizard from '_organisms/link-wizard'
 import AddButton from '_atoms/add-button'
 import UploadPhotoField from '_atoms/upload-photo-field'
 
@@ -35,6 +36,10 @@ class ResumeCreator extends Component {
       name: '',
       level: 1,
     },
+    links: {
+      name: '',
+      level: 1,
+    },
   }
 
   state = {
@@ -49,6 +54,7 @@ class ResumeCreator extends Component {
     employments: [],
     educations: [],
     skills: [],
+    links: [],
   }
 
   constructor(props) {
@@ -125,6 +131,7 @@ class ResumeCreator extends Component {
       employments,
       educations,
       skills,
+      links,
       firstName,
       lastName,
       photo,
@@ -240,6 +247,22 @@ class ResumeCreator extends Component {
               />
             ))}
             <AddButton onClick={() => this.handleWizardAdd('skills')}>Add skill</AddButton>
+          </FormSection>
+          <FormSection title="Websites & Social Links">
+            <FormDescription>
+              You can add links to websites you want hiring managers to see! Perhaps It will be  a link to your portfolio, LinkedIn profile, or personal website
+            </FormDescription>
+            {links.map(({ isOpen, hasFocus, ...link }, index) => (
+              <LinkWizard
+                key={index}
+                isOpen={isOpen}
+                link={link}
+                onToggle={() => this.handleWizardToggle('links', index)}
+                onChange={(name, value) => this.handleWizardChange('links', index, name, value)}
+                onRemove={() => this.handleWizardRemove('links', index)}
+              />
+            ))}
+            <AddButton onClick={() => this.handleWizardAdd('links')}>Add link</AddButton>
           </FormSection>
         </Container>
       </Page>
