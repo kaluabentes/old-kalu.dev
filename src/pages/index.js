@@ -6,7 +6,10 @@ import CoverTitle from '_atoms/cover-title'
 import CoverSubtitle from '_atoms/cover-subtitle'
 import Button from '_atoms/button'
 
-const SUBTITLE = "Hello everybody, I'm Kalu. I code beautiful UI's and I love what I do."
+const SUBTITLE = `
+  Hello everybody, I'm Kalu. I code 
+  beautiful UI's and I love what I do.
+`
 
 const Home = () => (
   <Page title="Frontend Developer">

@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.photo {
+  height: 150px;
+  width: 150px;
+  border-radius: 4px;
+  object-fit: cover;
+  margin-right: 30px;
+}
+
+.title {
+  font-size: 2.812rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  margin: 0;
+  color: var(--color-blue);
+}
