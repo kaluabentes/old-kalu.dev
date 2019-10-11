@@ -41,6 +41,16 @@
   }
 }
 
+.spinnerBox {
+  min-width: 60px;
+  height: 60px;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+}
+
 .text {
   color: rgb(33, 150, 243);
   font-size: 0.875rem;
