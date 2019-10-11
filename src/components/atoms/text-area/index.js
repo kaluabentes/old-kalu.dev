@@ -20,7 +20,7 @@ const TextArea = ({
       rows={5}
       className={classNames(
         styles.input,
-        { [styles.error]: hasError }
+        { [styles.error]: hasError },
       )}
       id={id}
       name={name}
@@ -33,7 +33,6 @@ const TextArea = ({
 )
 
 TextArea.propTypes = {
-  className: PropTypes.string,
   id: PropTypes.string,
   name: PropTypes.string,
   value: PropTypes.string,
@@ -45,12 +44,11 @@ TextArea.propTypes = {
 }
 
 TextArea.defaultProps = {
-  className: undefined,
-  id: undefined,
-  name: undefined,
+  id: '',
+  name: '',
   value: '',
-  errorMessage: undefined,
-  label: undefined,
+  errorMessage: '',
+  label: '',
   onChange: () => {},
   isDisabled: false,
   hasError: false,

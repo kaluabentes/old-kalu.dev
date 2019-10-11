@@ -8,7 +8,20 @@ import Input from '_atoms/input'
 
 import styles from './styles.css'
 
-const MonthYearField = ({ month, year, onChange, label, ...inputProps }) => {
+const PICKER_ALIGNMENTS = {
+  left: styles.pickerAlignmentLeft,
+  right: styles.pickerAlignmentRight,
+}
+
+const MonthYearField = ({
+  month,
+  year,
+  onChange,
+  label,
+  pickerAlignment,
+  ...inputProps
+}) => {
+  const { id } = inputProps
   const [isPickerOpen, setPickerOpen] = useState(false)
   const dateValue = month && year ? `${month}, ${year}` : ''
 
@@ -23,30 +36,54 @@ const MonthYearField = ({ month, year, onChange, label, ...inputProps }) => {
   return (
     <ClickOutside onClickOutside={handlePickerClose}>
       <div className={styles.container}>
-        <Input 
+        <Input
           onFocus={handlePickerOpen}
           onClick={handlePickerOpen}
-          value={dateValue} 
+          value={dateValue}
           placeholder="MM / YYYY"
           label={label}
-          {...inputProps}
+          id={id}
         />
-        <div className={
-          classNames(
-            styles.picker, 
-            { [styles.pickerOpen]: isPickerOpen, [styles.withLabel]: !!label })
+        <div
+          className={
+            classNames(
+              styles.picker,
+              pickerAlignment,
+              {
+                [styles.pickerOpen]: isPickerOpen,
+                [styles.withLabel]: !!label,
+              },
+            )
           }
         >
-          <MonthYearPicker 
-            month={month} 
-            year={year} 
-            onChange={onChange} 
-            onMonthChange={handlePickerClose} 
+          <MonthYearPicker
+            month={month}
+            year={year}
+            onChange={onChange}
+            onMonthChange={handlePickerClose}
           />
         </div>
       </div>
     </ClickOutside>
   )
 }
+
+MonthYearField.propTypes = {
+  month: PropTypes.string,
+  year: PropTypes.string,
+  onChange: PropTypes.func,
+  label: PropTypes.func,
+  pickerAlignment: PropTypes.string,
+}
+
+MonthYearField.defaultProps = {
+  month: '',
+  year: '',
+  onChange: () => {},
+  label: '',
+  pickerAlignment: PICKER_ALIGNMENTS.left,
+}
+
+MonthYearField.alignments = PICKER_ALIGNMENTS
 
 export default MonthYearField

@@ -11,13 +11,12 @@ const Input = forwardRef(({
   value,
   errorMessage,
   label,
+  placeholder,
+  isDisabled,
+  hasError,
   onChange,
   onFocus,
   onClick,
-  isDisabled,
-  hasError,
-  hasAutoFocus,
-  placeholder,
 }, ref) => (
   <div className={styles.container}>
     {label && (
@@ -31,7 +30,7 @@ const Input = forwardRef(({
     <input
       className={classNames(
         styles.input,
-        { [styles.error]: hasError }
+        { [styles.error]: hasError },
       )}
       id={id}
       name={name}
@@ -39,7 +38,6 @@ const Input = forwardRef(({
       value={value}
       onChange={onChange}
       disabled={isDisabled}
-      autoFocus={hasAutoFocus}
       onFocus={onFocus}
       onClick={onClick}
       ref={ref}
@@ -50,33 +48,33 @@ const Input = forwardRef(({
 ))
 
 Input.propTypes = {
-  className: PropTypes.string,
   id: PropTypes.string,
   name: PropTypes.string,
   type: PropTypes.string,
   value: PropTypes.string,
   errorMessage: PropTypes.string,
   label: PropTypes.string,
-  onChange: PropTypes.func,
+  placeholder: PropTypes.string,
   isDisabled: PropTypes.bool,
   hasError: PropTypes.bool,
-  hasAutoFocus: PropTypes.bool,
-  inputRef: PropTypes.object,
+  onChange: PropTypes.func,
+  onFocus: PropTypes.func,
+  onClick: PropTypes.func,
 }
 
 Input.defaultProps = {
-  className: undefined,
-  id: undefined,
-  name: undefined,
-  type: undefined,
+  id: '',
+  name: '',
+  type: '',
   value: '',
-  errorMessage: undefined,
-  label: undefined,
-  onChange: () => {},
+  errorMessage: '',
+  label: '',
+  placeholder: '',
   isDisabled: false,
   hasError: false,
-  hasAutoFocus: false,
-  inputRef: {},
+  onChange: () => {},
+  onFocus: () => {},
+  onClick: () => {},
 }
 
 export default Input

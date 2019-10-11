@@ -4,7 +4,12 @@ import classNames from 'classnames'
 
 import styles from './styles.css'
 
-const Accordion = ({ isOpen, onToggle, children, header }) => {
+const Accordion = ({
+  isOpen,
+  onToggle,
+  children,
+  header,
+}) => {
   const [height, setHeight] = useState(0)
   const ref = createRef()
 
@@ -13,14 +18,15 @@ const Accordion = ({ isOpen, onToggle, children, header }) => {
   })
 
   return (
-    <div 
-      ref={ref} 
-      style={{ height: isOpen ? `${height}px` : `77px` }} 
+    <div
+      ref={ref}
+      style={{ height: isOpen ? `${height}px` : '77px' }}
       className={classNames(styles.wizard, { [styles.open]: isOpen })}
     >
-      <div 
-        onClick={onToggle} 
-        className={styles.header} 
+      <div
+        onClick={onToggle}
+        className={styles.header}
+        role="button"
         tabIndex={0}
       >
         {header}
@@ -32,14 +38,14 @@ const Accordion = ({ isOpen, onToggle, children, header }) => {
   )
 }
 
-Accordion.propTypes = { 
-  isOpen: PropTypes.bool, 
+Accordion.propTypes = {
+  isOpen: PropTypes.bool,
   children: PropTypes.node.isRequired,
   header: PropTypes.node.isRequired,
   onToggle: PropTypes.func,
 }
 
-Accordion.defaultProps = { 
+Accordion.defaultProps = {
   isOpen: false,
   onToggle: () => {},
 }

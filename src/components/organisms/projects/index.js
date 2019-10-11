@@ -13,7 +13,7 @@ const Projects = ({ projects }) => (
     <Container>
       <SectionTitle>Projects</SectionTitle>
       <div className={styles.grid}>
-        {projects.map(project => (
+        {projects.map((project) => (
           <Actionable>
             <Paper>
               <div className={styles.project}>
@@ -46,7 +46,7 @@ Projects.propTypes = {
       url: PropTypes.string,
       image: PropTypes.string,
       description: PropTypes.string,
-    })
+    }),
   ).isRequired,
 }
 

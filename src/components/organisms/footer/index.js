@@ -11,13 +11,14 @@ const Footer = () => (
       <div className={styles.row}>
         <Brand />
         <p className={styles.greetings}>
-          Say hi,{' '}
+          Say hi,
+          {' '}
           <a href="mailto:kaluanbentes@gmail.com" className={styles.email}>
             kaluanbentes@gmail.com
           </a>
         </p>
         <div>
-          <a href="https://github.com/kaluabentes" target="_blank" rel="nooponer noreferrer">
+          <a href="https://github.com/kaluabentes" target="_blank" rel="noopener noreferrer">
             <svg
               className={styles.icon}
               xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +32,7 @@ const Footer = () => (
           <a
             href="https://www.linkedin.com/in/kalu%C3%A3-bentes-5a5245103/"
             target="_blank"
-            rel="nooponer noreferrer"
+            rel="noopener noreferrer"
           >
             <svg
               className={styles.icon}
@@ -45,7 +46,11 @@ const Footer = () => (
           </a>
         </div>
         <p className={styles.copyright}>
-          Copyright © {new Date().getFullYear()} Kaluã Bentes, Inc. All rights reserved.
+          Copyright ©
+          {' '}
+          {new Date().getFullYear()}
+          {' '}
+Kaluã Bentes, Inc. All rights reserved.
         </p>
       </div>
     </Container>

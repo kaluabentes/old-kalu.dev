@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-export default inputRef => {
+export default (inputRef) => {
   useEffect(() => {
     inputRef.current.focus()
     setTimeout(() => {

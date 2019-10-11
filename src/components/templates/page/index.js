@@ -11,7 +11,10 @@ import routes from '_config/routes'
 const Page = ({ children, title }) => (
   <Base>
     <Head>
-      <title>Kaluã Bentes - {title}</title>
+      <title>
+Kaluã Bentes -
+        {title}
+      </title>
     </Head>
     <Header isFixed routes={routes} />
     <Body>{children}</Body>

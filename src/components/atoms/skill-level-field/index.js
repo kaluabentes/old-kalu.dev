@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
-import styles from './styles.css'
 import inputStyles from '_atoms/input/styles.css'
+import styles from './styles.css'
 
 const LEVELS = [
   {
@@ -47,47 +47,50 @@ const SkillLevelField = ({
   id,
   label,
   value,
-  onChange
+  onChange,
 }) => {
-  const currentLevel = LEVELS[value -1]
+  const currentLevel = LEVELS[value - 1]
 
-  const moveNeedle = level => ({
-    transform: `translateX(${(level - 1) * 100}%)`
+  const moveNeedle = (level) => ({
+    transform: `translateX(${(level - 1) * 100}%)`,
   })
-  
+
   return (
     <div className={inputStyles.container}>
       {label && (
-        <label 
-          className={inputStyles.label} 
+        <label
+          className={inputStyles.label}
           htmlFor={id}
         >
-          {label} — <span className={currentLevel.labelStyle}>{currentLevel.label}</span>
+          {label}
+          {' '}
+—
+          <span className={currentLevel.labelStyle}>{currentLevel.label}</span>
         </label>
       )}
-  
-      <div 
+
+      <div
         className={
           classNames(
-            inputStyles.input, 
-            styles.field, 
-            currentLevel.fieldStyle
+            inputStyles.input,
+            styles.field,
+            currentLevel.fieldStyle,
           )
         }
       >
-        <div 
+        <div
           className={
             classNames(
-              styles.needle, 
-              currentLevel.needleStyle
+              styles.needle,
+              currentLevel.needleStyle,
             )
-          } 
-          style={moveNeedle(value)} 
+          }
+          style={moveNeedle(value)}
         />
-        {LEVELS.map((level, index) => (
-          <button 
-            key={index}
-            type="button" 
+        {LEVELS.map((level) => (
+          <button
+            key={level.label}
+            type="button"
             onClick={() => onChange(level.value)}
             className={styles.level}
           />
@@ -99,7 +102,6 @@ const SkillLevelField = ({
 
 SkillLevelField.propTypes = {
   id: PropTypes.string,
-  name: PropTypes.string,
   label: PropTypes.string,
   value: PropTypes.number,
   onChange: PropTypes.func,
@@ -107,7 +109,6 @@ SkillLevelField.propTypes = {
 
 SkillLevelField.defaultProps = {
   id: '',
-  name: '',
   label: '',
   value: '',
   onChange: () => {},

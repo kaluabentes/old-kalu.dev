@@ -6,6 +6,7 @@
   position: absolute;
   top: 50px;
   display: none;
+  z-index: 5;
 }
 
 .pickerOpen {
@@ -15,3 +16,12 @@
 .withLabel {
   top: 77px;
 }
+
+.pickerAlignmentLeft {
+  left: 0;
+}
+
+.pickerAlignmentRight {
+  right: 0;
+}
+

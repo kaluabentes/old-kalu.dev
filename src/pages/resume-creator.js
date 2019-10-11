@@ -13,8 +13,6 @@ import SkillWizard from '_organisms/skill-wizard'
 import LinkWizard from '_organisms/link-wizard'
 import AddButton from '_atoms/add-button'
 import UploadPhotoField from '_atoms/upload-photo-field'
-import MonthYearField from '_molecules/month-year-field'
-
 
 class ResumeCreator extends Component {
   COMMON_FIELDS = {
@@ -22,8 +20,8 @@ class ResumeCreator extends Component {
     endDate: '',
     description: '',
   }
-
-  WIZARD_DEFAULT_VALUES = {
+ 
+  DEFAULT_VALUES = {
     employments: {
       jobTitle: '',
       employer: '',
@@ -70,45 +68,48 @@ class ResumeCreator extends Component {
   }
 
   handleWizardToggle(collection, index) {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       [collection]: prevState[collection].map((item, currentIndex) => {
         if (index === currentIndex) {
-          item.isOpen = !item.isOpen
+          return { ...item, isOpen: !item.isOpen }
         }
 
         return item
-      })
+      }),
     }))
   }
 
   handleWizardAdd(collection) {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       const items = prevState[collection].map(
-        item => ({...item, isOpen: false})
+        (item) => ({ ...item, isOpen: false, })
       )
 
       return {
-        [collection]: [...items, {
-          ...this.WIZARD_DEFAULT_VALUES[collection],
-          isOpen: true,
-        }]
+        [collection]: [
+          ...items,
+          {
+            ...this.DEFAULT_VALUES[collection],
+            isOpen: true,
+          },
+        ],
       }
     })
   }
 
   handleWizardRemove(collection, index) {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       [collection]: prevState[collection].filter(
         (item, currentIndex) => index !== currentIndex
-      )
+      ),
     }))
   }
 
   handleWizardChange(collection, index, name, value) {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       [collection]: prevState[collection].map((item, currentIndex) => {
         if (index === currentIndex) {
-          item = { ...item, [name]: value }
+          return { ...item, [name]: value }
         }
 
         return item
@@ -129,7 +130,7 @@ class ResumeCreator extends Component {
   }
 
   render() {
-    const { 
+    const {
       employments,
       educations,
       skills,
@@ -149,55 +150,55 @@ class ResumeCreator extends Component {
         <Container>
           <PageTitle>Resume Creator</PageTitle>
           <FormSection title="Personal Details">
-            <Input 
-              id="firstName" 
-              name="firstName" 
-              label="First Name" 
-              value={firstName} 
+            <Input
+              id="firstName"
+              name="firstName"
+              label="First Name"
+              value={firstName}
               onChange={this.handleInputChange}
             />
-            <Input 
-              id="lastName" 
-              name="lastName" 
+            <Input
+              id="lastName"
+              name="lastName"
               label="Last Name"
               value={lastName}
               onChange={this.handleInputChange}
             />
             <UploadPhotoField photoSrc={photo} onPhotoLoad={this.handlePhotoLoad} />
-            <Input 
-              id="jobTitle" 
-              name="jobTitle" 
+            <Input
+              id="jobTitle"
+              name="jobTitle"
               label="Job Title"
               value={jobTitle}
               onChange={this.handleInputChange}
             />
-            <Input 
-              id="email" 
-              name="email" 
-              label="Email" 
+            <Input
+              id="email"
+              name="email"
+              label="Email"
               type="email"
               value={email}
-              onChange={this.handleInputChange} 
+              onChange={this.handleInputChange}
             />
-            <Input 
-              id="phone" 
-              name="phone" 
-              label="Phone" 
+            <Input
+              id="phone"
+              name="phone"
+              label="Phone"
               type="tel"
               value={phone}
               onChange={this.handleInputChange}
             />
-            <Input 
-              id="address" 
-              name="address" 
-              label="address" 
+            <Input
+              id="address"
+              name="address"
+              label="address"
               type="Address"
               value={address}
               onChange={this.handleInputChange}
             />
           </FormSection>
           <FormSection title="Professional Summary">
-            <TextArea 
+            <TextArea
               id="professionalSummary"
               name="professionalSummary"
               label="Include 2-3 clear sentences about your overall exerience"
@@ -207,11 +208,13 @@ class ResumeCreator extends Component {
           </FormSection>
           <FormSection title="Employment History">
             <FormDescription>
-              Include your last 10 years of relevant experience and dates in this section. List your most recent position first.
+              Include your last 10 years of relevant experience and
+              dates in this section. List your most recent position
+              first.
             </FormDescription>
             {employments.map(({ isOpen, hasFocus, ...employment }, index) => (
               <EmploymentWizard
-                key={index}
+                key={employment.employer}
                 isOpen={isOpen}
                 employment={employment}
                 onToggle={() => this.handleWizardToggle('employments', index)}
@@ -227,7 +230,7 @@ class ResumeCreator extends Component {
             </FormDescription>
             {educations.map(({ isOpen, hasFocus, ...education }, index) => (
               <EducationWizard
-                key={index}
+                key={education.school}
                 isOpen={isOpen}
                 education={education}
                 onToggle={() => this.handleWizardToggle('educations', index)}
@@ -240,7 +243,7 @@ class ResumeCreator extends Component {
           <FormSection title="Skills">
             {skills.map(({ isOpen, hasFocus, ...skill }, index) => (
               <SkillWizard
-                key={index}
+                key={skill.name}
                 isOpen={isOpen}
                 skill={skill}
                 onToggle={() => this.handleWizardToggle('skills', index)}
@@ -252,11 +255,14 @@ class ResumeCreator extends Component {
           </FormSection>
           <FormSection title="Websites & Social Links">
             <FormDescription>
-              You can add links to websites you want hiring managers to see! Perhaps It will be  a link to your portfolio, LinkedIn profile, or personal website
+              You can add links to websites you want hiring
+              managers to see! Perhaps It will be  a link to
+              your portfolio, LinkedIn profile, or personal
+              website
             </FormDescription>
             {links.map(({ isOpen, hasFocus, ...link }, index) => (
               <LinkWizard
-                key={index}
+                key={link.label}
                 isOpen={isOpen}
                 link={link}
                 onToggle={() => this.handleWizardToggle('links', index)}

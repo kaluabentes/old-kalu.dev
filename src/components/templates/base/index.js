@@ -30,4 +30,8 @@ const Base = ({ children }) => (
   </>
 )
 
+Base.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
 export default Base

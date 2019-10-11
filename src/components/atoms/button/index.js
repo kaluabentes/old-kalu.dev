@@ -10,7 +10,8 @@ const Button = ({ href, onClick, children }) => {
       {children}
     </button>
   )
-  const withLink = button => <Link href={href}>{button}</Link>
+
+  const withLink = (btn) => <Link href={href}>{btn}</Link>
 
   if (href) {
     return withLink(button)

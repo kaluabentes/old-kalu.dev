@@ -10,6 +10,11 @@ const Paper = ({ className, children }) => (
 
 Paper.propTypes = {
   children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+}
+
+Paper.defaultProps = {
+  className: '',
 }
 
 export default Paper

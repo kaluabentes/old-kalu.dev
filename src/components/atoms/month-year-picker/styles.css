@@ -1,5 +1,6 @@
 .picker {
   max-width: 256px;
+  width: 256px;
   background: rgb(242, 245, 250);
   box-shadow: rgba(207, 214, 230, 0.7) 0px 14px 16px -10px, rgba(207, 214, 230, 0.12) 0px 20px 40px -8px;
 }
