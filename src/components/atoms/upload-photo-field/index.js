@@ -55,7 +55,7 @@ const UploadPhotoField = ({ photoSrc, onPhotoLoad }) => {
 
 UploadPhotoField.propTypes = {
   photoSrc: PropTypes.string,
-  onPhotoLoad: PropTypes.string,
+  onPhotoLoad: PropTypes.func,
 }
 
 UploadPhotoField.defaultProps = {

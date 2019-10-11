@@ -54,6 +54,12 @@
   font-weight: 400;
   color: var(--color-text);
   border-radius: 20px;
+  cursor: pointer;
+
+  &:not(.monthActive):hover {
+    color: rgb(33, 150, 243);
+    background: rgb(222, 238, 252);    
+  }
 }
 
 .monthActive {
