@@ -8,6 +8,8 @@
 }
 
 .open {
+  overflow: initial;
+
   .arrowIcon {
     & svg {
       transform: rotate(-90deg);

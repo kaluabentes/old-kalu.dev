@@ -2,7 +2,7 @@ import React, { useState, useEffect, createRef } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
-import { ENTER } from '_config/char-codes'
+import charCodes from '_config/char-codes'
 import styles from './styles.css'
 
 const Accordion = ({
@@ -19,7 +19,7 @@ const Accordion = ({
   })
 
   const handleKeyPress = (event) => {
-    if (event.charCode === ENTER) {
+    if (event.charCode === charCodes.ENTER) {
       onToggle()
     }
   }

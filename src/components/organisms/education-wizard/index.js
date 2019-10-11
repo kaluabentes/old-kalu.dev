@@ -6,9 +6,8 @@ import Input from '_atoms/input'
 import TextArea from '_atoms/text-area'
 import useInputFocus from '_hooks/use-input-focus'
 import MonthYearField from '_molecules/month-year-field'
-import getDateList from '_utils/get-date-list'
 
-import styles from './styles.css'
+import styles from '_organisms/employment-wizard/styles.css'
 
 const EducationWizard = ({
   education,
@@ -17,8 +16,6 @@ const EducationWizard = ({
 }) => {
   const { isOpen, onToggle, onRemove } = wizardAccordionProps
   const firstInputRef = createRef()
-  const startDateList = getDateList(education.startDate)
-  const endDateList = getDateList(education.endDate)
 
   useInputFocus(firstInputRef)
 
@@ -26,12 +23,12 @@ const EducationWizard = ({
     onChange(event.target.name, event.target.value)
   }
 
-  const handleStartDateChange = (month, year) => {
-    onChange('startDate', `${month}, ${year}`)
+  const handleStartDateChange = (value) => {
+    onChange('startDate', value)
   }
 
-  const handleEndDateChange = (month, year) => {
-    onChange('endDate', `${month}, ${year}`)
+  const handleEndDateChange = (value) => {
+    onChange('endDate', value)
   }
 
   return (
@@ -68,17 +65,17 @@ const EducationWizard = ({
         <MonthYearField
           id="educationStartDate"
           label="Start Date"
-          month={startDateList[0]}
-          year={startDateList[1]}
+          value={education.startDate}
           onChange={handleStartDateChange}
         />
         <MonthYearField
           id="educationEndDate"
           label="End Date"
-          month={endDateList[0]}
-          year={endDateList[1]}
+          value={education.endDate}
           onChange={handleEndDateChange}
           pickerAlignment={MonthYearField.alignments.right}
+          hasPresentOption
+          presentOptionLabel="Currently study here"
         />
       </div>
       <TextArea

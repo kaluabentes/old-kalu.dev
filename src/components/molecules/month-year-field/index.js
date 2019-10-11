@@ -14,16 +14,15 @@ const PICKER_ALIGNMENTS = {
 }
 
 const MonthYearField = ({
-  month,
-  year,
+  id,
+  value,
   onChange,
   label,
   pickerAlignment,
-  ...inputProps
+  hasPresentOption,
+  presentOptionLabel,
 }) => {
-  const { id } = inputProps
   const [isPickerOpen, setPickerOpen] = useState(false)
-  const dateValue = month && year ? `${month}, ${year}` : ''
 
   const handlePickerOpen = () => {
     setPickerOpen(true)
@@ -39,7 +38,7 @@ const MonthYearField = ({
         <Input
           onFocus={handlePickerOpen}
           onClick={handlePickerOpen}
-          value={dateValue}
+          value={value}
           placeholder="MM / YYYY"
           label={label}
           id={id}
@@ -57,10 +56,11 @@ const MonthYearField = ({
           }
         >
           <MonthYearPicker
-            month={month}
-            year={year}
+            value={value}
             onChange={onChange}
             onMonthChange={handlePickerClose}
+            hasPresentOption={hasPresentOption}
+            presentOptionLabel={presentOptionLabel}
           />
         </div>
       </div>
@@ -69,19 +69,23 @@ const MonthYearField = ({
 }
 
 MonthYearField.propTypes = {
-  month: PropTypes.string,
-  year: PropTypes.string,
+  id: PropTypes.string,
+  value: PropTypes.string,
   onChange: PropTypes.func,
-  label: PropTypes.func,
+  label: PropTypes.string,
   pickerAlignment: PropTypes.string,
+  hasPresentOption: PropTypes.bool,
+  presentOptionLabel: PropTypes.string,
 }
 
 MonthYearField.defaultProps = {
-  month: '',
-  year: '',
+  id: '',
+  value: '',
   onChange: () => {},
   label: '',
   pickerAlignment: PICKER_ALIGNMENTS.left,
+  hasPresentOption: false,
+  presentOptionLabel: '',
 }
 
 MonthYearField.alignments = PICKER_ALIGNMENTS

@@ -20,6 +20,7 @@
   border: none;
   outline: none;
   padding: 0;
+  cursor: pointer;
 }
 
 .leftButton,
@@ -54,7 +55,6 @@
   font-weight: 400;
   color: var(--color-text);
   border-radius: 20px;
-  cursor: pointer;
 
   &:not(.monthActive):hover {
     color: rgb(33, 150, 243);
@@ -65,4 +65,38 @@
 .monthActive {
   color: var(--color-white);
   background: var(--color-blue);
+}
+
+.footer {
+  padding: 0 25px 20px 25px;
+}
+
+.pickerDisabled {
+  .month,
+  .year,
+  .month:hover,
+  .year:hover {
+    color: rgb(152, 161, 179);
+    background: transparent;
+    cursor: default;
+  }
+
+  .leftButton,
+  .rightButton, {
+    cursor: default;
+
+    & svg {
+      fill: rgb(152, 161, 179);
+    }
+  }
+}
+
+.presentOptionGroup {
+  display: flex;
+  align-items: center;
+}
+
+.togglerLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
 }
