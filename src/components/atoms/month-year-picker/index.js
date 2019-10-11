@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
 import Toggler from '_atoms/toggler'
+import ChevronIcon from '_atoms/icon/chevron'
 import styles from './styles.css'
 
 const MONTHS = [
@@ -61,7 +62,7 @@ const MonthYearPicker = ({
           className={styles.leftButton}
           disabled={isPresent}
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M9.431 7.257l1.352-1.474 5.893 5.48a1 1 0 0 1 0 1.474l-5.893 5.45-1.352-1.475L14.521 12 9.43 7.257z" /></svg>
+          <ChevronIcon />
         </button>
         <div className={styles.year}>{currentYear}</div>
         <button
@@ -70,7 +71,7 @@ const MonthYearPicker = ({
           className={styles.rightButton}
           disabled={isPresent}
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M9.431 7.257l1.352-1.474 5.893 5.48a1 1 0 0 1 0 1.474l-5.893 5.45-1.352-1.475L14.521 12 9.43 7.257z" /></svg>
+          <ChevronIcon />
         </button>
       </div>
       <div className={styles.body}>

@@ -12,11 +12,13 @@
 }
 
 .icon {
-  fill: var(--color-white);
-  margin: 0 5px;
-
-  @media (--break-mobile) {
+  & svg {
+    fill: var(--color-white);
     margin: 0 5px;
+
+    @media (--break-mobile) {
+      margin: 0 5px;
+    }
   }
 }
 
