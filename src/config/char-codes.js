@@ -1,1 +1,3 @@
-export const ENTER = 13
+export default {
+  ENTER: 13
+}

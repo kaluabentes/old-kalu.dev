@@ -18,8 +18,8 @@ const Accordion = ({
     setHeight(ref.current.scrollHeight)
   })
 
-  const handleKeyPress = event => {
-    if (event.charCode == ENTER) {
+  const handleKeyPress = (event) => {
+    if (event.charCode === ENTER) {
       onToggle()
     }
   }

@@ -14,51 +14,51 @@ import LinkWizard from '_organisms/link-wizard'
 import AddButton from '_atoms/add-button'
 import UploadPhotoField from '_atoms/upload-photo-field'
 
-class ResumeCreator extends Component {
-  COMMON_FIELDS = {
-    startDate: '',
-    endDate: '',
-    description: '',
-  }
- 
-  DEFAULT_VALUES = {
-    employments: {
-      jobTitle: '',
-      employer: '',
-      ...this.COMMON_FIELDS,
-    },
-    educations: {
-      school: '',
-      degree: '',
-      ...this.COMMON_FIELDS,
-    },
-    skills: {
-      name: '',
-      level: 1,
-    },
-    links: {
-      name: '',
-      level: 1,
-    },
-  }
+const COMMON_FIELDS = {
+  startDate: '',
+  endDate: '',
+  description: '',
+}
 
-  state = {
-    firstName: '',
-    lastName: '',
-    photo: '',
+const DEFAULT_VALUES = {
+  employments: {
     jobTitle: '',
-    email: '',
-    phone: '',
-    address: '',
-    professionalSummary: '',
-    employments: [],
-    educations: [],
-    skills: [],
-    links: [],
-  }
+    employer: '',
+    ...COMMON_FIELDS,
+  },
+  educations: {
+    school: '',
+    degree: '',
+    ...COMMON_FIELDS,
+  },
+  skills: {
+    name: '',
+    level: 1,
+  },
+  links: {
+    name: '',
+    level: 1,
+  },
+}
 
+class ResumeCreator extends Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      firstName: '',
+      lastName: '',
+      photo: '',
+      jobTitle: '',
+      email: '',
+      phone: '',
+      address: '',
+      professionalSummary: '',
+      employments: [],
+      educations: [],
+      skills: [],
+      links: [],
+    }
 
     this.handleWizardAdd = this.handleWizardAdd.bind(this)
     this.handleWizardRemove = this.handleWizardRemove.bind(this)
@@ -89,7 +89,7 @@ class ResumeCreator extends Component {
         [collection]: [
           ...items,
           {
-            ...this.DEFAULT_VALUES[collection],
+            ...DEFAULT_VALUES[collection],
             isOpen: true,
           },
         ],

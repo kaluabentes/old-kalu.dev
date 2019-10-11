@@ -10,30 +10,16 @@ import Brand from '_atoms/brand'
 import styles from './styles.css'
 
 class Header extends Component {
-  state = {
-    isNavOpen: false,
-    currentPath: '',
-    navHeight: undefined,
-  }
-
-  navRef = createRef()
-
-  static propTypes = {
-    routes: PropTypes.arrayOf(
-      PropTypes.shape({
-        path: PropTypes.string,
-        text: PropTypes.string,
-      })
-    ),
-    isFixed: PropTypes.bool,
-  }
-
-  static defaultProps = {
-    isFixed: false,
-  }
-
   constructor(props) {
     super(props)
+
+    this.state = {
+      isNavOpen: false,
+      currentPath: '',
+      navHeight: undefined,
+    }
+
+    this.navRef = createRef()
 
     this.handleWindowResize = this.handleWindowResize.bind(this)
     this.handleNavToggle = this.handleNavToggle.bind(this)
@@ -41,7 +27,7 @@ class Header extends Component {
 
   componentDidMount() {
     const { router } = this.props
-    
+
     this.setState({
       currentPath: router.asPath,
       navHeight: this.navRef.current.scrollHeight,
@@ -56,11 +42,11 @@ class Header extends Component {
 
   isCurrentNavItem(path) {
     const { currentPath } = this.state
-    return currentPath == path
+    return currentPath === path
   }
 
   handleNavToggle() {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       isNavOpen: !prevState.isNavOpen,
     }))
   }
@@ -80,19 +66,24 @@ class Header extends Component {
         <Container>
           <div className={styles.headerInner}>
             <Brand />
-            <button onClick={this.handleNavToggle} className={styles.navToggler}>
+            <button
+              type="button"
+              onClick={this.handleNavToggle}
+              className={styles.navToggler}
+            >
               <span />
               <span />
               <span />
             </button>
-            <nav 
-              ref={this.navRef} 
-              style={{ height: isNavOpen ? `${navHeight}px` : '0' }} 
+            <nav
+              ref={this.navRef}
+              style={{ height: isNavOpen ? `${navHeight}px` : '0' }}
               className={styles.nav}
             >
-              {routes.map(route => (
+              {routes.map((route) => (
                 <Link href={route.path} key={route.path}>
                   <a
+                    href={route.path}
                     className={classNames(styles.navItem, {
                       [styles.navItemCurrent]: this.isCurrentNavItem(route.path),
                     })}
@@ -107,6 +98,24 @@ class Header extends Component {
       </header>
     )
   }
+}
+
+Header.propTypes = {
+  router: PropTypes.shape({
+    asPath: PropTypes.string,
+  }).isRequired,
+  routes: PropTypes.arrayOf(
+    PropTypes.shape({
+      path: PropTypes.string,
+      text: PropTypes.string,
+    })
+  ),
+  isFixed: PropTypes.bool,
+}
+
+Header.defaultProps = {
+  isFixed: false,
+  routes: [],
 }
 
 export default withRouter(Header)
