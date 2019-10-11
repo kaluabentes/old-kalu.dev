@@ -32,12 +32,13 @@
   cursor: pointer;
   height: 77px;
 
-  &:hover {
-    .title {
+  &:hover, 
+  &:focus {
+    div[class*="title"] {
       color: var(--color-blue);
     }
 
-    .arrowIcon {
+    div[class*="arrowIcon"] {
       & svg {
         fill: var(--color-blue);
       }

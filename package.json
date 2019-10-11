@@ -12,6 +12,11 @@
     "build-static": "yarn build && yarn export && ./move-dist.sh",
     "eslint": "eslint ./src"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn eslint"
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

@@ -131,3 +131,7 @@
 .labelExpert {
   color: var(--color-expert);
 }
+
+.buttonText {
+  display: none;
+}

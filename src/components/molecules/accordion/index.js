@@ -2,6 +2,7 @@ import React, { useState, useEffect, createRef } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
+import { ENTER } from '_config/char-codes'
 import styles from './styles.css'
 
 const Accordion = ({
@@ -17,6 +18,12 @@ const Accordion = ({
     setHeight(ref.current.scrollHeight)
   })
 
+  const handleKeyPress = event => {
+    if (event.charCode == ENTER) {
+      onToggle()
+    }
+  }
+
   return (
     <div
       ref={ref}
@@ -26,6 +33,7 @@ const Accordion = ({
       <div
         onClick={onToggle}
         className={styles.header}
+        onKeyPress={handleKeyPress}
         role="button"
         tabIndex={0}
       >

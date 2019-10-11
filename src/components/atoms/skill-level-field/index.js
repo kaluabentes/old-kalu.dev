@@ -93,7 +93,9 @@ const SkillLevelField = ({
             type="button"
             onClick={() => onChange(level.value)}
             className={styles.level}
-          />
+          >
+            <div className={styles.buttonText}>{level.label}</div>
+          </button>
         ))}
       </div>
     </div>
