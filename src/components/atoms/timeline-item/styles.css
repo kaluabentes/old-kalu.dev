@@ -66,4 +66,5 @@
 
 .description {
   margin: 10px 0 40px 0;
+  color: var(--color-grey-2);
 }
