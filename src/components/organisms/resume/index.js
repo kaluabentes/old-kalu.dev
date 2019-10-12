@@ -47,6 +47,7 @@ const Resume = forwardRef(({
           <Timeline>
             {employments.map((employment) => (
               <TimelineItem
+                key={employment.employer}
                 title={`${employment.jobTitle}`}
                 subtitle={`${employment.employer}, ${employment.city}`}
                 description={employment.description}
@@ -56,22 +57,25 @@ const Resume = forwardRef(({
             ))}
           </Timeline>
         </Section>
-        <Section>
-          <SectionTitle>
-            Education
-          </SectionTitle>
-          <Timeline>
-            {educations.map((education) => (
-              <TimelineItem
-                title={`${education.degree}`}
-                subtitle={`${education.school}, ${education.city}`}
-                description={education.description}
-                startDate={education.startDate}
-                endDate={education.endDate}
-              />
-            ))}
-          </Timeline>
-        </Section>
+        {educations.length ? (
+          <Section>
+            <SectionTitle>
+              Education
+            </SectionTitle>
+            <Timeline>
+              {educations.map((education) => (
+                <TimelineItem
+                  key={education.school}
+                  title={`${education.degree}`}
+                  subtitle={`${education.school}, ${education.city}`}
+                  description={education.description}
+                  startDate={education.startDate}
+                  endDate={education.endDate}
+                />
+              ))}
+            </Timeline>
+          </Section>
+        ) : null}
       </div>
       <div className={styles.columnRight}>
         <Section>
@@ -93,6 +97,7 @@ const Resume = forwardRef(({
           <SectionTitle>Links</SectionTitle>
           {links.map((link) => (
             <ResumeLinkItem
+              key={link.label}
               label={link.label}
               url={link.url}
             />
@@ -102,6 +107,7 @@ const Resume = forwardRef(({
           <SectionTitle>Skills</SectionTitle>
           {skills.map((skill) => (
             <SkillLevel
+              key={skill.label}
               label={skill.label}
               level={skill.level}
             />

@@ -12,8 +12,7 @@ const Page = ({ children, title }) => (
   <Base>
     <Head>
       <title>
-Kaluã Bentes -
-        {title}
+        {`Kaluã Bentes - ${title}`}
       </title>
     </Head>
     <Header isFixed routes={routes} />

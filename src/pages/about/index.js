@@ -48,12 +48,12 @@ const About = () => {
   }
 
   return (
-    <Page>
+    <Page title="About">
       <Cover>
         <CoverTitle>About me</CoverTitle>
         <CoverSubtitle>
           {/* eslint-disable-next-line react/no-danger */}
-          <div dangerouslySetInnerHTML={{ __html: SUBTITLE }} />
+          <span dangerouslySetInnerHTML={{ __html: SUBTITLE }} />
         </CoverSubtitle>
       </Cover>
       <Container>
@@ -78,76 +78,44 @@ const About = () => {
             address="Florianópolis, Brazil"
             professionalSummary={PROFESSIONAL_SUMMARY}
             employments={[{
-              jobTitle: 'Frontend Develoer',
+              jobTitle: 'Frontend Developer',
               employer: 'Cheesecake Labs',
-              city: 'Florianópolis',
-              startDate: 'Oct, 2018',
-              endDate: 'Present',
-              description: PROFESSIONAL_SUMMARY,
+              city: 'Florianópolis, SC',
+              startDate: 'Fev, 2018',
+              endDate: 'Oct, 2019',
+              description: `
+                Cheesecake Labs is a mobile and 
+                web app development company that 
+                builds apps with positive 
+                impact on society
+              `,
             },
             {
-              jobTitle: 'Frontend Develoer',
-              employer: 'Cheesecake Labs',
-              city: 'Florianópolis',
-              startDate: 'Oct, 2018',
-              endDate: 'Oct, 2019',
-              description: PROFESSIONAL_SUMMARY,
+              jobTitle: 'Fullstack Developer',
+              employer: 'Alvo Digital Agency',
+              city: 'Guarapari, ES',
+              startDate: 'Jan, 2017',
+              endDate: 'Fev, 2018',
+              description: `
+                A digital agency that builds websites 
+                and systems for microentrepreneurs, 
+                I worked building fullstack solutions 
+                with Laravel and content portals with 
+                Wordpress.
+              `,
             },
             {
-              jobTitle: 'Frontend Develoer',
-              employer: 'Cheesecake Labs',
-              city: 'Florianópolis',
-              startDate: 'Oct, 2018',
-              endDate: 'Oct, 2019',
-              description: PROFESSIONAL_SUMMARY,
-            },
-            {
-              jobTitle: 'Frontend Develoer',
-              employer: 'Cheesecake Labs',
-              city: 'Florianópolis',
-              startDate: 'Oct, 2018',
-              endDate: 'Oct, 2019',
-              description: PROFESSIONAL_SUMMARY,
-            }]}
-            educations={[{
-              school: 'Havard',
-              degree: 'Bacherol in Computer Science',
-              city: 'Massasuchets',
-              startDate: 'Oct, 2018',
-              endDate: 'Oct, 2019',
-              description: PROFESSIONAL_SUMMARY,
-            },
-            {
-              school: 'Havard',
-              degree: 'Bacherol in Computer Science',
-              city: 'Massasuchets',
-              startDate: 'Oct, 2018',
-              endDate: 'Oct, 2019',
-              description: PROFESSIONAL_SUMMARY,
-            },
-            {
-              school: 'Havard',
-              degree: 'Bacherol in Computer Science',
-              city: 'Massasuchets',
-              startDate: 'Oct, 2018',
-              endDate: 'Oct, 2019',
-              description: PROFESSIONAL_SUMMARY,
-            },
-            {
-              school: 'Havard',
-              degree: 'Bacherol in Computer Science',
-              city: 'Massasuchets',
-              startDate: 'Oct, 2018',
-              endDate: 'Oct, 2019',
-              description: PROFESSIONAL_SUMMARY,
-            },
-            {
-              school: 'Havard',
-              degree: 'Bacherol in Computer Science',
-              city: 'Massasuchets',
-              startDate: 'Oct, 2018',
-              endDate: 'Oct, 2019',
-              description: PROFESSIONAL_SUMMARY,
+              jobTitle: 'Fullstack Developer',
+              employer: 'Wikiz Digital Agency',
+              city: 'Guarapari, ES',
+              startDate: 'Jan, 2015',
+              endDate: 'Jul, 2016',
+              description: `
+                It was an agency focused on innovation 
+                and technological empowerment for the 
+                lay public. I worked with solutions that
+                used PHP, Laravel, Joomla and AngularJS.
+              `,
             }]}
             links={[
               { label: 'Website', url: 'https://kalu.dev' },

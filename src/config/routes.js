@@ -7,8 +7,8 @@ export default [
     path: '/about',
     text: 'About',
   },
-  {
-    path: '/resume-creator',
-    text: 'Resume Creator',
-  },
+  // {
+  //   path: '/resume-creator',
+  //   text: 'Resume Creator',
+  // },
 ]

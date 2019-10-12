@@ -11,6 +11,7 @@ const SkillLevel = ({ label, level }) => (
     <div className={styles.level}>
       {range(5).map((number) => (
         <div
+          key={number}
           className={classNames(
             styles.levelStep,
             { [styles.levelStepActive]: number <= level }
