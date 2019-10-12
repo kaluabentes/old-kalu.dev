@@ -1,4 +1,4 @@
-import React, { useEffect, createRef } from 'react'
+import React, { createRef } from 'react'
 
 import Page from '_templates/page'
 import Cover from '_molecules/cover'
@@ -7,6 +7,8 @@ import CoverSubtitle from '_atoms/cover-subtitle'
 import Container from '_atoms/container'
 import Resume from '_organisms/resume'
 import Button from '_atoms/button'
+import PdfTools from '_utils/pdf-tools'
+import { PDFExport } from '@progress/kendo-react-pdf'
 import myPhoto from '_images/me.jpeg'
 
 import styles from './styles.css'
@@ -14,7 +16,7 @@ import styles from './styles.css'
 const SUBTITLE = `
   Here you will find all the information about <br />who
   I am, what is my interests, background experience
-  and work history
+  and skills
 `
 
 const PROFESSIONAL_SUMMARY = `
@@ -30,19 +32,19 @@ const PROFESSIONAL_SUMMARY = `
 
 const About = () => {
   const resumeRef = createRef()
-  let html2canvas
+  let pdfExportComponent
 
-  useEffect(() => {
-    if (process.browser) {
-      // eslint-disable-next-line global-require
-      html2canvas = require('html2canvas')
-    }
-  }, [])
+  const handleDownloadClick = async () => {
+    const pdfTools = new PdfTools(resumeRef.current)
+    pdfTools.convertSvgsToCanvas()
 
-  const handleDownloadClick = () => {
-    html2canvas(resumeRef.current, { allowTaint: true }).then((canvas) => {
-      document.body.appendChild(canvas);
-    });
+    setTimeout(() => {
+      pdfExportComponent.save()
+
+      setTimeout(() => {
+        pdfTools.removeSvgsCanvas()
+      }, 600)
+    }, 600)
   }
 
   return (
@@ -58,58 +60,107 @@ const About = () => {
         <div className={styles.downloadButtonContainer}>
           <Button onClick={handleDownloadClick}>Download PDF</Button>
         </div>
-        <Resume
-          ref={resumeRef}
-          photo={myPhoto}
-          name="Kaluã Bentes"
-          jobTitle="Frontend Developer"
-          phone="48996288801"
-          email="kaluanbentes@gmail.com"
-          address="Florianópolis, Brazil"
-          professionalSummary={PROFESSIONAL_SUMMARY}
-          employments={[{
-            jobTitle: 'Frontend Develoer',
-            employer: 'Cheesecake Labs',
-            city: 'Florianópolis',
-            startDate: 'Oct, 2018',
-            endDate: 'Oct, 2019',
-            description: PROFESSIONAL_SUMMARY,
-          },
-          {
-            jobTitle: 'Frontend Develoer',
-            employer: 'Cheesecake Labs',
-            city: 'Florianópolis',
-            startDate: 'Oct, 2018',
-            endDate: 'Oct, 2019',
-            description: PROFESSIONAL_SUMMARY,
-          }]}
-          educations={[{
-            school: 'Havard',
-            degree: 'Bacherol in Computer Science',
-            city: 'Massasuchets',
-            startDate: 'Oct, 2018',
-            endDate: 'Oct, 2019',
-            description: PROFESSIONAL_SUMMARY,
-          },
-          {
-            school: 'Havard',
-            degree: 'Bacherol in Computer Science',
-            city: 'Massasuchets',
-            startDate: 'Oct, 2018',
-            endDate: 'Oct, 2019',
-            description: PROFESSIONAL_SUMMARY,
-          }]}
-          links={[
-            { label: 'Website', url: 'https://kalu.dev' },
-            { label: 'Github', url: 'https://github.com/kaluabentes' },
-            { label: 'Linkedin', url: 'https://linkedin.com/in/kalua-bentes' },
-          ]}
-          skills={[
-            { label: 'HTML 5', level: 2 },
-            { label: 'CSS 3', level: 3 },
-            { label: 'EcmaScript 6', level: 4 },
-          ]}
-        />
+        <PDFExport
+          ref={(component) => {
+            pdfExportComponent = component
+          }}
+          pageSize="A4"
+          margin="40pt"
+          fileName="kaluabentes"
+        >
+          <Resume
+            ref={resumeRef}
+            photo={myPhoto}
+            name="Kaluã Bentes"
+            jobTitle="Frontend Developer"
+            phone="48996288801"
+            email="kaluanbentes@gmail.com"
+            address="Florianópolis, Brazil"
+            professionalSummary={PROFESSIONAL_SUMMARY}
+            employments={[{
+              jobTitle: 'Frontend Develoer',
+              employer: 'Cheesecake Labs',
+              city: 'Florianópolis',
+              startDate: 'Oct, 2018',
+              endDate: 'Present',
+              description: PROFESSIONAL_SUMMARY,
+            },
+            {
+              jobTitle: 'Frontend Develoer',
+              employer: 'Cheesecake Labs',
+              city: 'Florianópolis',
+              startDate: 'Oct, 2018',
+              endDate: 'Oct, 2019',
+              description: PROFESSIONAL_SUMMARY,
+            },
+            {
+              jobTitle: 'Frontend Develoer',
+              employer: 'Cheesecake Labs',
+              city: 'Florianópolis',
+              startDate: 'Oct, 2018',
+              endDate: 'Oct, 2019',
+              description: PROFESSIONAL_SUMMARY,
+            },
+            {
+              jobTitle: 'Frontend Develoer',
+              employer: 'Cheesecake Labs',
+              city: 'Florianópolis',
+              startDate: 'Oct, 2018',
+              endDate: 'Oct, 2019',
+              description: PROFESSIONAL_SUMMARY,
+            }]}
+            educations={[{
+              school: 'Havard',
+              degree: 'Bacherol in Computer Science',
+              city: 'Massasuchets',
+              startDate: 'Oct, 2018',
+              endDate: 'Oct, 2019',
+              description: PROFESSIONAL_SUMMARY,
+            },
+            {
+              school: 'Havard',
+              degree: 'Bacherol in Computer Science',
+              city: 'Massasuchets',
+              startDate: 'Oct, 2018',
+              endDate: 'Oct, 2019',
+              description: PROFESSIONAL_SUMMARY,
+            },
+            {
+              school: 'Havard',
+              degree: 'Bacherol in Computer Science',
+              city: 'Massasuchets',
+              startDate: 'Oct, 2018',
+              endDate: 'Oct, 2019',
+              description: PROFESSIONAL_SUMMARY,
+            },
+            {
+              school: 'Havard',
+              degree: 'Bacherol in Computer Science',
+              city: 'Massasuchets',
+              startDate: 'Oct, 2018',
+              endDate: 'Oct, 2019',
+              description: PROFESSIONAL_SUMMARY,
+            },
+            {
+              school: 'Havard',
+              degree: 'Bacherol in Computer Science',
+              city: 'Massasuchets',
+              startDate: 'Oct, 2018',
+              endDate: 'Oct, 2019',
+              description: PROFESSIONAL_SUMMARY,
+            }]}
+            links={[
+              { label: 'Website', url: 'https://kalu.dev' },
+              { label: 'Github', url: 'https://github.com/kaluabentes' },
+              { label: 'Linkedin', url: 'https://linkedin.com/in/kalua-bentes' },
+            ]}
+            skills={[
+              { label: 'HTML 5', level: 2 },
+              { label: 'CSS 3', level: 3 },
+              { label: 'EcmaScript 6', level: 4 },
+            ]}
+          />
+        </PDFExport>
       </Container>
     </Page>
   )

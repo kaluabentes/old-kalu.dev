@@ -1,9 +1,9 @@
 * {
+  font-family: var(--font-face);
   box-sizing: border-box;
 }
 
 body {
-  font-family: var(--font-face);
   color: var(--color-text);
-  font-size: 1.125rem;
+  font-size: 1rem;
 }
