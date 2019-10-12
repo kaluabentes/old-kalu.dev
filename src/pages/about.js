@@ -5,7 +5,7 @@ import Cover from '_molecules/cover'
 import CoverTitle from '_atoms/cover-title'
 import CoverSubtitle from '_atoms/cover-subtitle'
 import Container from '_atoms/container'
-import Curriculum from '_organisms/curriculum'
+import Resume from '_organisms/resume'
 import myPhoto from '_images/me.jpeg'
 
 const SUBTITLE = `
@@ -35,7 +35,7 @@ const About = () => (
       </CoverSubtitle>
     </Cover>
     <Container>
-      <Curriculum
+      <Resume
         photo={myPhoto}
         name="Kaluã Bentes"
         jobTitle="Frontend Developer"
@@ -79,6 +79,11 @@ const About = () => (
           { label: 'Website', url: 'https://kalu.dev' },
           { label: 'Github', url: 'https://github.com/kaluabentes' },
           { label: 'Linkedin', url: 'https://linkedin.com/in/kalua-bentes' },
+        ]}
+        skills={[
+          { label: 'HTML 5', level: 2 },
+          { label: 'CSS 3', level: 3 },
+          { label: 'EcmaScript 6', level: 4 },
         ]}
       />
     </Container>

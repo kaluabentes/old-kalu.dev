@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import styles from './styles.css'
 
-const CurriculumHeader = ({
+const ResumeHeader = ({
   photo,
   name,
   jobTitle,
@@ -17,16 +17,16 @@ const CurriculumHeader = ({
   </header>
 )
 
-CurriculumHeader.propTypes = {
+ResumeHeader.propTypes = {
   photo: PropTypes.string,
   name: PropTypes.string,
   jobTitle: PropTypes.string,
 }
 
-CurriculumHeader.defaultProps = {
+ResumeHeader.defaultProps = {
   photo: '',
   name: '',
   jobTitle: '',
 }
 
-export default CurriculumHeader
+export default ResumeHeader

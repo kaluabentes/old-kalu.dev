@@ -1,0 +1,33 @@
+.skillLevel {
+  margin-bottom: 20px;
+}
+
+.label {
+  color: var(--color-grey-2);
+  margin-bottom: 7px;
+  font-size: 0.875rem;
+}
+
+.level {
+  position: relative;
+  height: 15px;
+  display: flex;
+  align-items: stretch;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.levelStep {
+  background: var(--color-grey);
+  width: 20%;
+  margin-right: 5px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.levelStepActive {
+  background: var(--color-blue);
+  opacity: 0.5;
+}

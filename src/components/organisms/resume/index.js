@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import CurriculumHeader from '_molecules/curriculum-header'
-import CurriculumProfile from '_molecules/curriculum-profile'
+import ResumeHeader from '_molecules/resume-header'
+import ResumeProfile from '_molecules/resume-profile'
 import Timeline from '_molecules/timeline'
 import TimelineItem from '_atoms/timeline-item'
 import Section from '_molecules/section'
@@ -12,10 +12,11 @@ import EmailIcon from '_atoms/icon/email'
 import MarkerIcon from '_atoms/icon/marker'
 import DetailItem from '_atoms/detail-item'
 import ResumeLinkItem from '_atoms/resume-link-item'
+import SkillLevel from '_atoms/skill-level'
 
 import styles from './styles.css'
 
-const Curriculum = ({
+const Resume = ({
   photo,
   name,
   jobTitle,
@@ -26,21 +27,22 @@ const Curriculum = ({
   employments,
   educations,
   links,
+  skills,
 }) => (
   <article>
-    <CurriculumHeader
+    <ResumeHeader
       photo={photo}
       name={name}
       jobTitle={jobTitle}
     />
     <div className={styles.grid}>
       <div>
-        <CurriculumProfile
+        <ResumeProfile
           content={professionalSummary}
         />
         <Section>
           <SectionTitle>
-            Employment History
+            Experience
           </SectionTitle>
           <Timeline>
             {employments.map((employment) => (
@@ -98,13 +100,19 @@ const Curriculum = ({
         </Section>
         <Section>
           <SectionTitle>Skills</SectionTitle>
+          {skills.map((skill) => (
+            <SkillLevel
+              label={skill.label}
+              level={skill.level}
+            />
+          ))}
         </Section>
       </div>
     </div>
   </article>
 )
 
-Curriculum.propTypes = {
+Resume.propTypes = {
   photo: PropTypes.string,
   name: PropTypes.string,
   jobTitle: PropTypes.string,
@@ -115,9 +123,10 @@ Curriculum.propTypes = {
   employments: PropTypes.instanceOf(Array),
   educations: PropTypes.instanceOf(Array),
   links: PropTypes.instanceOf(Array),
+  skills: PropTypes.instanceOf(Array),
 }
 
-Curriculum.defaultProps = {
+Resume.defaultProps = {
   photo: '',
   name: '',
   jobTitle: '',
@@ -128,6 +137,7 @@ Curriculum.defaultProps = {
   employments: [],
   educations: [],
   links: [],
+  skills: [],
 }
 
-export default Curriculum
+export default Resume

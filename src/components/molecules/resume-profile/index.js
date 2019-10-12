@@ -5,21 +5,21 @@ import Section from '_molecules/section'
 import SectionTitle from '_atoms/section-title'
 import styles from './styles.css'
 
-const CurriculumProfile = ({ content }) => (
+const ResumeProfile = ({ content }) => (
   <Section>
-    <SectionTitle>Profile</SectionTitle>
+    <SectionTitle>Bio</SectionTitle>
     <p className={styles.content}>
       {content}
     </p>
   </Section>
 )
 
-CurriculumProfile.propTypes = {
+ResumeProfile.propTypes = {
   content: PropTypes.string,
 }
 
-CurriculumProfile.defaultProps = {
+ResumeProfile.defaultProps = {
   content: '',
 }
 
-export default CurriculumProfile
+export default ResumeProfile
