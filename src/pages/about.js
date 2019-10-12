@@ -75,6 +75,11 @@ const About = () => (
           endDate: 'Oct, 2019',
           description: PROFESSIONAL_SUMMARY,
         }]}
+        links={[
+          { label: 'Website', url: 'https://kalu.dev' },
+          { label: 'Github', url: 'https://github.com/kaluabentes' },
+          { label: 'Linkedin', url: 'https://linkedin.com/in/kalua-bentes' },
+        ]}
       />
     </Container>
   </Page>

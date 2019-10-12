@@ -11,6 +11,7 @@ import WhatsappIcon from '_atoms/icon/whatsapp'
 import EmailIcon from '_atoms/icon/email'
 import MarkerIcon from '_atoms/icon/marker'
 import DetailItem from '_atoms/detail-item'
+import ResumeLinkItem from '_atoms/resume-link-item'
 
 import styles from './styles.css'
 
@@ -24,6 +25,7 @@ const Curriculum = ({
   professionalSummary,
   employments,
   educations,
+  links,
 }) => (
   <article>
     <CurriculumHeader
@@ -93,6 +95,12 @@ const Curriculum = ({
         </Section>
         <Section>
           <SectionTitle>Links</SectionTitle>
+          {links.map((link) => (
+            <ResumeLinkItem
+              label={link.label}
+              url={link.url}
+            />
+          ))}
         </Section>
         <Section>
           <SectionTitle>Skills</SectionTitle>
@@ -112,6 +120,7 @@ Curriculum.propTypes = {
   professionalSummary: PropTypes.string,
   employments: PropTypes.instanceOf(Array),
   educations: PropTypes.instanceOf(Array),
+  links: PropTypes.instanceOf(Array),
 }
 
 Curriculum.defaultProps = {
@@ -124,6 +133,7 @@ Curriculum.defaultProps = {
   professionalSummary: '',
   employments: [],
   educations: [],
+  links: [],
 }
 
 export default Curriculum

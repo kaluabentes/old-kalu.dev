@@ -1,0 +1,14 @@
+.item {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.label {
+  color: var(--color-grey-2);
+  margin-bottom: 7px;
+  font-size: 0.875rem;
+}
+
+.url {
+  color: var(--color-blue);
+}
