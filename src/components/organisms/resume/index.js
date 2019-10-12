@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import PropTypes from 'prop-types'
 
 import ResumeHeader from '_molecules/resume-header'
@@ -16,7 +16,7 @@ import SkillLevel from '_atoms/skill-level'
 
 import styles from './styles.css'
 
-const Resume = ({
+const Resume = forwardRef(({
   photo,
   name,
   jobTitle,
@@ -28,8 +28,8 @@ const Resume = ({
   educations,
   links,
   skills,
-}) => (
-  <article>
+}, ref) => (
+  <article ref={ref} className={styles.resume}>
     <ResumeHeader
       photo={photo}
       name={name}
@@ -110,7 +110,7 @@ const Resume = ({
       </div>
     </div>
   </article>
-)
+))
 
 Resume.propTypes = {
   photo: PropTypes.string,
