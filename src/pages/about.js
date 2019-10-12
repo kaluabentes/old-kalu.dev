@@ -47,6 +47,30 @@ const About = () => (
           startDate: 'Oct, 2018',
           endDate: 'Oct, 2019',
           description: PROFESSIONAL_SUMMARY,
+        },
+        {
+          jobTitle: 'Frontend Develoer',
+          employer: 'Cheesecake Labs',
+          city: 'Florianópolis',
+          startDate: 'Oct, 2018',
+          endDate: 'Oct, 2019',
+          description: PROFESSIONAL_SUMMARY,
+        }]}
+        educations={[{
+          school: 'Havard',
+          degree: 'Bacherol in Computer Science',
+          city: 'Massasuchets',
+          startDate: 'Oct, 2018',
+          endDate: 'Oct, 2019',
+          description: PROFESSIONAL_SUMMARY,
+        },
+        {
+          school: 'Havard',
+          degree: 'Bacherol in Computer Science',
+          city: 'Massasuchets',
+          startDate: 'Oct, 2018',
+          endDate: 'Oct, 2019',
+          description: PROFESSIONAL_SUMMARY,
         }]}
       />
     </Container>

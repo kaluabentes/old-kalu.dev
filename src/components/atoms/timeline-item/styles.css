@@ -1,6 +1,12 @@
 .item {
   display: flex;
   margin-bottom: 3px;
+
+  &:last-child {
+    .description {
+      margin-bottom: 0;
+    }
+  }
 }
 
 .year {
@@ -55,4 +61,9 @@
   margin: 0;
   color: var(--color-grey-2);
   font-weight: 500;
+  font-size: 1rem;
+}
+
+.description {
+  margin: 10px 0 40px 0;
 }

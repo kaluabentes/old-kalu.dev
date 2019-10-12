@@ -15,7 +15,8 @@ const Curriculum = ({
   name,
   jobTitle,
   professionalSummary,
-  employments
+  employments,
+  educations,
 }) => (
   <article>
     <CurriculumHeader
@@ -47,6 +48,25 @@ const Curriculum = ({
             })}
           </Timeline>
         </Section>
+        <Section>
+          <SectionTitle>
+            Education
+          </SectionTitle>
+          <Timeline>
+            {educations.map((education) => {
+              const [, year] = education.startDate.split(',').map((str) => str.trim())
+
+              return (
+                <TimelineItem
+                  title={`${education.degree} at ${education.school}, ${education.city}`}
+                  subtitle={`${education.startDate} — ${education.endDate}`}
+                  description={education.description}
+                  year={year}
+                />
+              )
+            })}
+          </Timeline>
+        </Section>
       </div>
     </div>
   </article>
@@ -58,6 +78,7 @@ Curriculum.propTypes = {
   jobTitle: PropTypes.string,
   professionalSummary: PropTypes.string,
   employments: PropTypes.instanceOf(Array),
+  educations: PropTypes.instanceOf(Array),
 }
 
 Curriculum.defaultProps = {
@@ -66,6 +87,7 @@ Curriculum.defaultProps = {
   jobTitle: '',
   professionalSummary: '',
   employments: [],
+  educations: [],
 }
 
 export default Curriculum
