@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 
 import styles from './styles.css'
 
-const SectionTitle = ({ children }) => <h3 className={styles.title}>{children}</h3>
+const Timeline = ({ children }) => <ul className={styles.timeline}>{children}</ul>
 
-SectionTitle.propTypes = {
+Timeline.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default SectionTitle
+export default Timeline

@@ -14,6 +14,17 @@ const SUBTITLE = `
   and work history
 `
 
+const PROFESSIONAL_SUMMARY = `
+  I'm a developer since 2013, I love to build beautiful
+  UI's and apps that cause a positive impact in the world,
+  It drives me, I began working as a full-stack developer
+  working with tech such as HTML5, CSS3, JavaScript, PHP,
+  Laravel and Joomla CMS. Currently, I've been giving special
+  attention to frontend development, I developed a profound
+  interest in building good looking and improved user
+  experience UI's.
+`
+
 const About = () => (
   <Page>
     <Cover>
@@ -28,6 +39,15 @@ const About = () => (
         photo={myPhoto}
         name="Kaluã Bentes"
         jobTitle="Frontend Developer"
+        professionalSummary={PROFESSIONAL_SUMMARY}
+        employments={[{
+          jobTitle: 'Frontend Develoer',
+          employer: 'Cheesecake Labs',
+          city: 'Florianópolis',
+          startDate: 'Oct, 2018',
+          endDate: 'Oct, 2019',
+          description: PROFESSIONAL_SUMMARY,
+        }]}
       />
     </Container>
   </Page>

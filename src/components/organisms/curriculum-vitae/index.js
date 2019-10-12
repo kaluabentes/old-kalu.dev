@@ -3,6 +3,9 @@ import PropTypes from 'prop-types'
 
 import CurriculumVitaeHeader from '_molecules/curriculum-vitae-header'
 import CurriculumVitaeProfile from '_molecules/curriculum-vitae-profile'
+import CurriculumVitaeSectionTitle from '_atoms/curriculum-vitae-section-title'
+import Timeline from '_molecules/timeline'
+import TimelineItem from '_atoms/timeline-item'
 
 import styles from './styles.css'
 
@@ -10,6 +13,8 @@ const CurriculumVitae = ({
   photo,
   name,
   jobTitle,
+  professionalSummary,
+  employments
 }) => (
   <article>
     <CurriculumVitaeHeader
@@ -20,17 +25,25 @@ const CurriculumVitae = ({
     <div className={styles.grid}>
       <div>
         <CurriculumVitaeProfile
-          content={`
-            I'm a developer since 2013, I love to build beautiful
-            UI's and apps that cause a positive impact in the world,
-            It drives me, I began working as a full-stack developer
-            working with tech such as HTML5, CSS3, JavaScript, PHP,
-            Laravel and Joomla CMS. Currently, I've been giving special
-            attention to frontend development, I developed a profound
-            interest in building good looking and improved user
-            experience UI's.
-          `}
+          content={professionalSummary}
         />
+        <CurriculumVitaeSectionTitle>
+          Employment History
+        </CurriculumVitaeSectionTitle>
+        <Timeline>
+          {employments.map((employment) => {
+            const [, year] = employment.startDate.split(',').map((str) => str.trim())
+
+            return (
+              <TimelineItem
+                title={`${employment.jobTitle} at ${employment.employer}, ${employment.city}`}
+                subtitle={`${employment.startDate} — ${employment.endDate}`}
+                description={employment.description}
+                year={year}
+              />
+            )
+          })}
+        </Timeline>
       </div>
     </div>
   </article>
@@ -40,12 +53,16 @@ CurriculumVitae.propTypes = {
   photo: PropTypes.string,
   name: PropTypes.string,
   jobTitle: PropTypes.string,
+  professionalSummary: PropTypes.string,
+  employments: PropTypes.instanceOf(Array),
 }
 
 CurriculumVitae.defaultProps = {
   photo: '',
   name: '',
   jobTitle: '',
+  professionalSummary: '',
+  employments: [],
 }
 
 export default CurriculumVitae

@@ -63,8 +63,7 @@ const SkillLevelField = ({
           htmlFor={id}
         >
           {label}
-          {' '}
-—
+          —
           <span className={currentLevel.labelStyle}>{currentLevel.label}</span>
         </label>
       )}
