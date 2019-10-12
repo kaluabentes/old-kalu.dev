@@ -7,10 +7,14 @@ const TimelineItem = ({
   title,
   subtitle,
   description,
-  year,
+  startDate,
+  endDate,
 }) => (
   <li className={styles.item}>
-    <div className={styles.year}>{year}</div>
+    <div className={styles.period}>
+      <div>{startDate}</div>
+      <div>{endDate}</div>
+    </div>
     <div className={styles.point}>
       <div className={styles.pointCircle} />
       <div className={styles.pointLine} />
@@ -27,14 +31,16 @@ TimelineItem.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   description: PropTypes.string,
-  year: PropTypes.string,
+  startDate: PropTypes.string,
+  endDate: PropTypes.string,
 }
 
 TimelineItem.defaultProps = {
   title: '',
   subtitle: '',
   description: '',
-  year: '',
+  startDate: '',
+  endDate: '',
 }
 
 export default TimelineItem

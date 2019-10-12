@@ -9,10 +9,16 @@
   }
 }
 
-.year {
-  font-weight: bold;
+.period {
+  font-weight: 500;
   color: var(--color-grey-2);
   margin-top: 2px;
+  font-size: 1rem;
+  min-width: 70px;
+
+  & > div {
+    margin-bottom: 7px;
+  }
 }
 
 .point {
@@ -59,7 +65,6 @@
 
 .subtitle {
   margin: 0;
-  color: var(--color-grey-2);
   font-weight: 500;
   font-size: 1rem;
 }

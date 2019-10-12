@@ -43,18 +43,15 @@ const Curriculum = ({
             Employment History
           </SectionTitle>
           <Timeline>
-            {employments.map((employment) => {
-              const [, year] = employment.startDate.split(',').map((str) => str.trim())
-
-              return (
-                <TimelineItem
-                  title={`${employment.jobTitle} at ${employment.employer}, ${employment.city}`}
-                  subtitle={`${employment.startDate} — ${employment.endDate}`}
-                  description={employment.description}
-                  year={year}
-                />
-              )
-            })}
+            {employments.map((employment) => (
+              <TimelineItem
+                title={`${employment.jobTitle}`}
+                subtitle={`${employment.employer}, ${employment.city}`}
+                description={employment.description}
+                startDate={employment.startDate}
+                endDate={employment.endDate}
+              />
+            ))}
           </Timeline>
         </Section>
         <Section>
@@ -62,18 +59,15 @@ const Curriculum = ({
             Education
           </SectionTitle>
           <Timeline>
-            {educations.map((education) => {
-              const [, year] = education.startDate.split(',').map((str) => str.trim())
-
-              return (
-                <TimelineItem
-                  title={`${education.degree} at ${education.school}, ${education.city}`}
-                  subtitle={`${education.startDate} — ${education.endDate}`}
-                  description={education.description}
-                  year={year}
-                />
-              )
-            })}
+            {educations.map((education) => (
+              <TimelineItem
+                title={`${education.degree}`}
+                subtitle={`${education.school}, ${education.city}`}
+                description={education.description}
+                startDate={education.startDate}
+                endDate={education.endDate}
+              />
+            ))}
           </Timeline>
         </Section>
       </div>
