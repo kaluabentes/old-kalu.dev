@@ -7,7 +7,7 @@ import '_styles/base.css'
 const Base = ({ children }) => (
   <>
     <Head>
-      <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css?family=Poppins:500,600,700&display=swap" rel="stylesheet" />
       <link rel="apple-touch-icon" sizes="57x57" href="/static/apple-icon-57x57.png" />
       <link rel="apple-touch-icon" sizes="60x60" href="/static/apple-icon-60x60.png" />
       <link rel="apple-touch-icon" sizes="72x72" href="/static/apple-icon-72x72.png" />

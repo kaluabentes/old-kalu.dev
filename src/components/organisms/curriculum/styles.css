@@ -1,0 +1,8 @@
+.grid {
+  display: flex;
+}
+
+.columnRight {
+  min-width: 280px;
+  margin-left: 40px;
+}

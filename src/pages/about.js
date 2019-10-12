@@ -39,6 +39,9 @@ const About = () => (
         photo={myPhoto}
         name="Kaluã Bentes"
         jobTitle="Frontend Developer"
+        phone="48996288801"
+        email="kaluanbentes@gmail.com"
+        address="Florianópolis, Brazil"
         professionalSummary={PROFESSIONAL_SUMMARY}
         employments={[{
           jobTitle: 'Frontend Develoer',
