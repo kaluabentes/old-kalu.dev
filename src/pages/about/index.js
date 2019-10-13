@@ -20,10 +20,9 @@ const SUBTITLE = `
   and skills
 `
 
-let pdfExportComponent
-
 const About = () => {
   const resumeRef = createRef()
+  let pdfExportComponent
 
   const handleDownloadClick = async () => {
     const pdfTools = new PDFTools(resumeRef.current)
