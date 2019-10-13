@@ -1,7 +1,6 @@
 import React, { Component, createRef } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import Link from 'next/link'
 import { withRouter } from 'next/router'
 
 import Container from '_atoms/container'
@@ -74,6 +73,12 @@ class Header extends Component {
     })
   }
 
+  handleNavClick(path) {
+    const { router } = this.props
+
+    router.push(path)
+  }
+
   render() {
     const { routes, isFixed } = this.props
     const { isNavOpen, hasShadow, navHeight } = this.state
@@ -108,16 +113,15 @@ class Header extends Component {
               className={styles.nav}
             >
               {routes.map((route) => (
-                <Link href={route.path} key={route.path}>
-                  <a
-                    href={route.path}
-                    className={classNames(styles.navItem, {
-                      [styles.navItemCurrent]: this.isCurrentNavItem(route.path),
-                    })}
-                  >
-                    {route.text}
-                  </a>
-                </Link>
+                <a
+                  onClick={() => this.handleNavClick(route.path)}
+                  href={route.path}
+                  className={classNames(styles.navItem, {
+                    [styles.navItemCurrent]: this.isCurrentNavItem(route.path),
+                  })}
+                >
+                  {route.text}
+                </a>
               ))}
             </nav>
           </div>
@@ -130,6 +134,7 @@ class Header extends Component {
 Header.propTypes = {
   router: PropTypes.shape({
     asPath: PropTypes.string,
+    push: PropTypes.func,
   }).isRequired,
   routes: PropTypes.arrayOf(
     PropTypes.shape({
