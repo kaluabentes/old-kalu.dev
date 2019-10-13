@@ -9,7 +9,7 @@ export default {
     UI's and apps that cause a positive impact in the world,
     It drives me, I began working as a fullstack developer
     working with tech such as HTML5, CSS3, JavaScript, PHP,
-    Laravel and Joomla CMS. Currently, I've been giving special
+    Laravel and Joomla. Currently, I've been giving special
     attention to frontend development, I developed a profound
     interest in building good looking and improved user
     experience UI's. I am curious to know about how things work, 
