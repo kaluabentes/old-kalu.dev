@@ -6,4 +6,5 @@
 body {
   color: var(--color-text);
   font-size: 1rem;
+  background: var(--color-grey);
 }

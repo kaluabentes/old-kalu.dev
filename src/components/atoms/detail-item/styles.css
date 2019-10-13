@@ -18,4 +18,5 @@
 
 .text {
   color: var(--color-grey-2);
+  font-size: 0.875rem;
 }

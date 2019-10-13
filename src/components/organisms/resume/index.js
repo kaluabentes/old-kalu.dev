@@ -13,10 +13,12 @@ import MarkerIcon from '_atoms/icon/marker'
 import DetailItem from '_atoms/detail-item'
 import ResumeLinkItem from '_atoms/resume-link-item'
 import SkillLevel from '_atoms/skill-level'
+import Paper from '_atoms/paper'
 
 import styles from './styles.css'
 
 const Resume = forwardRef(({
+  isPadded,
   photo,
   name,
   jobTitle,
@@ -29,7 +31,10 @@ const Resume = forwardRef(({
   links,
   skills,
 }, ref) => (
-  <article ref={ref} className={styles.resume}>
+  <article
+    ref={ref}
+    className={styles.resume}
+  >
     <ResumeHeader
       photo={photo}
       name={name}
@@ -38,80 +43,91 @@ const Resume = forwardRef(({
     <div className={styles.grid}>
       <div>
         <ResumeProfile
+          hasPadding={isPadded}
           content={professionalSummary}
         />
         <Section>
-          <SectionTitle>
-            Experience
-          </SectionTitle>
-          <Timeline>
-            {employments.map((employment) => (
-              <TimelineItem
-                key={employment.employer}
-                title={`${employment.jobTitle}`}
-                subtitle={`${employment.employer}, ${employment.city}`}
-                description={employment.description}
-                startDate={employment.startDate}
-                endDate={employment.endDate}
-              />
-            ))}
-          </Timeline>
-        </Section>
-        {educations.length ? (
-          <Section>
+          <Paper hasPadding={isPadded}>
             <SectionTitle>
-              Education
+              Experience
             </SectionTitle>
             <Timeline>
-              {educations.map((education) => (
+              {employments.map((employment) => (
                 <TimelineItem
-                  key={education.school}
-                  title={`${education.degree}`}
-                  subtitle={`${education.school}, ${education.city}`}
-                  description={education.description}
-                  startDate={education.startDate}
-                  endDate={education.endDate}
+                  key={employment.employer}
+                  title={`${employment.jobTitle}`}
+                  subtitle={`${employment.employer}, ${employment.city}`}
+                  description={employment.description}
+                  startDate={employment.startDate}
+                  endDate={employment.endDate}
                 />
               ))}
             </Timeline>
+          </Paper>
+        </Section>
+        {educations.length ? (
+          <Section>
+            <Paper hasPadding={isPadded}>
+              <SectionTitle>
+                Education
+              </SectionTitle>
+              <Timeline>
+                {educations.map((education) => (
+                  <TimelineItem
+                    key={education.school}
+                    title={`${education.degree}`}
+                    subtitle={`${education.school}, ${education.city}`}
+                    description={education.description}
+                    startDate={education.startDate}
+                    endDate={education.endDate}
+                  />
+                ))}
+              </Timeline>
+            </Paper>
           </Section>
         ) : null}
       </div>
       <div className={styles.columnRight}>
         <Section>
-          <SectionTitle>Details</SectionTitle>
-          <DetailItem
-            icon={<WhatsappIcon />}
-            text={phone}
-          />
-          <DetailItem
-            icon={<EmailIcon />}
-            text={email}
-          />
-          <DetailItem
-            icon={<MarkerIcon />}
-            text={address}
-          />
+          <Paper hasPadding={isPadded}>
+            <SectionTitle>Details</SectionTitle>
+            <DetailItem
+              icon={<WhatsappIcon />}
+              text={phone}
+            />
+            <DetailItem
+              icon={<EmailIcon />}
+              text={email}
+            />
+            <DetailItem
+              icon={<MarkerIcon />}
+              text={address}
+            />
+          </Paper>
         </Section>
         <Section>
-          <SectionTitle>Links</SectionTitle>
-          {links.map((link) => (
-            <ResumeLinkItem
-              key={link.label}
-              label={link.label}
-              url={link.url}
-            />
-          ))}
+          <Paper hasPadding={isPadded}>
+            <SectionTitle>Links</SectionTitle>
+            {links.map((link) => (
+              <ResumeLinkItem
+                key={link.label}
+                label={link.label}
+                url={link.url}
+              />
+            ))}
+          </Paper>
         </Section>
         <Section>
-          <SectionTitle>Skills</SectionTitle>
-          {skills.map((skill) => (
-            <SkillLevel
-              key={skill.label}
-              label={skill.label}
-              level={skill.level}
-            />
-          ))}
+          <Paper hasPadding={isPadded}>
+            <SectionTitle>Skills</SectionTitle>
+            {skills.map((skill) => (
+              <SkillLevel
+                key={skill.label}
+                label={skill.label}
+                level={skill.level}
+              />
+            ))}
+          </Paper>
         </Section>
       </div>
     </div>
@@ -119,6 +135,7 @@ const Resume = forwardRef(({
 ))
 
 Resume.propTypes = {
+  isPadded: PropTypes.bool,
   photo: PropTypes.string,
   name: PropTypes.string,
   jobTitle: PropTypes.string,
@@ -133,6 +150,7 @@ Resume.propTypes = {
 }
 
 Resume.defaultProps = {
+  isPadded: true,
   photo: '',
   name: '',
   jobTitle: '',

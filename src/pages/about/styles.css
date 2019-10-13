@@ -3,3 +3,13 @@
   right: 30px;
   top: 61px;
 }
+
+.exportArea {
+  position: absolute;
+  left: -10000px;
+  width: 1160px;
+}
+
+.resumeGroup {
+  position: relative;
+}

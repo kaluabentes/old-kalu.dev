@@ -64,7 +64,7 @@
 }
 
 .subtitle {
-  margin: 0;
+  margin: 0 0 7px 0;
   font-weight: 500;
   font-size: 1rem;
   color: var(--color-black);
@@ -72,7 +72,7 @@
 }
 
 .description {
-  margin: 10px 0 40px 0;
+  margin: 0 0 40px 0;
   opacity: 0.6;
   font-size: 1rem;
 }

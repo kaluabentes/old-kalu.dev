@@ -1,6 +1,6 @@
 const CANVAS_TEMP_CLASSNAME = 'canvasTempClassname'
 
-class PdfTools {
+class PDFTools {
   constructor(element) {
     // this.html2canvas = require('html2canvas')
     // eslint-disable-next-line global-require
@@ -77,4 +77,4 @@ class PdfTools {
   }
 }
 
-export default PdfTools
+export default PDFTools

@@ -17,11 +17,13 @@ class Header extends Component {
       isNavOpen: false,
       currentPath: '',
       navHeight: undefined,
+      hasShadow: false,
     }
 
     this.navRef = createRef()
 
     this.handleWindowResize = this.handleWindowResize.bind(this)
+    this.handleWindowScroll = this.handleWindowScroll.bind(this)
     this.handleNavToggle = this.handleNavToggle.bind(this)
   }
 
@@ -34,10 +36,12 @@ class Header extends Component {
     })
 
     window.addEventListener('resize', this.handleWindowResize)
+    window.addEventListener('scroll', this.handleWindowScroll)
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleWindowResize)
+    window.removeEventListener('scroll', this.handleWindowScroll)
   }
 
   isCurrentNavItem(path) {
@@ -57,12 +61,35 @@ class Header extends Component {
     })
   }
 
+  handleWindowScroll() {
+    if (window.scrollY > 300) {
+      this.setState({
+        hasShadow: true,
+      })
+      return
+    }
+
+    this.setState({
+      hasShadow: false,
+    })
+  }
+
   render() {
     const { routes, isFixed } = this.props
-    const { isNavOpen, navHeight } = this.state
+    const { isNavOpen, hasShadow, navHeight } = this.state
 
     return (
-      <header className={classNames(styles.header, { [styles.fixed]: isFixed })}>
+      <header
+        className={
+          classNames(
+            styles.header,
+            {
+              [styles.fixed]: isFixed,
+              [styles.shadow]: hasShadow
+            }
+          )
+        }
+      >
         <Container>
           <div className={styles.headerInner}>
             <Brand />
