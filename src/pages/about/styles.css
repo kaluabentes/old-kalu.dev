@@ -1,3 +1,11 @@
+.containerWrapper {
+  @media (--break-mobile) {
+    & > div {
+      padding: 0;
+    }
+  }
+}
+
 .downloadButtonContainer {
   position: absolute;
   right: 0;
@@ -23,4 +31,8 @@
   z-index: 20;
   bottom: 10px;
   left: 10px;
+
+  @media (--break-desktop) {
+    display: none;
+  }
 }

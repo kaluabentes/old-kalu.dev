@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react'
 import PropTypes from 'prop-types'
+import classnames from 'classnames'
 
 import ResumeHeader from '_molecules/resume-header'
 import ResumeProfile from '_molecules/resume-profile'
@@ -18,7 +19,7 @@ import Paper from '_atoms/paper'
 import styles from './styles.css'
 
 const Resume = forwardRef(({
-  isPadded,
+  isExportable,
   photo,
   name,
   jobTitle,
@@ -33,9 +34,15 @@ const Resume = forwardRef(({
 }, ref) => (
   <article
     ref={ref}
-    className={styles.resume}
+    className={
+      classnames(
+        styles.resume,
+        { [styles.exportable]: isExportable }
+      )
+    }
   >
     <ResumeHeader
+      isExportable={isExportable}
       photo={photo}
       name={name}
       jobTitle={jobTitle}
@@ -43,11 +50,11 @@ const Resume = forwardRef(({
     <div className={styles.grid}>
       <div>
         <ResumeProfile
-          hasPadding={isPadded}
+          isExportable={isExportable}
           content={professionalSummary}
         />
         <Section>
-          <Paper hasPadding={isPadded}>
+          <Paper hasPadding={!isExportable}>
             <SectionTitle>
               Experience
             </SectionTitle>
@@ -67,7 +74,7 @@ const Resume = forwardRef(({
         </Section>
         {educations.length ? (
           <Section>
-            <Paper hasPadding={isPadded}>
+            <Paper hasPadding={!isExportable}>
               <SectionTitle>
                 Education
               </SectionTitle>
@@ -89,7 +96,7 @@ const Resume = forwardRef(({
       </div>
       <div className={styles.columnRight}>
         <Section>
-          <Paper hasPadding={isPadded}>
+          <Paper hasPadding={!isExportable}>
             <SectionTitle>Details</SectionTitle>
             <DetailItem
               icon={<WhatsappIcon />}
@@ -106,7 +113,7 @@ const Resume = forwardRef(({
           </Paper>
         </Section>
         <Section>
-          <Paper hasPadding={isPadded}>
+          <Paper hasPadding={!isExportable}>
             <SectionTitle>Links</SectionTitle>
             {links.map((link) => (
               <ResumeLinkItem
@@ -118,7 +125,7 @@ const Resume = forwardRef(({
           </Paper>
         </Section>
         <Section>
-          <Paper hasPadding={isPadded}>
+          <Paper hasPadding={!isExportable}>
             <SectionTitle>Skills</SectionTitle>
             {skills.map((skill) => (
               <SkillLevel
@@ -135,7 +142,7 @@ const Resume = forwardRef(({
 ))
 
 Resume.propTypes = {
-  isPadded: PropTypes.bool,
+  isExportable: PropTypes.bool,
   photo: PropTypes.string,
   name: PropTypes.string,
   jobTitle: PropTypes.string,
@@ -150,7 +157,7 @@ Resume.propTypes = {
 }
 
 Resume.defaultProps = {
-  isPadded: true,
+  isExportable: false,
   photo: '',
   name: '',
   jobTitle: '',

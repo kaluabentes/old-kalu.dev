@@ -42,42 +42,19 @@ const About = () => {
           {aboutData.subtitle}
         </CoverSubtitle>
       </Cover>
-      <Container>
-        <div className={styles.mobileDownloadButton}>
-          <ActionButton
-            onClick={handleDownloadClick}
-            icon={<DownloadIcon />}
-          />
-        </div>
-        <div className={styles.resumeGroup}>
-          <div className={styles.downloadButtonContainer}>
-            <Button onClick={handleDownloadClick}>Download PDF</Button>
+      <div className={styles.containerWrapper}>
+        <Container>
+          <div className={styles.mobileDownloadButton}>
+            <ActionButton
+              onClick={handleDownloadClick}
+              icon={<DownloadIcon />}
+            />
           </div>
-          <Resume
-            ref={resumeRef}
-            photo={myPhoto}
-            name={resumeData.name}
-            jobTitle={resumeData.jobTitle}
-            phone={resumeData.phone}
-            email={resumeData.email}
-            address={resumeData.address}
-            professionalSummary={resumeData.professionalSummary}
-            employments={resumeData.employments}
-            links={resumeData.links}
-            skills={resumeData.skills}
-          />
-        </div>
-        <div className={styles.exportArea}>
-          <PDFExport
-            ref={(component) => {
-              pdfExportComponent = component
-            }}
-            pageSize="A4"
-            margin="60pt"
-            fileName="kaluabentes"
-          >
+          <div className={styles.resumeGroup}>
+            <div className={styles.downloadButtonContainer}>
+              <Button onClick={handleDownloadClick}>Download PDF</Button>
+            </div>
             <Resume
-              isPadded={false}
               ref={resumeRef}
               photo={myPhoto}
               name={resumeData.name}
@@ -90,9 +67,34 @@ const About = () => {
               links={resumeData.links}
               skills={resumeData.skills}
             />
-          </PDFExport>
-        </div>
-      </Container>
+          </div>
+          <div className={styles.exportArea}>
+            <PDFExport
+              ref={(component) => {
+                pdfExportComponent = component
+              }}
+              pageSize="A4"
+              margin="60pt"
+              fileName="kaluabentes"
+            >
+              <Resume
+                isExportable
+                ref={resumeRef}
+                photo={myPhoto}
+                name={resumeData.name}
+                jobTitle={resumeData.jobTitle}
+                phone={resumeData.phone}
+                email={resumeData.email}
+                address={resumeData.address}
+                professionalSummary={resumeData.professionalSummary}
+                employments={resumeData.employments}
+                links={resumeData.links}
+                skills={resumeData.skills}
+              />
+            </PDFExport>
+          </div>
+        </Container>
+      </div>
     </Page>
   )
 }

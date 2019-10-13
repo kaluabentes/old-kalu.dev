@@ -4,13 +4,35 @@
 
 .grid {
   display: flex;
+
+  @media (--break-mobile) {
+    flex-direction: column;
+  }
 }
 
 .columnRight {
   min-width: 280px;
   margin-left: 40px;
+
+  @media (--break-mobile) {
+    margin-left: 0;
+  }
 }
 
 .linkItem {
   font-size: 1rem;
+}
+
+.exportable {
+  .grid {
+    @media (--break-mobile) {
+      flex-direction: row;
+    }
+  }
+
+  .columnRight {
+    @media (--break-mobile) {
+      margin-left: 60px;
+    }
+  }
 }

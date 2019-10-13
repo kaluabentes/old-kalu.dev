@@ -6,9 +6,9 @@ import SectionTitle from '_atoms/section-title'
 import Paper from '_atoms/paper'
 import styles from './styles.css'
 
-const ResumeProfile = ({ content, hasPadding }) => (
+const ResumeProfile = ({ content, isExportable }) => (
   <Section>
-    <Paper hasPadding={hasPadding}>
+    <Paper hasPadding={!isExportable}>
       <SectionTitle>Bio</SectionTitle>
       <p className={styles.content}>
         {content}
@@ -19,12 +19,12 @@ const ResumeProfile = ({ content, hasPadding }) => (
 
 ResumeProfile.propTypes = {
   content: PropTypes.string,
-  hasPadding: PropTypes.bool,
+  isExportable: PropTypes.bool,
 }
 
 ResumeProfile.defaultProps = {
   content: '',
-  hasPadding: true,
+  isExportable: false,
 }
 
 export default ResumeProfile

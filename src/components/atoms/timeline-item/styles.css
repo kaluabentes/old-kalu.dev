@@ -9,18 +9,6 @@
   }
 }
 
-.period {
-  font-weight: 500;
-  color: var(--color-grey-2);
-  margin-top: 2px;
-  font-size: 1rem;
-  min-width: 76px;
-
-  & > div {
-    margin-bottom: 7px;
-  }
-}
-
 .point {
   padding: 0 20px;
   display: flex;
@@ -50,6 +38,18 @@
   }
 }
 
+.period {
+  font-weight: 500;
+  color: var(--color-grey-2);
+  margin-top: 2px;
+  font-size: 0.875rem;
+  min-width: 63px;
+
+  & > div {
+    margin-bottom: 7px;
+  }
+}
+
 .pointLine {
   width: 4px;
   background: var(--color-grey-2);
@@ -66,12 +66,12 @@
 .subtitle {
   margin: 0 0 7px 0;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: var(--color-black);
 }
 
 .description {
   margin: 0 0 40px 0;
   opacity: 0.6;
-  font-size: 1rem;
+  font-size: 0.875rem;
 }

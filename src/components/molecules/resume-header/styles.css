@@ -2,6 +2,10 @@
   display: flex;
   align-items: center;
   margin-bottom: 40px;
+
+  @media (--break-mobile) {
+    flex-direction: column;
+  }
 }
 
 .photo {
@@ -11,6 +15,10 @@
   object-fit: cover;
   margin-right: 30px;
   box-shadow: 0 2px 3px rgba(0,0,0,.2);
+
+  @media (--break-mobile) {
+    margin: 0 0 30px 0;
+  }
 }
 
 .title {
@@ -18,10 +26,36 @@
   font-weight: 700;
   margin-bottom: 10px;
   font-family: var(--font-face);
+
+  @media (--break-mobile) {
+    text-align: center;
+  }
 }
 
 .subtitle {
   font-size: 1.25rem;
   margin: 0;
   color: var(--color-blue);
+
+  @media (--break-mobile) {
+    text-align: center;
+  }
+}
+
+.exportable {
+  @media (--break-mobile) {
+    flex-direction: row;
+  }
+
+  .photo {
+    @media (--break-mobile) {
+      margin: 0 30px 0 0;
+    }
+  }
+
+  .subtitle {
+    @media (--break-mobile) {
+      text-align: left;
+    }
+  }
 }
