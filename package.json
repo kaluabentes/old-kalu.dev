@@ -8,8 +8,9 @@
     "dev": "next src",
     "build": "next build src",
     "start": "next start src",
-    "export": "next export src",
-    "build-static": "yarn build && yarn export",
+    "export": "next export src -o ./dist",
+    "build-static": "yarn build && yarn export && ./post-build.sh",
+    "deploy": "yarn build-static && ./deploy.sh",
     "eslint": "eslint ./src"
   },
   "husky": {
