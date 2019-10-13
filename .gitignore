@@ -95,3 +95,4 @@ dist
 .dynamodb/
 
 # End of https://www.gitignore.io/api/node
+.DS_Store
