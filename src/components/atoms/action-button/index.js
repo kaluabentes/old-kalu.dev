@@ -4,30 +4,30 @@ import { withRouter } from 'next/router'
 
 import styles from './styles.css'
 
-const Button = ({
-  href, onClick, children, router
+const ActionButton = ({
+  href, onClick, router, icon,
 }) => {
   const handleNavigation = () => router.push(href)
 
   return (
     <button className={styles.button} onClick={href ? handleNavigation : onClick} type="button">
-      {children}
+      {icon}
     </button>
   )
 }
 
-Button.propTypes = {
+ActionButton.propTypes = {
   onClick: PropTypes.func,
   href: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  icon: PropTypes.node.isRequired,
   router: PropTypes.shape({
     push: PropTypes.func,
   }).isRequired
 }
 
-Button.defaultProps = {
+ActionButton.defaultProps = {
   onClick: () => {},
   href: undefined,
 }
 
-export default withRouter(Button)
+export default withRouter(ActionButton)

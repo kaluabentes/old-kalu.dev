@@ -7,18 +7,15 @@ import CoverSubtitle from '_atoms/cover-subtitle'
 import Container from '_atoms/container'
 import Resume from '_organisms/resume'
 import Button from '_atoms/button'
+import ActionButton from '_atoms/action-button'
+import DownloadIcon from '_atoms/icon/download'
 import PDFTools from '_utils/pdf-tools'
 import { PDFExport } from '@progress/kendo-react-pdf'
 import myPhoto from '_images/me.jpeg'
 import resumeData from '_data/resume'
+import aboutData from '_data/about'
 
 import styles from './styles.css'
-
-const SUBTITLE = `
-  Here you will find all the information about <br />who
-  I am, what is my interests, background experience
-  and skills
-`
 
 const About = () => {
   const resumeRef = createRef()
@@ -42,11 +39,16 @@ const About = () => {
       <Cover>
         <CoverTitle>About me</CoverTitle>
         <CoverSubtitle>
-          {/* eslint-disable-next-line react/no-danger */}
-          <span dangerouslySetInnerHTML={{ __html: SUBTITLE }} />
+          {aboutData.subtitle}
         </CoverSubtitle>
       </Cover>
       <Container>
+        <div className={styles.mobileDownloadButton}>
+          <ActionButton
+            onClick={handleDownloadClick}
+            icon={<DownloadIcon />}
+          />
+        </div>
         <div className={styles.resumeGroup}>
           <div className={styles.downloadButtonContainer}>
             <Button onClick={handleDownloadClick}>Download PDF</Button>

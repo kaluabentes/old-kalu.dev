@@ -2,6 +2,10 @@
   position: absolute;
   right: 0;
   top: 61px;
+
+  @media (--break-mobile) {
+    display: none;
+  }
 }
 
 .exportArea {
@@ -12,4 +16,11 @@
 
 .resumeGroup {
   position: relative;
+}
+
+.mobileDownloadButton {
+  position: fixed;
+  z-index: 20;
+  bottom: 10px;
+  left: 10px;
 }

@@ -1,0 +1,23 @@
+.button {
+  height: 64px;
+  width: 64px;
+  box-shadow: 0 2px 3px rgba(0,0,0,.2);
+  background: var(--color-blue);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+
+  &:hover {
+    background: var(--color-blue-2);
+  }
+
+  &:active {
+    background: var(--color-blue-2);
+  }
+
+  & svg {
+    fill: var(--color-white);
+    width: 24px;
+  }
+}
