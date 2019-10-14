@@ -7,7 +7,9 @@ import styles from './styles.css'
 const Button = ({
   href, onClick, children, router
 }) => {
-  const handleNavigation = () => router.push(href)
+  const handleNavigation = () => {
+    router.push(href)
+  }
 
   return (
     <button className={styles.button} onClick={href ? handleNavigation : onClick} type="button">
