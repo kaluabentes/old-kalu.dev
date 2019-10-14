@@ -8,6 +8,7 @@ const Button = ({
   href, onClick, children, router
 }) => {
   const handleNavigation = () => {
+    console.log(`> Routing to ${href}`)
     router.push(href)
   }
 
