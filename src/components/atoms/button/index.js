@@ -8,7 +8,7 @@ const Button = ({
   href, onClick, children, router
 }) => {
   const handleNavigation = () => {
-    // eslint-disable-next-line no-console
+    // eslint-disable-next-line no-alert
     alert(`> Routing to ${href}`)
     router.push(href)
   }
