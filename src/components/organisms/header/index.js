@@ -1,7 +1,6 @@
 import React, { Component, createRef } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import { withRouter } from 'next/router'
 
 import Container from '_atoms/container'
 import Brand from '_atoms/brand'
@@ -73,12 +72,6 @@ class Header extends Component {
     })
   }
 
-  handleNavClick(path) {
-    const { router } = this.props
-
-    router.push(path)
-  }
-
   render() {
     const { routes, isFixed } = this.props
     const { isNavOpen, hasShadow, navHeight } = this.state
@@ -114,7 +107,6 @@ class Header extends Component {
             >
               {routes.map((route) => (
                 <a
-                  onClick={() => this.handleNavClick(route.path)}
                   href={route.path}
                   className={classNames(styles.navItem, {
                     [styles.navItemCurrent]: this.isCurrentNavItem(route.path),
@@ -150,4 +142,4 @@ Header.defaultProps = {
   routes: [],
 }
 
-export default withRouter(Header)
+export default Header

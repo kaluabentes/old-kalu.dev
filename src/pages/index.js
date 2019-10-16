@@ -1,10 +1,10 @@
 import React from 'react'
-import Link from 'next/link'
 
 import Page from '_templates/page'
 import Cover from '_molecules/cover'
 import CoverTitle from '_atoms/cover-title'
 import CoverSubtitle from '_atoms/cover-subtitle'
+import Button from '_atoms/button'
 
 const SUBTITLE = `
   Hello everybody, I'm Kalu. I code 
@@ -18,9 +18,7 @@ const Home = () => (
       <CoverSubtitle>
         {SUBTITLE}
       </CoverSubtitle>
-      <Link href="/about">
-        <a href="/about">Read more about</a>
-      </Link>
+      <Button href="/about">Read about me</Button>
     </Cover>
   </Page>
 )
