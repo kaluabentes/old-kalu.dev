@@ -1,6 +1,7 @@
 import React, { Component, createRef } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+import { withRouter } from 'next/router'
 
 import Container from '_atoms/container'
 import Brand from '_atoms/brand'
@@ -142,4 +143,4 @@ Header.defaultProps = {
   routes: [],
 }
 
-export default Header
+export default withRouter(Header)
