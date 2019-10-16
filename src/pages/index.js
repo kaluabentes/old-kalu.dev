@@ -5,7 +5,6 @@ import Page from '_templates/page'
 import Cover from '_molecules/cover'
 import CoverTitle from '_atoms/cover-title'
 import CoverSubtitle from '_atoms/cover-subtitle'
-import Button from '_atoms/button'
 
 const SUBTITLE = `
   Hello everybody, I'm Kalu. I code 
@@ -20,7 +19,7 @@ const Home = () => (
         {SUBTITLE}
       </CoverSubtitle>
       <Link href="/about">
-        <Button>Read about me</Button>
+        <a href="/about">Read more about</a>
       </Link>
     </Cover>
   </Page>
