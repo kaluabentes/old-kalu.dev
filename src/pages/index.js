@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 import Page from '_templates/page'
 import Cover from '_molecules/cover'
@@ -18,7 +19,9 @@ const Home = () => (
       <CoverSubtitle>
         {SUBTITLE}
       </CoverSubtitle>
-      <Button href="/about">Read about me</Button>
+      <Link href="/about">
+        <Button>Read about me</Button>
+      </Link>
     </Cover>
   </Page>
 )
