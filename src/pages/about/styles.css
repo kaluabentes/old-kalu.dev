@@ -31,8 +31,16 @@
   z-index: 20;
   bottom: 10px;
   left: 10px;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.3s;
 
   @media (--break-desktop) {
     display: none;
   }
+}
+
+.mobileDownloadButtonShown {
+  opacity: 1;
+  transform: scale(1);
 }

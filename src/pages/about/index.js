@@ -1,4 +1,5 @@
-import React, { createRef } from 'react'
+import React, { Component, createRef } from 'react'
+import classnames from 'classnames'
 
 import Page from '_templates/page'
 import Cover from '_molecules/cover'
@@ -17,16 +18,47 @@ import aboutData from '_data/about'
 
 import styles from './styles.css'
 
-const About = () => {
-  const resumeRef = createRef()
-  let pdfExportComponent
+class About extends Component {
+  constructor(props) {
+    super(props)
 
-  const handleDownloadClick = async () => {
-    const pdfTools = new PDFTools(resumeRef.current)
+    this.state = {
+      isDownloadButtonShown: false,
+    }
+
+    this.resumeRef = createRef()
+
+    this.handleDownloadClick = this.handleDownloadClick.bind(this)
+    this.handleScroll = this.handleScroll.bind(this)
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
+
+  handleScroll() {
+    if (window.scrollY > 200) {
+      this.setState({
+        isDownloadButtonShown: true,
+      })
+      return
+    }
+
+    this.setState({
+      isDownloadButtonShown: false,
+    })
+  }
+
+  handleDownloadClick() {
+    const pdfTools = new PDFTools(this.resumeRef.current)
     pdfTools.convertSvgsToCanvas()
 
     setTimeout(() => {
-      pdfExportComponent.save()
+      this.pdfExportComponent.save()
 
       setTimeout(() => {
         pdfTools.removeSvgsCanvas()
@@ -34,52 +66,38 @@ const About = () => {
     }, 600)
   }
 
-  return (
-    <Page title="About">
-      <Cover>
-        <CoverTitle>About me</CoverTitle>
-        <CoverSubtitle>
-          {aboutData.subtitle}
-        </CoverSubtitle>
-      </Cover>
-      <div className={styles.containerWrapper}>
-        <Container>
-          <div className={styles.mobileDownloadButton}>
-            <ActionButton
-              onClick={handleDownloadClick}
-              icon={<DownloadIcon />}
-            />
-          </div>
-          <div className={styles.resumeGroup}>
-            <div className={styles.downloadButtonContainer}>
-              <Button onClick={handleDownloadClick}>Download PDF</Button>
-            </div>
-            <Resume
-              ref={resumeRef}
-              photo={myPhoto}
-              name={resumeData.name}
-              jobTitle={resumeData.jobTitle}
-              phone={resumeData.phone}
-              email={resumeData.email}
-              address={resumeData.address}
-              professionalSummary={resumeData.professionalSummary}
-              employments={resumeData.employments}
-              links={resumeData.links}
-              skills={resumeData.skills}
-            />
-          </div>
-          <div className={styles.exportArea}>
-            <PDFExport
-              ref={(component) => {
-                pdfExportComponent = component
-              }}
-              pageSize="A4"
-              margin="60pt"
-              fileName="kaluabentes"
+  render() {
+    const { isDownloadButtonShown } = this.state
+
+    return (
+      <Page title="About">
+        <Cover>
+          <CoverTitle>About me</CoverTitle>
+          <CoverSubtitle>
+            {aboutData.subtitle}
+          </CoverSubtitle>
+        </Cover>
+        <div className={styles.containerWrapper}>
+          <Container>
+            <div
+              className={
+                classnames(
+                  styles.mobileDownloadButton,
+                  { [styles.mobileDownloadButtonShown]: isDownloadButtonShown }
+                )
+              }
             >
+              <ActionButton
+                onClick={this.handleDownloadClick}
+                icon={<DownloadIcon />}
+              />
+            </div>
+            <div className={styles.resumeGroup}>
+              <div className={styles.downloadButtonContainer}>
+                <Button onClick={this.handleDownloadClick}>Download PDF</Button>
+              </div>
               <Resume
-                isExportable
-                ref={resumeRef}
+                ref={this.resumeRef}
                 photo={myPhoto}
                 name={resumeData.name}
                 jobTitle={resumeData.jobTitle}
@@ -91,12 +109,37 @@ const About = () => {
                 links={resumeData.links}
                 skills={resumeData.skills}
               />
-            </PDFExport>
-          </div>
-        </Container>
-      </div>
-    </Page>
-  )
+            </div>
+            <div className={styles.exportArea}>
+              <PDFExport
+                ref={(component) => {
+                  this.pdfExportComponent = component
+                }}
+                pageSize="A4"
+                margin="60pt"
+                fileName="kaluabentes"
+              >
+                <Resume
+                  isExportable
+                  ref={this.resumeRef}
+                  photo={myPhoto}
+                  name={resumeData.name}
+                  jobTitle={resumeData.jobTitle}
+                  phone={resumeData.phone}
+                  email={resumeData.email}
+                  address={resumeData.address}
+                  professionalSummary={resumeData.professionalSummary}
+                  employments={resumeData.employments}
+                  links={resumeData.links}
+                  skills={resumeData.skills}
+                />
+              </PDFExport>
+            </div>
+          </Container>
+        </div>
+      </Page>
+    )
+  }
 }
 
 export default About
