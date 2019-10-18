@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 import styles from './styles.css'
 
@@ -9,19 +9,26 @@ const Button = ({
   children,
   href
 }) => {
-  const router = useRouter()
-
-  const handleClick = () => {
-    if (href) {
-      router.push(href)
-      return
-    }
-
-    onClick()
+  if (href) {
+    return (
+      <Link href={href}>
+        <a
+          href={href}
+          className={styles.button}
+          onClick={onClick}
+        >
+          {children}
+        </a>
+      </Link>
+    )
   }
 
   return (
-    <button className={styles.button} onClick={handleClick} type="button">
+    <button
+      className={styles.button}
+      onClick={onClick}
+      type="button"
+    >
       {children}
     </button>
   )

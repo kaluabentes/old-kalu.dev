@@ -64,7 +64,6 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
-  font-weight: bold;
   text-align: left;
 
   &:hover {

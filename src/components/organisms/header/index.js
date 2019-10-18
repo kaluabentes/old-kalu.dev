@@ -109,14 +109,14 @@ class Header extends Component {
             >
               {routes.map((route) => (
                 <Link href={route.path}>
-                  <button
-                    type="button"
+                  <a
+                    href={route.path}
                     className={classNames(styles.navItem, {
                       [styles.navItemCurrent]: this.isCurrentNavItem(route.path),
                     })}
                   >
                     {route.text}
-                  </button>
+                  </a>
                 </Link>
               ))}
             </nav>
