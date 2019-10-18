@@ -64,6 +64,7 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
+  font-weight: bold;
 
   &:hover {
     color: var(--color-white);
