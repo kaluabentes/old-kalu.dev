@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'next/link'
 
 import styles from './styles.css'
 
@@ -11,15 +10,13 @@ const Button = ({
 }) => {
   if (href) {
     return (
-      <Link href={href}>
-        <a
-          href={href}
-          className={styles.button}
-          onClick={onClick}
-        >
-          {children}
-        </a>
-      </Link>
+      <a
+        href={href}
+        className={styles.button}
+        onClick={onClick}
+      >
+        {children}
+      </a>
     )
   }
 

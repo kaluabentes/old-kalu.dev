@@ -2,7 +2,6 @@ import React, { Component, createRef } from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { withRouter } from 'next/router'
-import Link from 'next/link'
 
 import Container from '_atoms/container'
 import Brand from '_atoms/brand'
@@ -108,16 +107,15 @@ class Header extends Component {
               className={styles.nav}
             >
               {routes.map((route) => (
-                <Link href={route.path}>
-                  <a
-                    href={route.path}
-                    className={classNames(styles.navItem, {
-                      [styles.navItemCurrent]: this.isCurrentNavItem(route.path),
-                    })}
-                  >
-                    {route.text}
-                  </a>
-                </Link>
+                <a
+                  key={route.path}
+                  href={route.path}
+                  className={classNames(styles.navItem, {
+                    [styles.navItemCurrent]: this.isCurrentNavItem(route.path),
+                  })}
+                >
+                  {route.text}
+                </a>
               ))}
             </nav>
           </div>
