@@ -23,6 +23,16 @@
   font-size: 1rem;
 }
 
+.skillsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+
+  @media (--break-mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
 .exportable {
   .grid {
     @media (--break-mobile) {
@@ -35,14 +45,12 @@
       margin-left: 60px;
     }
   }
-}
 
-.skillsGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
-
-  @media (--break-mobile) {
-    grid-template-columns: 1fr;
+  .skillsGrid {
+    @media (--break-mobile) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 }
+
+
