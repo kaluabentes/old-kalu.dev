@@ -78,6 +78,7 @@ export default {
     { label: 'Node.js', level: 4 },
     { label: 'REST API\'s', level: 4 },
     { label: 'Wordpress', level: 3 },
+    { label: 'PHP', level: 2 },
     { label: 'Python', level: 2 },
     { label: 'Django', level: 2 },
     { label: 'Adaptability', level: 4 },
