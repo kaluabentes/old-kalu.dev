@@ -35,7 +35,7 @@ export default {
       `,
     },
     {
-      jobTitle: 'Fullstack Developer Junior',
+      jobTitle: 'Frontend Developer',
       employer: 'Alvo Digital Agency',
       city: 'Guarapari, ES',
       startDate: 'Jan, 2017',
@@ -49,7 +49,7 @@ export default {
       `,
     },
     {
-      jobTitle: 'Fullstack Developer Junior',
+      jobTitle: 'Frontend Developer',
       employer: 'Wikiz Digital Agency',
       city: 'Guarapari, ES',
       startDate: 'Jan, 2015',
