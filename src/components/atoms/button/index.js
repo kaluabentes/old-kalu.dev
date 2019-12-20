@@ -3,29 +3,17 @@ import PropTypes from 'prop-types'
 
 import styles from './styles.css'
 
-const Button = ({
-  onClick,
-  children,
-  href
-}) => {
+const Button = ({ onClick, children, href }) => {
   if (href) {
     return (
-      <a
-        href={href}
-        className={styles.button}
-        onClick={onClick}
-      >
+      <a href={href} className={styles.button} onClick={onClick}>
         {children}
       </a>
     )
   }
 
   return (
-    <button
-      className={styles.button}
-      onClick={onClick}
-      type="button"
-    >
+    <button className={styles.button} onClick={onClick} type="button">
       {children}
     </button>
   )
@@ -34,9 +22,6 @@ const Button = ({
 Button.propTypes = {
   onClick: PropTypes.func,
   children: PropTypes.node.isRequired,
-  router: PropTypes.shape({
-    push: PropTypes.func,
-  }).isRequired,
   href: PropTypes.string,
 }
 
