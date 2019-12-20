@@ -15,14 +15,23 @@ export default {
     experience UI's. I am curious to know about how things work, 
     I am challenged by issues that are presented to me, in both 
     life and technology, although focusing on the front end, I am 
-    also interested in backend technologies, but I have a personal 
-    preference for being a specialist rather than a generalist. 
-    I am self-taught, and I am always updating my knowledge to deliver 
-    the best possible user experience.
+    also interested in backend technologies. I am self-taught, and 
+    I am always updating my knowledge to deliver the best possible 
+    user experience.
   `,
   employments: [
     {
-      jobTitle: 'Frontend Developer Pleno',
+      jobTitle: 'React Native Developer',
+      employer: 'Desenvolva',
+      city: 'Florianópolis, SC',
+      startDate: 'Nov, 2019',
+      endDate: 'Current',
+      description: `
+        We make React Native applications and web apps
+      `,
+    },
+    {
+      jobTitle: 'Frontend Developer',
       employer: 'Cheesecake Labs',
       city: 'Florianópolis, SC',
       startDate: 'Fev, 2018',
@@ -60,28 +69,30 @@ export default {
         lay public. I worked with solutions that
         used PHP, Laravel, Joomla and AngularJS.
       `,
-    }
+    },
   ],
   skills: [
-    { label: 'HTML', level: 4 },
-    { label: 'CSS', level: 4 },
-    { label: 'JavaScript', level: 4 },
+    { label: 'HTML 5', level: 4 },
+    { label: 'CSS 3', level: 4 },
+    { label: 'ECMAScript 6', level: 4 },
+    { label: 'Responsive Web Design', level: 4 },
     { label: 'SEO on page', level: 4 },
     { label: 'Accessibility', level: 4 },
     { label: 'Semantic Markup', level: 4 },
     { label: 'Sass', level: 4 },
     { label: 'PostCSS', level: 4 },
     { label: 'React', level: 4 },
+    { label: 'React Native', level: 3 },
     { label: 'Redux', level: 3 },
     { label: 'Atomic Design', level: 4 },
     { label: 'BEM', level: 4 },
     { label: 'Node.js', level: 4 },
-    { label: 'REST API\'s', level: 4 },
-    { label: 'Wordpress', level: 3 },
+    { label: "RESTful API's", level: 4 },
     { label: 'PHP', level: 2 },
     { label: 'Laravel', level: 2 },
     { label: 'Python', level: 2 },
     { label: 'Django', level: 2 },
+    { label: 'Wagtail', level: 2 },
     { label: 'Adaptability', level: 4 },
     { label: 'Creativity', level: 4 },
   ],
@@ -89,5 +100,5 @@ export default {
     { label: 'Website', url: 'https://kalu.dev' },
     { label: 'Github', url: 'https://github.com/kaluabentes' },
     { label: 'Linkedin', url: 'https://linkedin.com/in/kalua-bentes' },
-  ]
+  ],
 }
