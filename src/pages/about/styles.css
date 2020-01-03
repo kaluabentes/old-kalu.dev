@@ -6,16 +6,6 @@
   }
 }
 
-.downloadButtonContainer {
-  position: absolute;
-  right: 0;
-  top: 61px;
-
-  @media (--break-mobile) {
-    display: none;
-  }
-}
-
 .exportArea {
   position: absolute;
   left: -10000px;

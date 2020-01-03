@@ -7,7 +7,6 @@ import CoverTitle from '_atoms/cover-title'
 import CoverSubtitle from '_atoms/cover-subtitle'
 import Container from '_atoms/container'
 import Resume from '_organisms/resume'
-import Button from '_atoms/button'
 import ActionButton from '_atoms/action-button'
 import DownloadIcon from '_atoms/icon/download'
 import PDFTools from '_utils/pdf-tools'
@@ -73,29 +72,18 @@ class About extends Component {
       <Page title="About">
         <Cover>
           <CoverTitle>About me</CoverTitle>
-          <CoverSubtitle>
-            {aboutData.subtitle}
-          </CoverSubtitle>
+          <CoverSubtitle>{aboutData.subtitle}</CoverSubtitle>
         </Cover>
         <div className={styles.containerWrapper}>
           <Container>
             <div
-              className={
-                classnames(
-                  styles.mobileDownloadButton,
-                  { [styles.mobileDownloadButtonShown]: isDownloadButtonShown }
-                )
-              }
+              className={classnames(styles.mobileDownloadButton, {
+                [styles.mobileDownloadButtonShown]: isDownloadButtonShown,
+              })}
             >
-              <ActionButton
-                onClick={this.handleDownloadClick}
-                icon={<DownloadIcon />}
-              />
+              <ActionButton onClick={this.handleDownloadClick} icon={<DownloadIcon />} />
             </div>
             <div className={styles.resumeGroup}>
-              <div className={styles.downloadButtonContainer}>
-                <Button onClick={this.handleDownloadClick}>Download PDF</Button>
-              </div>
               <Resume
                 ref={this.resumeRef}
                 photo={myPhoto}
@@ -108,11 +96,12 @@ class About extends Component {
                 employments={resumeData.employments}
                 links={resumeData.links}
                 skills={resumeData.skills}
+                onDowloadClick={this.handleDownloadClick}
               />
             </div>
             <div className={styles.exportArea}>
               <PDFExport
-                ref={(component) => {
+                ref={component => {
                   this.pdfExportComponent = component
                 }}
                 pageSize="A4"

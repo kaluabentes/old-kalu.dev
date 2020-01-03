@@ -18,142 +18,116 @@ import Paper from '_atoms/paper'
 
 import styles from './styles.css'
 
-const Resume = forwardRef(({
-  isExportable,
-  photo,
-  name,
-  jobTitle,
-  phone,
-  email,
-  address,
-  professionalSummary,
-  employments,
-  educations,
-  links,
-  skills,
-}, ref) => {
-  const renderSkillsSection = (isGrid) => (
-    <Section>
-      <Paper hasPadding={!isExportable}>
-        <SectionTitle>Skills</SectionTitle>
-        <div
-          className={
-            classnames(
-              { [styles.skillsGrid]: isGrid }
-            )
-          }
-        >
-          {skills.map((skill) => (
-            <SkillLevel
-              key={skill.label}
-              label={skill.label}
-              level={skill.level}
-            />
-          ))}
-        </div>
-      </Paper>
-    </Section>
-  )
+const Resume = forwardRef(
+  (
+    {
+      isExportable,
+      photo,
+      name,
+      jobTitle,
+      phone,
+      email,
+      address,
+      professionalSummary,
+      employments,
+      educations,
+      links,
+      skills,
+      onDownloadClick,
+    },
+    ref
+  ) => {
+    const renderSkillsSection = isGrid => (
+      <Section>
+        <Paper hasPadding={!isExportable}>
+          <SectionTitle>Skills</SectionTitle>
+          <div className={classnames({ [styles.skillsGrid]: isGrid })}>
+            {skills.map(skill => (
+              <SkillLevel key={skill.label} label={skill.label} level={skill.level} />
+            ))}
+          </div>
+        </Paper>
+      </Section>
+    )
 
-  return (
-    <article
-      ref={ref}
-      className={
-        classnames(
-          styles.resume,
-          { [styles.exportable]: isExportable }
-        )
-      }
-    >
-      <ResumeHeader
-        isExportable={isExportable}
-        photo={photo}
-        name={name}
-        jobTitle={jobTitle}
-      />
-      <div className={styles.grid}>
-        <div>
-          <ResumeProfile
-            isExportable={isExportable}
-            content={professionalSummary}
-          />
-          <Section>
-            <Paper hasPadding={!isExportable}>
-              <SectionTitle>
-                Experience
-              </SectionTitle>
-              <Timeline>
-                {employments.map((employment) => (
-                  <TimelineItem
-                    key={employment.employer}
-                    title={`${employment.jobTitle}`}
-                    subtitle={`${employment.employer}, ${employment.city}`}
-                    description={employment.description}
-                    startDate={employment.startDate}
-                    endDate={employment.endDate}
-                  />
-                ))}
-              </Timeline>
-            </Paper>
-          </Section>
-          {educations.length ? (
+    return (
+      <article
+        ref={ref}
+        className={classnames(styles.resume, { [styles.exportable]: isExportable })}
+      >
+        <ResumeHeader
+          onDownloadClick={onDownloadClick}
+          isExportable={isExportable}
+          photo={photo}
+          name={name}
+          jobTitle={jobTitle}
+        />
+        <div className={styles.grid}>
+          <div>
+            <ResumeProfile isExportable={isExportable} content={professionalSummary} />
             <Section>
               <Paper hasPadding={!isExportable}>
-                <SectionTitle>
-                  Education
-                </SectionTitle>
+                <SectionTitle>Experience</SectionTitle>
                 <Timeline>
-                  {educations.map((education) => (
+                  {employments.map(employment => (
                     <TimelineItem
-                      key={education.school}
-                      title={`${education.degree}`}
-                      subtitle={`${education.school}, ${education.city}`}
-                      description={education.description}
-                      startDate={education.startDate}
-                      endDate={education.endDate}
+                      key={employment.employer}
+                      title={`${employment.jobTitle}`}
+                      subtitle={`${employment.employer}, ${employment.city}`}
+                      description={employment.description}
+                      startDate={employment.startDate}
+                      endDate={employment.endDate}
                     />
                   ))}
                 </Timeline>
               </Paper>
             </Section>
-          ) : renderSkillsSection(true)}
+            {educations.length ? (
+              <Section>
+                <Paper hasPadding={!isExportable}>
+                  <SectionTitle>Education</SectionTitle>
+                  <Timeline>
+                    {educations.map(education => (
+                      <TimelineItem
+                        key={education.school}
+                        title={`${education.degree}`}
+                        subtitle={`${education.school}, ${education.city}`}
+                        description={education.description}
+                        startDate={education.startDate}
+                        endDate={education.endDate}
+                      />
+                    ))}
+                  </Timeline>
+                </Paper>
+              </Section>
+            ) : (
+              renderSkillsSection(true)
+            )}
+          </div>
+          <div className={styles.columnRight}>
+            <Section>
+              <Paper hasPadding={!isExportable}>
+                <SectionTitle>Details</SectionTitle>
+                <DetailItem icon={<WhatsappIcon />} text={phone} />
+                <DetailItem icon={<EmailIcon />} text={email} />
+                <DetailItem icon={<MarkerIcon />} text={address} />
+              </Paper>
+            </Section>
+            <Section>
+              <Paper hasPadding={!isExportable}>
+                <SectionTitle>Links</SectionTitle>
+                {links.map(link => (
+                  <ResumeLinkItem key={link.label} label={link.label} url={link.url} />
+                ))}
+              </Paper>
+            </Section>
+            {educations.length ? renderSkillsSection(false) : null}
+          </div>
         </div>
-        <div className={styles.columnRight}>
-          <Section>
-            <Paper hasPadding={!isExportable}>
-              <SectionTitle>Details</SectionTitle>
-              <DetailItem
-                icon={<WhatsappIcon />}
-                text={phone}
-              />
-              <DetailItem
-                icon={<EmailIcon />}
-                text={email}
-              />
-              <DetailItem
-                icon={<MarkerIcon />}
-                text={address}
-              />
-            </Paper>
-          </Section>
-          <Section>
-            <Paper hasPadding={!isExportable}>
-              <SectionTitle>Links</SectionTitle>
-              {links.map((link) => (
-                <ResumeLinkItem
-                  key={link.label}
-                  label={link.label}
-                  url={link.url}
-                />
-              ))}
-            </Paper>
-          </Section>
-          {educations.length ? renderSkillsSection(false) : null}
-        </div>
-      </div>
-    </article>
-  )
-})
+      </article>
+    )
+  }
+)
 
 Resume.propTypes = {
   isExportable: PropTypes.bool,
@@ -168,6 +142,7 @@ Resume.propTypes = {
   educations: PropTypes.instanceOf(Array),
   links: PropTypes.instanceOf(Array),
   skills: PropTypes.instanceOf(Array),
+  onDownloadClick: PropTypes.func,
 }
 
 Resume.defaultProps = {
@@ -183,6 +158,7 @@ Resume.defaultProps = {
   educations: [],
   links: [],
   skills: [],
+  onDownloadClick: () => {},
 }
 
 export default Resume
