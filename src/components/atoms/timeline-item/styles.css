@@ -52,19 +52,19 @@
 
 .pointLine {
   width: 4px;
-  background: var(--color-grey-2);
+  background: var(--color-grey-3);
   flex: 1;
   opacity: 0.5;
 }
 
 .title {
-  margin: 0 0 5px 0;
+  margin: 0 0 10px 0;
   font-size: 1.125rem;
   margin-top: 2px;
 }
 
 .subtitle {
-  margin: 0 0 7px 0;
+  margin: 0 0 10px 0;
   font-weight: 500;
   font-size: 0.875rem;
   color: var(--color-black);
@@ -72,6 +72,6 @@
 
 .description {
   margin: 0 0 40px 0;
-  opacity: 0.6;
   font-size: 0.875rem;
+  color: var(--color-black);
 }
