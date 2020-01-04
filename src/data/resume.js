@@ -93,8 +93,6 @@ export default {
     { label: 'Python', level: 2 },
     { label: 'Django', level: 2 },
     { label: 'Wagtail', level: 2 },
-    { label: 'Adaptability', level: 4 },
-    { label: 'Creativity', level: 4 },
   ],
   links: [
     { label: 'Website', url: 'https://kalu.dev' },
