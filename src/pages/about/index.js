@@ -96,7 +96,7 @@ class About extends Component {
                 employments={resumeData.employments}
                 links={resumeData.links}
                 skills={resumeData.skills}
-                onDowloadClick={this.handleDownloadClick}
+                onDownloadClick={this.handleDownloadClick}
               />
             </div>
             <div className={styles.exportArea}>
